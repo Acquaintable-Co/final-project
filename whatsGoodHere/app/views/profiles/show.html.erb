@@ -1,1 +1,9 @@
 <h1>profile page of specific business</h1>
+<p><% @profile.highlights.each do |highlight| %>
+    <%= highlight.highlight_detail %>
+    <% end %></p>
+
+    <p><% @profile.hacks.each do |hack| %>
+        <%= hack.hack_detail %>
+        <% end %></p>
+
