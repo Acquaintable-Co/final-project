@@ -12,7 +12,7 @@ class HacksController < ApplicationController
   def update
   end
 
-  def create
+  def destroy
   end
 
   private
