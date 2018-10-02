@@ -28,7 +28,7 @@ class OffersController < ApplicationController
   end
 
   def offer_params
-    params.require(:offer).permit(:offer_detail, :profile_id)
+    params.require(:offer).permit(:offer_detail)
   end
 
 end
