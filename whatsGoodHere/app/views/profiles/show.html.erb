@@ -3,6 +3,11 @@
 <p><% @profile.offers.each do |offer| %>
     <%= offer.offer_detail %>
    <% end %></p>
+<%= form_with model: @offer, url: offers_path, local: true do |f| %>
+<%= f.label "EAT FOOD" %>
+<%= f.text_field :offer_detail %>
+<%= f.submit %>
+  <% end %>
                   
 <p><% @profile.highlights.each do |highlight| %>
       <%= highlight.highlight_detail %>

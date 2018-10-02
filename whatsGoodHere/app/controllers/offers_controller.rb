@@ -3,7 +3,7 @@ class OffersController < ApplicationController
   
 
   def create
-    @offer = Offer.new(offer_params)
+    @offer = Offer.new(offer_detail: offer_detail, profile_id: params[:id])
     if @offer.save
       redirect profiles(@offer.profile_id)
     else
