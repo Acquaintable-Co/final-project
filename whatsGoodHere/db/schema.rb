@@ -10,10 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_01_210610) do
+
+ActiveRecord::Schema.define(version: 2018_10_01_224816) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "hacks", force: :cascade do |t|
+    t.string "hack_detail"
+    t.bigint "profile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_hacks_on_profile_id"
+  end
+
+  create_table "highlights", force: :cascade do |t|
+    t.string "highlight_detail"
+    t.bigint "profile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_highlights_on_profile_id"
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string "location_detail"
+    t.bigint "profile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_locations_on_profile_id"
+  end
+
+  create_table "offers", force: :cascade do |t|
+    t.string "offer_detail"
+    t.bigint "profile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_offers_on_profile_id"
+  end
 
   create_table "profiles", force: :cascade do |t|
     t.string "email"
@@ -27,5 +61,10 @@ ActiveRecord::Schema.define(version: 2018_10_01_210610) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_foreign_key "hacks", "profiles"
+  add_foreign_key "highlights", "profiles"
+  add_foreign_key "locations", "profiles"
+  add_foreign_key "offers", "profiles"
 
 end
