@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
     profile = Profile.find_by(email: params[:session][:email])
     if profile && profile.authenticate(params[:session][:password])
       # Log the profiler in and redirect to the profile's show page.
+      redirect_to profile
     else
       # Create an error message.
       render 'new'
@@ -15,6 +16,9 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    session[:profile_id] = nil
+    flash[:notice] = "You've been logged out"
+    redirect_to root_path
   end
 
 end

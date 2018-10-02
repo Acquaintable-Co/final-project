@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :locations
   resources :highlights
   resources :hacks
+  root 'profiles#index'
 end
