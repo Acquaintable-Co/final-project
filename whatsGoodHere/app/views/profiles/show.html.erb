@@ -1,1 +1,4 @@
 <h1>profile page of specific business</h1>
+<% @profile.offers.each do |offer| %>
+  <%= offer.offer_detail %>
+<% end %>
