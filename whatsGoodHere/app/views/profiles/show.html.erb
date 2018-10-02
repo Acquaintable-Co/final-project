@@ -1,9 +1,13 @@
 <h1>profile page of specific business</h1>
+
+<p><% @profile.offers.each do |offer| %>
+    <%= offer.offer_detail %>
+   <% end %></p>
+                  
 <p><% @profile.highlights.each do |highlight| %>
-    <%= highlight.highlight_detail %>
+      <%= highlight.highlight_detail %>
     <% end %></p>
 
-    <p><% @profile.hacks.each do |hack| %>
-        <%= hack.hack_detail %>
-        <% end %></p>
-
+<p><% @profile.hacks.each do |hack| %>
+     <%= hack.hack_detail %>
+   <% end %></p>
