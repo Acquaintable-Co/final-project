@@ -1,0 +1,37 @@
+<h1>profile page of specific business</h1>
+<% if flash[:error_message] %>
+<p class="flash-error"><%= flash[:notice] %></p>
+<% end %>
+
+<p><% @profile.offers.each do |offer| %>
+    <%= offer.offer_detail %>
+
+   <% end %></p>
+
+<% if current_profile && @profile.id == current_profile.id %>
+<%= form_with model: @offer, url: offers_path, local: true do |f| %>
+<%= f.label "EAT FOOD" %>
+<%= f.text_field :offer_detail %>
+<%= f.submit %>
+  <% end %>
+  <% end %>
+                  
+<p><% @profile.highlights.each do |highlight| %>
+      <%= highlight.highlight_detail %>
+      <%end %></p>
+<%= form_with model: @highlight, url: highlights_path, local: true do |f| %>
+<%= f.label "Why We're Awesome" %>
+<%= f.text_field :highlight_detail %>
+<%= f.submit %>
+    <% end %>
+
+<p><% @profile.hacks.each do |hack| %>
+     <%= hack.hack_detail %>
+     <% end %></p>
+<%= form_with model: @hack, url: hacks_path, local: true do |f| %>
+<%= f.label "Know All The Secrets" %>
+<%= f.text_field :hack_detail %>
+<%= f.submit %>
+   <% end %>
+   
+   <%= link_to "log out", logout_path, method: :delete %>
