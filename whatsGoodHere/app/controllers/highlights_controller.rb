@@ -1,6 +1,7 @@
 class HighlightsController < ApplicationController
+  #likely will not use
   before_action :set_highlight, only: [:update, :destroy]
- 
+
   def create
     if !current_profile
       flash[:error_message] = "You don't have access"

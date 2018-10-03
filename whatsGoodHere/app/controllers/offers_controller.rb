@@ -1,4 +1,5 @@
 class OffersController < ApplicationController
+  #fare
   before_action :set_offer, only: [:update, :destroy]
   
 
@@ -16,14 +17,13 @@ class OffersController < ApplicationController
     end
   end
 
- 
-
   def update
     @offer.update(offer_params)
   end
 
   def destroy
     @offer.destroy
+    redirect_to profile_path(@offer.profile_id)
   end
 
   private
