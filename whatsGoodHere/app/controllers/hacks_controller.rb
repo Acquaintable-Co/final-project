@@ -1,4 +1,6 @@
 class HacksController < ApplicationController
+#tips
+before_action :set_hack, only: [:update, :destroy]
 
   def create
     if !current_profile
@@ -23,6 +25,7 @@ class HacksController < ApplicationController
 
   def destroy
     @hack.destroy
+    redirect_to profile_path(@hack.profile_id)
   end
 
   private
