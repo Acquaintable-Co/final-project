@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
   def create
     profile = Profile.find_by(email: params[:session][:email])
     if profile && profile.authenticate(params[:session][:password])
+      session[:profile_id] = profile.id
       # Log the profiler in and redirect to the profile's show page.
       redirect_to profile
     else

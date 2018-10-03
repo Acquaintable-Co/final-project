@@ -1,8 +1,8 @@
 class ApplicationController < ActionController::Base
-  helper_method :current_user
+  helper_method :current_profile
 
   protected
-    def current_user
-      @current_user ||= Profile.find(session[:profile_id]) if session[:profile_id]
+    def current_profile
+      @current_profile ||= Profile.find(session[:profile_id]) if session[:profile_id]
     end
 end

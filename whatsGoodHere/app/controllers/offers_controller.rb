@@ -3,11 +3,16 @@ class OffersController < ApplicationController
   
 
   def create
-    @offer = Offer.new(offer_detail: offer_detail, profile_id: params[:id])
-    if @offer.save
-      redirect profiles(@offer.profile_id)
+   
+    if !current_profile
+      flash[:error_message] = "You don't have access"
     else
-      @offer.errors
+    @offer = Offer.new(offer_detail: offer_params[:offer_detail], profile_id: current_profile.id)
+      if @offer.save
+        redirect_to profile_path(@offer.profile_id)
+      else
+        @offer.errors
+      end
     end
   end
 
@@ -25,10 +30,11 @@ class OffersController < ApplicationController
 
   def set_offer
     @offer = Offer.find(params[:id])
+  
   end
 
   def offer_params
-    params.require(:offer).permit(:offer_detail)
+    params.permit(:offer_detail)
   end
 
 end
