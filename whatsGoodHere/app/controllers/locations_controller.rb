@@ -2,6 +2,7 @@ class LocationsController < ApplicationController
   before_action :set_location, only: [:update, :destroy]
  
   def create
+    
     @location = Location.new(location_params)
     if @location.save
       redirect_to profiles(@location.profile_id)

@@ -1,20 +1,25 @@
 class HighlightsController < ApplicationController
-
+  before_action :set_highlight, only: [:update, :destroy]
  
   def create
-    @highlight = Highlight.new(highlight_params)
-    if @highlight.save
-      redirect_to profiles(@highlight.profile_id)
+    if !current_profile
+      flash[:error_message] = "You don't have access"
     else
-      @highlight.errors
+      @highlight = Highlight.new(highlight_detail: highlight_params[:highlight_detail], profile_id: current_profile.id)
+      if @highlight.save
+        redirect_to profile_path(@highlight.profile_id)
+      else
+        @highlight.errors
+      end
     end
   end
 
   def update
     if @highlight.update(highlight_params)
-      redirect_to profiles(@highlight.profile_id)
+      redirect_to profile_path(@highlight.profile_id)
     else 
       @highlight.errors
+    end
   end
 
   def destroy
@@ -28,7 +33,7 @@ class HighlightsController < ApplicationController
   end
 
   def highlight_params
-    params.require(:highlight).permit(:highlight_detail, :profile_id)
+    params.permit(:highlight_detail, :profile_id)
   end
 
 end
