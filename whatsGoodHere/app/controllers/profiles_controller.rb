@@ -7,11 +7,10 @@ class ProfilesController < ApplicationController
   end
 
   def browse
-    puts 'browse action**********************'
     if params[:restaurant].present?
       @browse = Profile.search_by_restaurant(params[:restaurant])
     else
-      #@browse = Profile.all
+      #flash[:error_message] = "Typo, maybe?"
     end
   end
 
