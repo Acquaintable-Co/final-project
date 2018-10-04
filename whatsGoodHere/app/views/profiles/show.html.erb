@@ -2,7 +2,14 @@
 <% if flash[:error_message] %>
 <p class="flash-error"><%= flash[:error_message] %></p>
 <% end %>
+<%= form_with model: @profile, local: true do |form| %>
+<%= form.file_field :menu %>
+<%= form.submit %>
+<% end %>
 
+<% if @profile.menu.previewable? %>
+        <%= link_to "View Menu", rails_blob_path(@profile.menu, disposition: "menu") %>
+      <% end %>
 <p><% @profile.offers.each do |offer| %>
     <%= offer.offer_detail %>
     <% if current_profile && @profile.id == current_profile.id %>
