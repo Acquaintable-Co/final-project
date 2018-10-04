@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+  a-scene {
+    height: 300px;
+    width: 600px;
+  }
+  #myEmbeddedScene {
+    width:50%;
+    height:300px;
+  }
