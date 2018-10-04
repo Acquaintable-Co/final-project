@@ -22,11 +22,12 @@
   <% if @profile.floor_plan.attached? %>
     <%= link_to "View Floor Plan", rails_blob_path(@profile.floor_plan, disposition: "floor_plan"), target: "_new" %>
   <% end %>
-
-  <% if @profile.vr_image.attached? %>
-      <%= image_tag @profile.vr_image %>
-  <% end %>
-
+  
+ 
+  <div id="myEmbeddedScene">
+  <a-scene embedded="">
+   <a-sky src="<%= rails_blob_path(@profile.vr_image) %>"></a-sky>
+  </a-scene>
 <p><% @profile.offers.each do |offer| %>
     <%= offer.offer_detail %>
     <% if current_profile && @profile.id == current_profile.id %>
