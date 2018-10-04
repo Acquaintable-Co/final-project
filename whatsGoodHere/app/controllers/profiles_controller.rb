@@ -20,6 +20,7 @@ class ProfilesController < ApplicationController
 
   def update
     @profile.update(profile_params)
+    redirect_to @profile
   end
 
   def delete
@@ -32,6 +33,6 @@ class ProfilesController < ApplicationController
   end
 
   def profile_params
-    params.require(:profile).permit(:email, :password, :address, :hours, :phone, :website, :restaurant, :name, :menu)
+    params.require(:profile).permit(:email, :password, :address, :hours, :phone, :website, :restaurant, :name, :menu, :vr_image, :floor_plan)
   end
 end

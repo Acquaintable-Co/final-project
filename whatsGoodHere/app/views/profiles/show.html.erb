@@ -3,17 +3,34 @@
 <p class="flash-error"><%= flash[:error_message] %></p>
 <% end %>
 <%= form_with model: @profile, local: true do |form| %>
-<%= form.file_field :menu %>
-<%= form.submit %>
+
+  <%= form.label "Upload a Menu" %>
+  <%= form.file_field :menu %>
+
+  <%= form.label "Upload a 360 image" %>
+  <%= form.file_field :vr_image %>
+
+  <%= form.label "Upload Floor Plan" %>
+  <%= form.file_field :floor_plan%>
+
+  <%= form.submit %>
 <% end %>
 
-<% if @profile.menu.previewable? %>
-        <%= link_to "View Menu", rails_blob_path(@profile.menu, disposition: "menu") %>
-      <% end %>
+  <% if @profile.menu.attached? %>
+    <%= link_to "View Menu", rails_blob_path(@profile.menu, disposition: "menu"), target: "_new" %>
+  <% end %>
+  <% if @profile.floor_plan.attached? %>
+    <%= link_to "View Floor Plan", rails_blob_path(@profile.floor_plan, disposition: "floor_plan"), target: "_new" %>
+  <% end %>
+
+  <% if @profile.vr_image.attached? %>
+      <%= image_tag @profile.vr_image %>
+  <% end %>
+
 <p><% @profile.offers.each do |offer| %>
     <%= offer.offer_detail %>
     <% if current_profile && @profile.id == current_profile.id %>
-    <%= link_to 'delete', offer_path(offer), method: :delete %>
+      <%= link_to 'delete', offer_path(offer), method: :delete %>
     <% end %>
     <% end %></p>
 
