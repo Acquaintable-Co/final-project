@@ -8,11 +8,10 @@ class ProfilesController < ApplicationController
 
   def browse
     puts 'browse action**********************'
-    if params[:restaurant]
-      @browse = Profile.where('restaurant LIKE ?', "%#{params[:restaurant]}%")
-      redirect_to browse_path
+    if params[:restaurant].present?
+      @browse = Profile.search_by_restaurant(params[:restaurant])
     else
-      @browse = Profile.all
+      #@browse = Profile.all
     end
   end
 
