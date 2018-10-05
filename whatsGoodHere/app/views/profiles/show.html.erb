@@ -1,4 +1,3 @@
-
 <div class="app-container profile">
     <div class="top-nav-bar">
         <div class="app-initials">WGH<span class="nav-q-mark"</span>?</div>
@@ -92,7 +91,13 @@
 </div>   
 
 
+
 <%= form_with model: @profile, local: true do |form| %>
+
+<% if current_profile && @profile.id == current_profile.id %>
+<input type='file'></input>
+<button type="submit" class="btn btn-default">Submit</button>
+<% end %>
 
   <%= form.label "Upload a Menu" %>
   <%= form.file_field :menu %>
@@ -113,54 +118,52 @@
     <%= link_to "View Floor Plan", rails_blob_path(@profile.floor_plan, disposition: "floor_plan"), target: "_new" %>
   <% end %>
   
- 
+  <% if @profile.vr_image.attached? %>
   <div id="myEmbeddedScene">
   <a-scene embedded="">
    <a-sky src="<%= rails_blob_path(@profile.vr_image) %>"></a-sky>
   </a-scene>
-<p><% @profile.offers.each do |offer| %>
-    <%= offer.offer_detail %>
-    <% if current_profile && @profile.id == current_profile.id %>
-      <%= link_to 'delete', offer_path(offer), method: :delete %>
-    <% end %>
-    <% end %></p>
+  </div>
+  <% end %>
 
+
+<button class="expand" onClick=showDetail('fare-detail')>Fare</button><% @profile.offers.each do |offer| %>
+   <div class="hidden fare-detail"><%= offer.offer_detail %></div>
+   <% end %>
 <% if current_profile && @profile.id == current_profile.id %>
     <%= form_with model: @offer, url: offers_path, local: true do |f| %>
-    <%= f.label "EAT FOOD" %>
     <%= f.text_field :offer_detail %>
     <%= f.submit %>
   <% end %>
   <% end %>
-       
   
-<p><% @profile.locations.each do |location| %>
-      <%= location.location_detail %>
-      <% if current_profile && @profile.id == current_profile.id %>
-      <%= link_to 'delete', location_path(location), method: :delete %>
-      <%end %>
-      <% end %></p>
+
+<button class="expand" onClick=showDetail('tips-detail')>Tips</button><% @profile.hacks.each do |hack| %>
+    <div class="hidden tips-detail"><%= hack.hack_detail %></div>
+    <% if current_profile && @profile.id == current_profile.id %>
+    <%= link_to 'delete', hack_path(hack), method: :delete %>
+    <% end %>
+    <% end %>
+<% if current_profile && @profile.id == current_profile.id %>
+    <%= form_with model: @hack, url: hacks_path, local: true do |f| %>
+    <%= f.text_field :hack_detail %>
+    <%= f.submit %>
+<% end %>
+<% end %>
+
+<button class="expand" onClick=showDetail('specs-detail')>Specs</button><% @profile.locations.each do |location| %>
+   <div class="hidden specs-detail"><%= location.location_detail %></div>
+    <% if current_profile && @profile.id == current_profile.id %>
+    <%= link_to 'delete', location_path(location), method: :delete %>
+    <%end %>
+    <% end %></p>
 <% if current_profile && @profile.id == current_profile.id %>
 <%= form_with model: @location, url: locations_path, local: true do |f| %>
-<%= f.label "Why We're Awesome" %>
 <%= f.text_field :location_detail %>
 <%= f.submit %>
-    <% end %>
-    <% end %>
-
-<p><% @profile.hacks.each do |hack| %>
-     <%= hack.hack_detail %>
-     <% if current_profile && @profile.id == current_profile.id %>
-     <%= link_to 'delete', hack_path(hack), method: :delete %>
-     <% end %>
-     <% end %></p>
-
-<% if current_profile && @profile.id == current_profile.id %>
-<%= form_with model: @hack, url: hacks_path, local: true do |f| %>
-<%= f.label "Know All The Secrets" %>
-<%= f.text_field :hack_detail %>
-<%= f.submit %>
-   <% end %>
-   <% end %>
+  <% end %>
+  <% end %>
    
+   <% if current_profile %>
    <%= link_to "log out", logout_path, method: :delete %>
+   <% end %>
