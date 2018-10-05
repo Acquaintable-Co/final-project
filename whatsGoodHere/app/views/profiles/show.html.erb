@@ -1,4 +1,4 @@
-<h1>profile page of specific business</h1>
+<h1 style="font-family:'Frontage'">profile page of specific business</h1>
 <% if flash[:error_message] %>
 <p class="flash-error"><%= flash[:error_message] %></p>
 <% end %>
@@ -25,9 +25,11 @@
   
  
   <div id="myEmbeddedScene">
+  <% if @profile.vr_image.attached? %>
   <a-scene embedded="">
-   <a-sky src="<%= rails_blob_path(@profile.vr_image) %>"></a-sky>
+   <a-sky src="<%= url_for(@profile.vr_image) %>"></a-sky>
   </a-scene>
+  <% end %>
 <p><% @profile.offers.each do |offer| %>
     <%= offer.offer_detail %>
     <% if current_profile && @profile.id == current_profile.id %>
