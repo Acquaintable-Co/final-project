@@ -116,7 +116,7 @@
  
   <div id="myEmbeddedScene">
   <a-scene embedded="">
-   <a-sky src="<%= rails_blob_path(@profile.vr_image) %>"></a-sky>
+   <a-sky src="<%= url_for(@profile.vr_image) %>"></a-sky>
   </a-scene>
 <p><% @profile.offers.each do |offer| %>
     <%= offer.offer_detail %>
