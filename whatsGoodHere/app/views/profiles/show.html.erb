@@ -120,8 +120,9 @@
   
   <% if @profile.vr_image.attached? %>
   <div id="myEmbeddedScene">
+  <% if @profile.vr_image.attached? %>
   <a-scene embedded="">
-   <a-sky src="<%= rails_blob_path(@profile.vr_image) %>"></a-sky>
+   <a-sky src="<%= url_for(@profile.vr_image) %>"></a-sky>
   </a-scene>
   </div>
   <% end %>

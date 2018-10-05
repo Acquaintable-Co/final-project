@@ -33,7 +33,7 @@ class ProfilesController < ApplicationController
     redirect_to @profile
   end
 
-  def delete
+  def destroy
   end
 
   private
