@@ -1,9 +1,19 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :delete]
-  def new
+  def index
+    puts 'hey yall index action*********************'
   end
 
   def show
+  end
+
+  
+  def browse
+    if params[:restaurant].present?
+      @browse = Profile.search_by_restaurant(params[:restaurant])
+    else
+      @browse = Profile.all
+    end
   end
 
   def create
@@ -19,6 +29,8 @@ class ProfilesController < ApplicationController
   end
 
   def update
+    @profile.update(profile_params)
+    redirect_to @profile
   end
 
   def delete
@@ -31,6 +43,6 @@ class ProfilesController < ApplicationController
   end
 
   def profile_params
-    params.require(:profile).permit(:email, :password, :address, :hours, :phone, :website, :restaurant, :name)
+    params.require(:profile).permit(:email, :password, :address, :hours, :phone, :website, :restaurant, :name, :menu, :vr_image, :floor_plan)
   end
 end

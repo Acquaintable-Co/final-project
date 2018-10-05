@@ -1,3 +1,4 @@
+
 <div class="app-container home">
 <div class="app-background">
   <%# <div id="homepage-image">
@@ -26,3 +27,18 @@
   <button class="button main">see list</button>
 </div>
 </div>
+
+
+
+<p><%= form_tag(browse_path, method: :get) do %>
+    <%= text_field_tag :restaurant, params[:restaurant]  %>
+    <%= submit_tag 'Search', name: nil %>
+  <% end %></p>
+
+ <p><%= form_tag(browse_path, method: :get) do %> 
+     <%= button_tag 'Browse', :class => 'button_main' %>
+     <% end %></p>
+ 
+
+
+
