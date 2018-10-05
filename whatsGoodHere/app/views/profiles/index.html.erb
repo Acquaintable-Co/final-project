@@ -1,10 +1,40 @@
-<header class='site-header'>
-<h1>hompage, search and browse</h1>
-</header>
-<div id='search'>
-<input type='search'>Search</input>
-<button>browse</button>
+<div class="app-container home">
+<div class="app-background">
+  <%# <div id="homepage-image">
+    <img src="WGH-fork-mobile.jpg" />
+  </div> %>
+
+  <header class="site-header">
+    <div class="app-title">What's <br> Good <br> Here<span class="q-mark">?</span></div>
+  </header>
+
+  <div class="site-subhead">
+    <div class="app-subhead">Scope out everything <br> you need to know about Durham’s <br> restaurants and bars</div>
+  </div>
+
+  <div class="home-search-area">
+  <form>
+    <div class="field">
+    <div class="control">
+      <input class="input home-search-bar" type="text" placeholder="search by venue" />
+        <%# <span class="icon is-left">
+          <i class="fas fa-search"></>
+        </span>   %>
+    </div>
+    </div>
+  </form>  
+  <button class="button main">see list</button>
 </div>
-<div id='homepage-image'>
-<img src='#'>
 </div>
+
+
+
+<p><%= form_tag(browse_path, method: :get) do %>
+    <%= text_field_tag :restaurant, params[:restaurant]  %>
+    <%= submit_tag 'Search', name: nil %>
+  <% end %></p>
+
+ <p><%= form_tag(browse_path, method: :get) do %> 
+     <%= button_tag 'Browse', :class => 'button_main' %>
+     <% end %></p>
+ 
