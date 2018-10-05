@@ -1,5 +1,5 @@
 <div class="app-container home">
-<div class="app-background">
+  <div class="app-background">
   <%# <div id="homepage-image">
     <img src="WGH-fork-mobile.jpg" />
   </div> %>
@@ -13,26 +13,23 @@
   </div>
 
   <div class="home-search-area">
-  <form>
     <div class="field">
-    <div class="control">
-      <input class="input home-search-bar" type="text" placeholder="search by venue" />
-        <%# <span class="icon is-left">
-          <i class="fas fa-search"></>
-        </span>   %>
+        <div class="control">
+        <%= form_tag(browse_path, method: :get) do %>
+          <%= text_field_tag :restaurant, params[:restaurant], :class => 'input home-search-bar', :type => 'text', :placeholder => 'search for venue'  %>
+        <% end %>
+              <%# <span class="icon is-left">
+              <i class="fas fa-search"></>
+            </span> %>
+        </div>
     </div>
-    </div>
-  </form>  
-  <button class="button main">or see a list</button>
+    
+    <div class="or-between">or</div>
+      </div>
+      <div>
+      <%= link_to 'see list', browse_path, :class => 'button main' %>
 </div>
+   
+  
+  </div>
 </div>
-
-<p><%= form_tag(browse_path, method: :get) do %>
-    <%= text_field_tag :restaurant, params[:restaurant]  %>
-    <%= submit_tag 'Search', name: nil %>
-  <% end %></p>
-
- <p><%= form_tag(browse_path, method: :get) do %> 
-     <%= button_tag 'Browse', :class => 'button_main' %>
-     <% end %></p>
- 
