@@ -1,8 +1,13 @@
-<h1>hompage, search and browse</h1>
-<p>this is a random paragarph</p>
+<h1>Homepage, search and browse</h1>
 
-<%= form_tag(browse_path, method: :get) do %>
+<p><%= form_tag(browse_path, method: :get) do %>
     <%= text_field_tag :restaurant, params[:restaurant]  %>
     <%= submit_tag 'Search', name: nil %>
-  <% end %>
+  <% end %></p>
+
+ <p><%= form_tag(browse_path, method: :get) do %> 
+     <%= button_tag 'Browse', :class => 'button_main' %>
+     <% end %></p>
+ 
+
 
