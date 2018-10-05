@@ -1,39 +1,41 @@
-<div class="top-nav-bar">
-    <div class="app-initials">WGH<span class="nav-q-mark"</span>?</div>
-    
-    <div class="nav-search-area">
-        <form>
-            <div class="field">
-                <div class="control">
-                    <input class="input nav-search-bar is-small" type="text" placeholder="Search by venue name" />
-                        <%# <span class="icon is-left">
-                        <i class="fas fa-search"></>
-                        </span> %>
-                </div>          
-            </div>
-        </form>
-        <button class="button top-nav is-small">browse</button>
+<div class="app-container profile">
+    <div class="top-nav-bar">
+        <div class="app-initials">WGH<span class="nav-q-mark"</span>?</div>
+        
+        <div class="nav-search-area">
+            <form>
+                <div class="field">
+                    <div class="control">
+                        <input class="input nav-search-bar is-small" type="text" placeholder="Search by venue" />
+                            <%# <span class="icon is-left">
+                            <i class="fas fa-search"></>
+                            </span> %>
+                    </div>          
+                </div>
+            </form>
+            <%# <button class="button top-nav is-small">see list</button> %>
+        </div>
     </div>
-</div>
 
+    <div class="top-info">
+        <div class="name-field">
+            <h1 class="business-name"><%= @profile.restaurant %></h1>
+                <% if flash[:error_message] %>
+                <p class="flash-error"><%= flash[:error_message] %></p>
+                <% end %>
+        </div>  
 
-<div class="top-info">
-    <div class="name-field">
-        <h1 class="business-name"><%= @profile.restaurant %></h1>
-            <% if flash[:error_message] %>
-            <p class="flash-error"><%= flash[:error_message] %></p>
-            <% end %>
-    </div>    
-    <div class="address-phone"><%= @profile.address %> | <%= @profile.phone %>
-    </div>    
-    <div class="hours"> <% @profile.hours %> </div>
-</div>
-       
-<div class="info-section">
-    <div class="info-category-header fare"> fare </div>
+        <div class="address-phone"><%= @profile.address %>  |  <%= @profile.phone %>
+        </div>    
+
+        <div class="hours"> <% @profile.hours %> </div>
+    </div>
+        
+    <div class="info-section">
+        <div class="info-category-header fare">fare</div>
 
         <p><% @profile.offers.each do |offer| %>
-           <div class="info-entry"> <%= offer.offer_detail %> </div>
+            <div class="info-entry"> <%= offer.offer_detail %> </div>
                 <% if current_profile && @profile.id == current_profile.id %>
                 <%= link_to 'delete', offer_path(offer), method: :delete %>
                 <% end %>
@@ -45,14 +47,11 @@
             <%= f.text_field :offer_detail %>
             <%= f.submit %>
         <% end %>
-        <% end %>
-       
-    </div>
+        <% end %>     
+    </div>            
 
-</div>            
-
-<div class="info-section">
-    <div class="info-category-header tips"> tips </div>
+    <div class="info-section">
+        <div class="info-category-header tips">tips</div>
 
         <p><% @profile.hacks.each do |hack| %>
             <div class="info-entry"> <%= hack.hack_detail %> </div>
@@ -68,12 +67,10 @@
         <%= f.submit %>
         <% end %>
         <% end %>
-        
-    </div>    
-</div>     
+    </div>     
 
-<div class="info-section">
-    <div class="info-category-header specs"> specs </div>
+    <div class="info-section">
+        <div class="info-category-header specs">specs</div>
 
         <p><% @profile.locations.each do |location| %>
             <div class="info-entry"> <%= location.location_detail %> </div>
@@ -89,6 +86,6 @@
         <%= f.submit %>
             <% end %>
             <% end %>
-</div>
-      
-   <%= link_to "log out", logout_path, method: :delete %>
+    </div>      
+    <%= link_to "log out (?)", logout_path, method: :delete %>
+</div>   
