@@ -1,4 +1,6 @@
 class Profile < ApplicationRecord
+  include PgSearch
+  pg_search_scope :search_by_restaurant, :against => :restaurant, :using => { :tsearch => {:prefix => true}}
   has_secure_password
   has_many :offers
   has_many :highlights
