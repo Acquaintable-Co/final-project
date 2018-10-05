@@ -34,16 +34,19 @@
     <div class="info-section">
         <div class="info-category-header fare">fare</div>
 
-        <p><% @profile.offers.each do |offer| %>
-            <div class="info-entry"> <%= offer.offer_detail %> </div>
+        <a class="expand" onClick=showDetail('fare-detail')>see more</a>
+        <% @profile.offers.each do |offer| %>
+
+        <div class="hidden fare-detail info-entry"> 
+                <%= offer.offer_detail %>
                 <% if current_profile && @profile.id == current_profile.id %>
-                <%= link_to 'delete', offer_path(offer), method: :delete %>
+                <%= link_to 'delete', offer_path(offer), method: :delete %> </div>
                 <% end %>
-                <% end %></p>
+                <% end %>
 
         <% if current_profile && @profile.id == current_profile.id %>
             <%= form_with model: @offer, url: offers_path, local: true do |f| %>
-            <%= f.label "EAT FOOD" %>
+            <%= f.label "add a new item to this section" %>
             <%= f.text_field :offer_detail %>
             <%= f.submit %>
         <% end %>
@@ -53,16 +56,17 @@
     <div class="info-section">
         <div class="info-category-header tips">tips</div>
 
-        <p><% @profile.hacks.each do |hack| %>
-            <div class="info-entry"> <%= hack.hack_detail %> </div>
+        <a class="expand" onClick=showDetail('tips-detail')>see more</a>
+        <% @profile.hacks.each do |hack| %>
+            <div class="hidden tips-detail info-entry"> <%= hack.hack_detail %> </div>
                 <% if current_profile && @profile.id == current_profile.id %>
                 <%= link_to 'delete', hack_path(hack), method: :delete %>
                 <% end %>
-                <% end %></p>
+                <% end %>
 
         <% if current_profile && @profile.id == current_profile.id %>
         <%= form_with model: @hack, url: hacks_path, local: true do |f| %>
-        <%= f.label "Know All The Secrets" %>
+        <%= f.label "add a new item to this section" %>
         <%= f.text_field :hack_detail %>
         <%= f.submit %>
         <% end %>
@@ -72,16 +76,17 @@
     <div class="info-section">
         <div class="info-category-header specs">specs</div>
 
-        <p><% @profile.locations.each do |location| %>
-            <div class="info-entry"> <%= location.location_detail %> </div>
+        <a class="expand" onClick=showDetail('specs-detail')>Specs</a>
+        <% @profile.locations.each do |location| %>
+            <div class="hidden specs-detail info-entry"> <%= location.location_detail %> </div>
             <% if current_profile && @profile.id == current_profile.id %>
             <%= link_to 'delete', location_path(location), method: :delete %>
             <%end %>
-            <% end %></p>
+            <% end %>
 
         <% if current_profile && @profile.id == current_profile.id %>
         <%= form_with model: @location, url: locations_path, local: true do |f| %>
-        <%= f.label "Why We're Awesome" %>
+        <%= f.label "add a new item to this section" %>
         <%= f.text_field :location_detail %>
         <%= f.submit %>
             <% end %>
