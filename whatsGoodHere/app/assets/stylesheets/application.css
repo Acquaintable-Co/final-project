@@ -12,6 +12,277 @@
  *
  *= require_tree .
  *= require_self
+*/
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+  /* min-width: 640px; */
+  /* height: 100vh; */
+}
+
+body {
+  /* margin: 0;
+  padding: 0; */
+  background-color: #8ED062;
+  min-width: 320px;
+  height: 100vh;
+}
+
+/* background-size:cover; 
+background-repeat:no-repeat;
+background-attachment:fixed;
+height:100%; */
+
+.app-background {
+  background-image: url(WGH-fork-mobile.jpg);
+  background-size:cover; 
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  height: 100vh;
+  background-color: transparent;
+} 
+
+.html {
+
+  
+}
+
+/* main app homepage */
+
+.app-title {
+  margin: 0 auto;
+  padding-top: 40px;
+  font-family: 'Crushed', cursive;
+  /* font-size: 3rem; */
+  font-size: 70px;
+  line-height: 75px;
+  vertical-align: top;
+  text-align: center;
+  /* color: #4D5656; */
+  color: #424949;
+  width: 80%;
+  margin-bottom: 35%;
+}
+
+.q-mark {
+  color: #FDFEFE;
+}
+
+.site-subhead {
+  margin-top: 20px;
+}
+
+.app-subhead {
+  /* color: #4D5656; */
+  color: #424949;
+  margin: 40px auto;
+  font-family: 'Heebo', sans-serif;
+  font-size: 1rem;
+  /* font-weight: bold; */
+  text-align: center;
+}
+
+.home-search-area {
+  display: inline-flex;
+  align-content: flex-end;
+  vertical-align: top;
+  margin: 0 20px;
+  /* align-content: center; */
+}
+
+.input.home-search-bar {
+  background: #C1E5AA;
+  border: #FDFEFE;
+}
+
+.button.main {
+  background: #C1E5AA;
+  border: #FDFEFE;
+  margin-left: 10px;
+  font-weight: 500;
+}
+
+.is-left {
+  background: transparent;
+  /* border: #FDFEFE; */
+  color: #FDFEFE;
+  color: black;
+}
+
+/* profile page */
+
+.app-container.profile {
+  margin: 0;
+  padding: 0;
+  background-color: #8ED062;
+  height: 100vh;
+}
+
+.top-nav-bar {
+  display: block;
+  margin-bottom: 30px;
+  /* display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start */
+}
+
+.nav-search-bar {
+  vertical-align: top;
+  display: inline-block;
+  background: #C1E5AA;
+  border: #FDFEFE;
+}
+
+.app-initials {
+  padding: 10px 0 10px 15px;
+  float: left;
+  font-family: 'Crushed', cursive;
+  font-size: 1.75rem;
+  line-height: 1.5rem;
+  /* align-content: flex-start; */
+  vertical-align: top;
+  width: 18%;
+}
+
+.nav-q-mark {
+  color: #FDFEFE;
+  vertical-align: top;
+}
+
+.control {
+  align-content: flex-end;
+}
+
+.nav-search-area {
+  display: inline-flex;
+  /* display: inline-block; */
+  float: right;
+  align-content: flex-end;
+}
+
+.top-info {
+  clear: both;
+  background: #424949;
+
+}
+
+.button.top-nav {
+  vertical-align: top;
+  display: inline-block;
+  background: #C1E5AA;
+  border: #FDFEFE;
+  margin-left: 10px;
+  font-weight: 500;
+}
+
+.business-name {
+  font-size: 1.75rem;
+  font-weight: 800;
+  text-align: center;
+  color: #FDFEFE;
+}
+
+.address-phone {
+  color: #F59841;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.hours {
+  color: #FDFEFE;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.info-section {
+  display: block;
+}
+
+.info-category-header {
+  margin: 0 auto;
+  padding-top: 15px;
+  padding-left: 15px;
+  font-family: 'Crushed', cursive;
+  font-size: 2.25rem;
+  line-height: 2.25rem;
+  vertical-align: top;
+  text-align: left;
+  /* color: #4D5656; */
+  color: #424949;
+}
+
+
+/*
+  * phones: < 768px
+  * tablets: >= 768px
+  * desktops: >= 992px
+  * big desktops: >= 1200px
+*/
+/*  
+/* 
+
+@media screen and (min-width: 768px) {
+
+
+/* #8ED062
+142, 208, 98 */
+
+/* <link href="https://fonts.googleapis.com/css?family=Crushed|Heebo:300,500,800" rel="stylesheet"> */
+
+/* font-family: 'Crushed', cursive;
+font-family: 'Heebo', sans-serif; */
+
+
+/* .app-container
+.app-background
+.site-header
+.app-title
+.q-mark
+.site-subheader
+.app-subhead */
+
+
+/* .top-info
+.name-field
+.top-search-area
+.business-name
+.address-phone
+.hours
+.info-section
+.info-category-header
+.info-entry */
+
+/* 
+At Bulma, breakpoints are set at 768px, 769px, 1024px, 1216px, and 1408px
+
+@media (min-width: 640px){
+ 
+  ...
+   
+  }
+   
+  @media (min-width: 768px){
+   
+  ...
+   
+  }
+   
+  @media (min-width: 1024px){
+   
+  ...
+   
+  }
+   
+  @media (min-width: 1200px){
+   
+  ...
+   
+  } */
+
  */
 
   a-scene {
@@ -22,3 +293,4 @@
     width:50%;
     height:300px;
   }
+
