@@ -10,6 +10,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ @import "bulma";
  *= require_tree .
  *= require_self
 */
@@ -285,7 +286,6 @@ At Bulma, breakpoints are set at 768px, 769px, 1024px, 1216px, and 1408px
 
  */
 
-
  
   a-scene {
     height: 300px;
@@ -295,4 +295,3 @@ At Bulma, breakpoints are set at 768px, 769px, 1024px, 1216px, and 1408px
     width:50%;
     height:300px;
   }
-
