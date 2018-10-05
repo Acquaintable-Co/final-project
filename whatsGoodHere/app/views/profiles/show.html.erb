@@ -1,13 +1,17 @@
-<h1>profile page of specific business</h1>
+<h1><%= @profile.restaurant %></h1>
 <% if flash[:error_message] %>
 <p class="flash-error"><%= flash[:notice] %></p>
 <% end %>
 
-<p><% @profile.offers.each do |offer| %>
-    <%= offer.offer_detail %>
+<% if current_profile && @profile.id == current_profile.id %>
+<input type='file'></input>
+<button type="submit" class="btn btn-default">Submit</button>
+<% end %>
 
-   <% end %></p>
 
+<button id="expand" onClick='showOfferDetail()'>Fare</button><% @profile.offers.each do |offer| %>
+   <div class="hidden fare-detail"><%= offer.offer_detail %></div>
+   <% end %>
 <% if current_profile && @profile.id == current_profile.id %>
 <%= form_with model: @offer, url: offers_path, local: true do |f| %>
 <%= f.label "EAT FOOD" %>
@@ -16,22 +20,28 @@
   <% end %>
   <% end %>
                   
-<p><% @profile.highlights.each do |highlight| %>
-      <%= highlight.highlight_detail %>
+<button class="expand" onClick='showHighlightDetail()'>Highlights</button><% @profile.highlights.each do |highlight| %>
+    <div class="hidden highlight-detail"> <%= highlight.highlight_detail %></div>
       <%end %></p>
+<% if current_profile && @profile.id == current_profile.id %>
 <%= form_with model: @highlight, url: highlights_path, local: true do |f| %>
 <%= f.label "Why We're Awesome" %>
 <%= f.text_field :highlight_detail %>
 <%= f.submit %>
     <% end %>
+    <% end %>
 
-<p><% @profile.hacks.each do |hack| %>
+<p><h2>Tips</h2><% @profile.hacks.each do |hack| %>
      <%= hack.hack_detail %>
      <% end %></p>
+<% if current_profile && @profile.id == current_profile.id %>
 <%= form_with model: @hack, url: hacks_path, local: true do |f| %>
 <%= f.label "Know All The Secrets" %>
 <%= f.text_field :hack_detail %>
 <%= f.submit %>
    <% end %>
+   <% end %>
    
+   <% if current_profile %>
    <%= link_to "log out", logout_path, method: :delete %>
+   <% end %>
