@@ -128,8 +128,11 @@
   <% end %>
 
 
-# <button class="expand" onClick=showDetail('fare-detail')>Fare</button><% @profile.offers.each do |offer| %>
-#    <div class="hidden fare-detail"><%= offer.offer_detail %></div>
+<button class="expand" onClick=showDetail('fare-detail')>Fare</button><% @profile.offers.each do |offer| %>
+   <div class="hidden fare-detail"><%= offer.offer_detail %>
+   <% if current_profile && @profile.id == current_profile.id %>
+   <%= link_to 'delete', offer_path(offer), method: :delete %>
+   <% end %></div>
    <% end %>
 <% if current_profile && @profile.id == current_profile.id %>
     <%= form_with model: @offer, url: offers_path, local: true do |f| %>
@@ -140,10 +143,11 @@
   
 
 <button class="expand" onClick=showDetail('tips-detail')>Tips</button><% @profile.hacks.each do |hack| %>
-    <div class="hidden tips-detail"><%= hack.hack_detail %></div>
+    <div class="hidden tips-detail"><%= hack.hack_detail %>
     <% if current_profile && @profile.id == current_profile.id %>
     <%= link_to 'delete', hack_path(hack), method: :delete %>
     <% end %>
+    </div>
     <% end %>
 <% if current_profile && @profile.id == current_profile.id %>
     <%= form_with model: @hack, url: hacks_path, local: true do |f| %>
@@ -152,7 +156,8 @@
 <% end %>
 <% end %>
 
-<button class="expand" onClick=showDetail('specs-detail')>Specs</button><% @profile.locations.each do |location| %>
+<button class="expand" onClick=showDetail('specs-detail')>Specs</button>
+<% @profile.locations.each do |location| %>
    <div class="hidden specs-detail"><%= location.location_detail %></div>
     <% if current_profile && @profile.id == current_profile.id %>
     <%= link_to 'delete', location_path(location), method: :delete %>

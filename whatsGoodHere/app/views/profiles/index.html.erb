@@ -13,28 +13,28 @@
   </div>
 
   <div class="home-search-area">
-  <form>
     <div class="field">
-    <div class="control">
-      <input class="input home-search-bar" type="text" placeholder="search by venue" />
-        <%# <span class="icon is-left">
-          <i class="fas fa-search"></>
-        </span>   %>
+      <div class="control">
+      <%= form_tag(browse_path, method: :get) do %>
+        <%= text_field_tag :restaurant, params[:restaurant], :class => 'input home-search-bar', :type => 'text', :placeholder => 'search for venue'  %>
+      <% end %>
+            <%# <span class="icon is-left">
+            <i class="fas fa-search"></>
+          </span> %>
+      </div>
     </div>
-    </div>
-  </form>  
-  <button class="button main">see list</button>
-</div>
-</div>
+    
+    <h6>or</h6>
 
-
-
-<p><%= form_tag(browse_path, method: :get) do %>
-    <%= text_field_tag :restaurant, params[:restaurant]  %>
-    <%= submit_tag 'Search', name: nil %>
+  <p><%= form_tag(browse_path, method: :get) do %> 
+    <%= button_tag 'see list', :class => 'button main' %>
   <% end %></p>
+</div>
+</div>
 
- <p><%= form_tag(browse_path, method: :get) do %> 
-     <%= button_tag 'Browse', :class => 'button_main' %>
-     <% end %></p>
+
+
+
+
+   
  
