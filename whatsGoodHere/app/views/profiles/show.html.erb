@@ -1,25 +1,14 @@
 <div class="app-container profile">
     <div class="top-nav-bar">
-        <div class="app-initials">WGH<span class="nav-q-mark"</span>?</div>
+        <div class="app-initials">wgh<span class="nav-q-mark">?</span></div>
         
-        <div class="nav-search-area">
-            <form>
-                <div class="field">
-                    <div class="control">
-                        <input class="input nav-search-bar is-small" type="text" placeholder="Search by venue" />
-                            <%# <span class="icon is-left">
-                            <i class="fas fa-search"></>
-                            </span> %>
-                    </div>          
-                </div>
-            </form>
-            <%# <button class="button top-nav is-small">see list</button> %>
-        </div>
+        <div class="new-search-icon"><i class="fa fa-search"></i></div>
     </div>
 
     <div class="top-info">
         <div class="name-field">
-            <h1 class="business-name"><%= @profile.restaurant %></h1>
+            <h1 class="business-name">
+            <%= @profile.restaurant %></h1>
                 <% if flash[:error_message] %>
                 <p class="flash-error"><%= flash[:error_message] %></p>
                 <% end %>
@@ -28,24 +17,42 @@
         <div class="address-phone"><%= @profile.address %>  |  <%= @profile.phone %>
         </div>    
 
-        <div class="hours"> <% @profile.hours %> </div>
+        <div class="hours"> <%= @profile.hours %> </div>
     </div>
-        
+
     <div class="info-section">
         <div class="info-category-header fare">fare</div>
 
-        <p><% @profile.offers.each do |offer| %>
-            <div class="info-entry"> <%= offer.offer_detail %> </div>
-                <% if current_profile && @profile.id == current_profile.id %>
-                <%= link_to 'delete', offer_path(offer), method: :delete %>
-                <% end %>
-                <% end %></p>
+            <div class="menu-icon"><button>
+            <i class="fas fa-utensils"></i>
+            <p>see menu</p></button>
+            </div>
+
+        <a class="expand-link" onClick=showDetail('fare-detail')>see more</a>
+        
+        <% @profile.offers.each do |offer| %>
+
+        <div class="hidden fare-detail info-entry"> 
+        
+            <%= offer.offer_detail %>
+            <% if current_profile && @profile.id == current_profile.id %>
+            <div class="item-delete">
+                <%= link_to 'delete', offer_path(offer), method: :delete %> 
+            </div>
+            <% end %>
+            <% end %>
 
         <% if current_profile && @profile.id == current_profile.id %>
             <%= form_with model: @offer, url: offers_path, local: true do |f| %>
-            <%= f.label "EAT FOOD" %>
-            <%= f.text_field :offer_detail %>
-            <%= f.submit %>
+            
+            <div class="add-new-item-label">
+            <%= f.label "add a new item to this section:" %>
+            </div>
+
+            <input class="input is-small" type="text" placeholder="enter new Fare entry here">
+            <%= f.text_field :offer_detail %> </input>
+            <a class="button save-entry is-small is-dark" >
+            <%= f.submit %> </a>
         <% end %>
         <% end %>     
     </div>            
@@ -53,18 +60,29 @@
     <div class="info-section">
         <div class="info-category-header tips">tips</div>
 
-        <p><% @profile.hacks.each do |hack| %>
-            <div class="info-entry"> <%= hack.hack_detail %> </div>
+        <a class="expand-link" onClick=showDetail('tips-detail')>see more</a>
+        <% @profile.hacks.each do |hack| %>
+            <div class="hidden tips-detail info-entry"> <%= hack.hack_detail %> </div>
                 <% if current_profile && @profile.id == current_profile.id %>
+
+                <div class="item-delete">
                 <%= link_to 'delete', hack_path(hack), method: :delete %>
+                </div>
+
                 <% end %>
-                <% end %></p>
+                <% end %>
 
         <% if current_profile && @profile.id == current_profile.id %>
         <%= form_with model: @hack, url: hacks_path, local: true do |f| %>
-        <%= f.label "Know All The Secrets" %>
+    
+    <div class="add-new-item-label">
+        <%= f.label "add a new item to this section:" %>
+        </div>
+        <input class="input is-small" type="text" placeholder="enter new Tips entry here">
         <%= f.text_field :hack_detail %>
-        <%= f.submit %>
+
+        <a class="button save-entry is-small is-dark" >
+        <%= f.submit %> </a>
         <% end %>
         <% end %>
     </div>     
@@ -72,22 +90,41 @@
     <div class="info-section">
         <div class="info-category-header specs">specs</div>
 
-        <p><% @profile.locations.each do |location| %>
-            <div class="info-entry"> <%= location.location_detail %> </div>
+        <a class="expand-link" onClick=showDetail('specs-detail')>see more</a>
+        <% @profile.locations.each do |location| %>
+            <div class="hidden specs-detail info-entry"> <%= location.location_detail %> </div>
             <% if current_profile && @profile.id == current_profile.id %>
-            <%= link_to 'delete', location_path(location), method: :delete %>
-            <%end %>
-            <% end %></p>
 
-        <% if current_profile && @profile.id == current_profile.id %>
-        <%= form_with model: @location, url: locations_path, local: true do |f| %>
-        <%= f.label "Why We're Awesome" %>
-        <%= f.text_field :location_detail %>
-        <%= f.submit %>
+            <div class="item-delete">
+            <%= link_to 'delete', location_path(location), method: :delete %>
+            </div>
+
+            <%end %>
             <% end %>
-            <% end %>
-    </div>      
-    <%= link_to "log out (?)", logout_path, method: :delete %>
+
+        <div class="add-new-item">
+        <div class="field">
+            <div class="control">
+
+            <% if current_profile && @profile.id == current_profile.id %>
+            <%= form_with model: @location, url: locations_path, local: true do |f| %>
+        
+            <div class="add-new-item-label">
+            <%= f.label "add a new item to this section:" %>
+            </div>
+
+            <input class="input is-small" type="text" placeholder="enter new Specs entry here">
+            <%= f.text_field :location_detail %>
+            
+            <a class="button save-entry is-small is-dark" >
+            <%= f.submit %> </a>
+                <% end %>
+                <% end %>
+            </div>    
+            </div>    
+            </div>    
+    </div>
+    
 </div>   
 
 
@@ -114,6 +151,7 @@
   <% if @profile.menu.attached? %>
     <%= link_to "View Menu", rails_blob_path(@profile.menu, disposition: "menu"), target: "_new" %>
   <% end %>
+
   <% if @profile.floor_plan.attached? %>
     <%= link_to "View Floor Plan", rails_blob_path(@profile.floor_plan, disposition: "floor_plan"), target: "_new" %>
   <% end %>
@@ -128,48 +166,9 @@
   <% end %>
 
 
-<button class="expand" onClick=showDetail('fare-detail')>Fare</button><% @profile.offers.each do |offer| %>
-   <div class="hidden fare-detail"><%= offer.offer_detail %>
-   <% if current_profile && @profile.id == current_profile.id %>
-   <%= link_to 'delete', offer_path(offer), method: :delete %>
-   <% end %></div>
-   <% end %>
-<% if current_profile && @profile.id == current_profile.id %>
-    <%= form_with model: @offer, url: offers_path, local: true do |f| %>
-    <%= f.text_field :offer_detail %>
-    <%= f.submit %>
-  <% end %>
-  <% end %>
-  
-
-<button class="expand" onClick=showDetail('tips-detail')>Tips</button><% @profile.hacks.each do |hack| %>
-    <div class="hidden tips-detail"><%= hack.hack_detail %>
-    <% if current_profile && @profile.id == current_profile.id %>
-    <%= link_to 'delete', hack_path(hack), method: :delete %>
-    <% end %>
+    <% if current_profile %>  
+    <div class="admin-log-out">
+    <a class="button is-fullwidth">Log out of administrator view
+    <%= link_to "log out", logout_path, method: :delete %>
+    <% end %></a>
     </div>
-    <% end %>
-<% if current_profile && @profile.id == current_profile.id %>
-    <%= form_with model: @hack, url: hacks_path, local: true do |f| %>
-    <%= f.text_field :hack_detail %>
-    <%= f.submit %>
-<% end %>
-<% end %>
-
-<button class="expand" onClick=showDetail('specs-detail')>Specs</button>
-<% @profile.locations.each do |location| %>
-   <div class="hidden specs-detail"><%= location.location_detail %></div>
-    <% if current_profile && @profile.id == current_profile.id %>
-    <%= link_to 'delete', location_path(location), method: :delete %>
-    <%end %>
-    <% end %></p>
-<% if current_profile && @profile.id == current_profile.id %>
-<%= form_with model: @location, url: locations_path, local: true do |f| %>
-<%= f.text_field :location_detail %>
-<%= f.submit %>
-  <% end %>
-  <% end %>
-   
-   <% if current_profile %>
-   <%= link_to "log out", logout_path, method: :delete %>
-   <% end %>

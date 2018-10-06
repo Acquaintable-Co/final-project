@@ -1,5 +1,5 @@
 <div class="app-container home">
-<div class="app-background">
+  <div class="app-background">
   <%# <div id="homepage-image">
     <img src="WGH-fork-mobile.jpg" />
   </div> %>
@@ -9,32 +9,30 @@
   </header>
 
   <div class="site-subhead">
-    <div class="app-subhead">Scope out everything <br> you need to know about Durham’s <br> restaurants and bars</div>
+    <div class="app-subhead">Scope out what <br> you need to know about Durham’s <br> restaurants and bars
+    </div>
   </div>
 
   <div class="home-search-area">
+
     <div class="field">
-      <div class="control">
-      <%= form_tag(browse_path, method: :get) do %>
-        <%= text_field_tag :restaurant, params[:restaurant], :class => 'input home-search-bar', :type => 'text', :placeholder => 'search for venue'  %>
-      <% end %>
-            <%# <span class="icon is-left">
-            <i class="fas fa-search"></>
-          </span> %>
-      </div>
+        <div class="control">
+          <%= form_tag(browse_path, method: :get) do %>
+            <%= text_field_tag :restaurant, params[:restaurant], :class => 'input home-search-bar', :type => 'text', :placeholder => 'search for venue'  %>
+          <% end %>
+                <%# <span class="icon is-left">
+                <i class="fa fa-search"></>
+              </span> %>
+        </div>
     </div>
     
-    <h6>or</h6>
-
-  <p><%= form_tag(browse_path, method: :get) do %> 
-    <%= button_tag 'see list', :class => 'button main' %>
-  <% end %></p>
-</div>
-</div>
-
-
-
-
-
+    <div class="or-between"><h4>or</h4></div>
+    
+    <div class="home-browse-button">
+        <%= link_to 'see list', browse_path, :class => 'button main' %>
+    </div>
    
- 
+   </div>
+
+  </div>
+</div>
