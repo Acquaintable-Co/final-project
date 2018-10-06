@@ -34,7 +34,7 @@
     <div class="info-section">
         <div class="info-category-header fare">fare</div>
 
-        <p><% @profile.offers.each do |offer| %>
+        <button class="expand" onClick=showDetail('fare-detail')>Fare</button><% @profile.offers.each do |offer| %>
             <div class="info-entry"> <%= offer.offer_detail %> </div>
                 <% if current_profile && @profile.id == current_profile.id %>
                 <%= link_to 'delete', offer_path(offer), method: :delete %>
@@ -128,8 +128,8 @@
   <% end %>
 
 
-<button class="expand" onClick=showDetail('fare-detail')>Fare</button><% @profile.offers.each do |offer| %>
-   <div class="hidden fare-detail"><%= offer.offer_detail %></div>
+# <button class="expand" onClick=showDetail('fare-detail')>Fare</button><% @profile.offers.each do |offer| %>
+#    <div class="hidden fare-detail"><%= offer.offer_detail %></div>
    <% end %>
 <% if current_profile && @profile.id == current_profile.id %>
     <%= form_with model: @offer, url: offers_path, local: true do |f| %>
