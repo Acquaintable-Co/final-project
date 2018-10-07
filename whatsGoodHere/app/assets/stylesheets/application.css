@@ -137,8 +137,6 @@ height:100%; */
 /* profile page */
 
 
-
-
 .app-container.profile {
   margin: 0;
   padding: 0;
@@ -278,6 +276,7 @@ height:100%; */
   display: inline-block;
   /* float: right; */
   text-align: right;
+  font-weight: 500;
 }
 
 .fa-utensils {
@@ -330,9 +329,70 @@ form {
   margin-bottom: 10px;
 }
 
+.add-new-item-label {
+  width: 75%;
+  display: block;
+}
+
 .save-entry {
+  margin: 10px 0;
+  display: block;
+  width: 20%;
+}
+
+.upload-button {
 
 }
+
+.admin-log-out {
+  margin-bottom: 30px;
+  width: 60%;
+}
+
+
+/* log-in view */
+
+
+.log-in-header {
+  margin: 0 auto;
+  padding: 40px 0 15px 0;
+  font-family: 'Crushed', cursive;
+  /* font-size: 3rem; */
+  font-size: 40px;
+  line-height: 44px;
+  vertical-align: top;
+  text-align: center;
+  /* color: #4D5656; */
+  color: #424949;
+  width: 80%;
+  margin-bottom: 30%;
+
+}
+
+.row {
+  align-content: center;
+}
+
+.app-container.log-in {
+  text-align: center;
+}
+
+.input.log-in {
+  width: 80%;
+  margin: 10px 0;
+}
+
+
+
+/* browse view */
+
+
+
+
+
+
+/* Bewlow, NOTES TO USE & DELETE */
+
 
 /* .form.label {
 
