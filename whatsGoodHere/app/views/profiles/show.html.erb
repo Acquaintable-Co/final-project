@@ -20,130 +20,133 @@
         <div class="hours"> <%= @profile.hours %> </div>
     </div>
 
+    <% if current_profile && @profile.id == current_profile.id %>
+    <%= form_with model: @profile, local: true do |form| %>
+
+    <%= form.label "Upload or replace a Menu" %>
+    <%= form.file_field :menu, class: "button is-small upload-button"%>
+
+    <%= form.label "Upload or replace a 360 image" %>
+    <%= form.file_field :vr_image, class: "button is-small upload-button" %>
+
+    <%= form.label "Upload or replace a Floor Plan" %>
+    <%= form.file_field :floor_plan, class: "button is-small upload-button"%>
+
+    <%= form.submit "submit", class: "button is-small upload-button" %>
+    <% end %>
+    <% end %>
+
+    <% if @profile.vr_image.attached? %>
+    <div id="myEmbeddedScene">
+        
+        <a-scene embedded="">
+        <a-sky src="<%= url_for(@profile.vr_image) %>"></a-sky>
+        </a-scene>
+    </div>
+    <% end %>
+
+
+<div class="info-section-container">
+
     <div class="info-section">
+
         <div class="info-category-header fare">fare</div>
 
-            <div class="menu-icon"><button>
-            <i class="fas fa-utensils"></i>
-            <p>see menu</p></button>
-            </div>
+        <div class="view-icon">
+            <% if @profile.menu.attached? %>
+            <%= link_to "<i class='fas fa-utensils'></i><div class='view-caption'> view menu</div>".html_safe, rails_blob_path(@profile.menu, disposition: "menu"), target: "_new" %>
+            <% end %> 
+        </div>
 
-        <a class="expand-link" onClick=showDetail('fare-detail')>see more</a>
+        <a class="expand-link" onClick=showDetail('fare-detail')> ... see more</a>
         
         <% @profile.offers.each do |offer| %>
 
-        <div class="hidden fare-detail info-entry"> 
-        
-            <%= offer.offer_detail %>
-            <% if current_profile && @profile.id == current_profile.id %>
-            <div class="item-delete">
-                <%= link_to 'delete', offer_path(offer), method: :delete %> 
-            </div>
-            <% end %>
-            <% end %>
+        <div class="hidden fare-detail info-entry"> •   
 
-        <% if current_profile && @profile.id == current_profile.id %>
+            <%= offer.offer_detail %> 
+            <% if current_profile && @profile.id == current_profile.id %>
+            
+            <span class="item-delete">
+                <%= link_to 'delete', offer_path(offer), method: :delete %> 
+            </span> </div>
+            <% end %>
+            <% end %>    
+
+            <% if current_profile && @profile.id == current_profile.id %>
             <%= form_with model: @offer, url: offers_path, local: true do |f| %>
         
-            <%= f.text_field :offer_detail, class: 'input is-small add-new-item', placeholder: "enter new Fare entry here" %> 
+            <%= f.text_field :offer_detail, class: 'input is-small add-new-item', placeholder: "enter new Fare item here" %> 
             <a class="button save-entry is-small" >
             <%= f.submit %> </a>
-        <% end %>
-        <% end %>     
-    </div>            
+            <% end %>
+            <% end %>                    
 
-    <div class="info-section">
         <div class="info-category-header tips">tips</div>
 
-        <a class="expand-link" onClick=showDetail('tips-detail')>see more</a>
+        <a class="expand-link" onClick=showDetail('tips-detail')> ... see more</a>
+
         <% @profile.hacks.each do |hack| %>
-            <div class="hidden tips-detail info-entry"> <%= hack.hack_detail %> </div>
-                <% if current_profile && @profile.id == current_profile.id %>
+        
+        <div class="hidden tips-detail info-entry"> •
+            <%= hack.hack_detail %> 
 
-                <div class="item-delete">
-                <%= link_to 'delete', hack_path(hack), method: :delete %>
-                </div>
-
-                <% end %>
-                <% end %>
-
-        <% if current_profile && @profile.id == current_profile.id %>
-        <%= form_with model: @hack, url: hacks_path, local: true do |f| %>
-    
-        <%= f.text_field :hack_detail, class: 'input is-small add-new-item', placeholder: "enter new Tips entry here" %>
-
-        <a class="button save-entry is-small" >
-        <%= f.submit %> </a>
-        <% end %>
-        <% end %>
-    </div>     
-
-    <div class="info-section">
-        <div class="info-category-header specs">specs</div>
-
-        <a class="expand-link" onClick=showDetail('specs-detail')>see more</a>
-        <% @profile.locations.each do |location| %>
-            <div class="hidden specs-detail info-entry"> <%= location.location_detail %> </div>
             <% if current_profile && @profile.id == current_profile.id %>
 
-            <div class="item-delete">
-            <%= link_to 'delete', location_path(location), method: :delete %>
-            </div>
+            <span class="item-delete">
+            <%= link_to 'delete', hack_path(hack), method: :delete %>
+            </span></div>
 
-            <%end %>
+            <% end %>
             <% end %>
 
-        <div class="add-new-item">
-        <div class="field">
-            <div class="control">
+            <% if current_profile && @profile.id == current_profile.id %>
+            <%= form_with model: @hack, url: hacks_path, local: true do |f| %>
+        
+            <%= f.text_field :hack_detail, class: 'input is-small add-new-item', placeholder: "enter new Tips item here" %>
+
+            <a class="button save-entry is-small" >
+            <%= f.submit %> </a>
+            <% end %>
+            <% end %>
+            
+
+        <div class="info-category-header specs">specs</div>
+
+            <div class="view-icon">
+                <% if @profile.floor_plan.attached? %>
+                <%= link_to "<i class='fas fa-map'></i> <br> 
+                view floor plan".html_safe, rails_blob_path(@profile.floor_plan, disposition: "floor plan"), target: "_new", class: "view-caption" %>
+                <% end %>                
+            </div>
+
+            <a class="expand-link" onClick=showDetail('specs-detail')> ... see more</a>
+
+            <% @profile.locations.each do |location| %>
+
+            <div class="hidden specs-detail info-entry"> • 
+            <%= location.location_detail %> 
+
+            <% if current_profile && @profile.id == current_profile.id %>
+
+            <span class="item-delete">
+            <%= link_to 'delete', location_path(location), method: :delete %>
+            </span> </div>
+
+            <% end %>
+            <% end %>
 
             <% if current_profile && @profile.id == current_profile.id %>
             <%= form_with model: @location, url: locations_path, local: true do |f| %>
         
-            <%= f.text_field :location_detail, class: 'input is-small add-new-item', placeholder: "enter new Specs entry here" %>
+            <%= f.text_field :location_detail, class: 'input is-small add-new-item', placeholder: "enter new Specs item here" %>
             
             <a class="button save-entry is-small" >
             <%= f.submit %> </a>
                 <% end %>
-                <% end %>
-            </div>    
-            </div>    
-            </div>    
-    </div>
-    
-<% if current_profile && @profile.id == current_profile.id %>
-<%= form_with model: @profile, local: true do |form| %>
-
-  <%= form.label "Upload a Menu" %>
-  <%= form.file_field :menu, class: "button upload-button"%>
-
-  <%= form.label "Upload a 360 image" %>
-  <%= form.file_field :vr_image, class: "button upload-button" %>
-
-  <%= form.label "Upload Floor Plan" %>
-  <%= form.file_field :floor_plan, class: "button upload-button"%>
-
-  <%= form.submit "submit", class: "button upload-button" %>
-<% end %>
-<% end %>
-
-  <% if @profile.menu.attached? %>
-    <%= link_to "View Menu", rails_blob_path(@profile.menu, disposition: "menu"), target: "_new" %>
-  <% end %>
-
-  <% if @profile.floor_plan.attached? %>
-    <%= link_to "View Floor Plan", rails_blob_path(@profile.floor_plan, disposition: "floor_plan"), target: "_new" %>
-  <% end %>
-  
-  <% if @profile.vr_image.attached? %>
-  <div id="myEmbeddedScene">
- 
-  <a-scene embedded="">
-   <a-sky src="<%= url_for(@profile.vr_image) %>"></a-sky>
-  </a-scene>
-  </div>
-  <% end %>
-
+                <% end %>   
+    </div>          
+</div>
 
     <% if current_profile %>  
     <%= link_to "log out of administator view", logout_path, method: :delete, class:"button is-fullwidth admin-log-out" %>

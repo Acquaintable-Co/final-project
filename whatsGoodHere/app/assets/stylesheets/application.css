@@ -28,7 +28,9 @@ body {
   background-color: #8ED062;
   min-width: 320px;
   height: 100vh;
-  font-family: 'Heebo', sans-serif;
+  /* font-family: 'Heebo', sans-serif;
+  font-weight: 300; */
+  font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   font-size: 16px;
 }
@@ -60,7 +62,13 @@ height:100%; */
 .app-title {
   margin: 0 auto;
   padding: 40px 0 15px 0;
-  font-family: 'Crushed', cursive;
+  /* font-family: 'Crushed', cursive; */
+  font-family: 'Montserrat', sans-serif;
+  
+  /* font-family: 'Montserrat', sans-serif; */
+  /* font-family: 'Rock Salt', cursive; */
+
+  font-weight: 800;
   /* font-size: 3rem; */
   font-size: 65px;
   line-height: 70px;
@@ -86,9 +94,13 @@ height:100%; */
   /* margin: 10px 0 30px 0; */
   margin: 0 auto;
   width: 80%;
-  font-family: 'Heebo', sans-serif;
+  /* font-family: 'Heebo', sans-serif;
+  font-weight: 300; */
+  /* font-family: 'Montserrat', sans-serif; */
+  font-family: 'Pacifico', cursive;
+  /* font-weight: 400; */
   font-size: 20px;
-  line-height: 22px;
+  line-height: 30px;
   font-weight: 500;
   /* font-weight: bold; */
   text-align: center;
@@ -165,7 +177,9 @@ height:100%; */
   padding: 10px 0 10px 15px;
   float: left;
   position: relative;
-  font-family: 'Crushed', cursive;
+  /* font-family: 'Crushed', cursive; */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
   font-size: 1.75rem;
   line-height: 1.5rem;
   /* align-content: flex-start; */
@@ -217,7 +231,9 @@ height:100%; */
   color: #F59841;
   font-size: 17px;
   line-height: 19px;
-  font-family: 'Heebo', sans-serif;
+  /* font-family: 'Heebo', sans-serif;
+  font-weight: 500; */
+  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   text-align: center;
   margin-top: 4px;
@@ -228,7 +244,7 @@ height:100%; */
   color: #FDFEFE;
   font-size: 15px;
   line-height: 18px;
-  font-weight: 300;
+  font-weight: 500;
   text-align: center;
   margin-top: 4px;
 }
@@ -251,71 +267,92 @@ height:100%; */
 
 .info-category-header {
   /* display: inine-block; */
-  width: 70%;
+  width: 50%;
   display: inline-block;
   /* float: left; */
-  padding-top: 5px;
-  font-family: 'Crushed', cursive;
+  /* padding-top: 5px; */
+  margin: 20px 0 10px 0;
+  /* font-family: 'Crushed', cursive; */
+  font-family: 'Pacifico', cursive;
   /* font-size: 2.25rem; */
   font-size: 40px;
-  /* line-height: 2.25rem; */
-  font-size: 42px;
+  line-height: 44px;
   vertical-align: top;
   text-align: left;
   /* color: #4D5656; */
   color: #424949;
 }
 
-.menu-icon {
-  padding: 10px 15px 0 0;
+.view-icon {
+  /* padding: 20px 0 15px 0; */
+  margin: 25px 0 5px 0;
+
   font-size: 22px;
   line-height: 24px;
   color: #FDFEFE;
   vertical-align: top;
-  width: 20%;
+  width: 40%;
   display: inline-block;
-  /* float: right; */
   text-align: right;
+  /* float: right; */
+  /* text-align: right; */
   font-weight: 500;
 }
 
-.fa-utensils {
+.fas {
   display: inline-block;
-  padding: 10px 15px 0 0;
+  /* padding: 10px 15px 0 0; */
   font-size: 30px;
   line-height: 30px;
-  color: #FDFEFE;
+  color: #424949;
   vertical-align: top;
-  width: 20%;
-  text-align: left;
+  text-align: center;
 }
 
-.see-menu {
-  color: #FDFEFE;
+.view-caption {
+  /* color: #FDFEFE; */
+  color: #424949;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 800;
+  padding-top: 5px;
+  text-align: right;
+  /* vertical-align: top; */
+  /* width: 25%; */
 }
 
 .expand-link {
   clear: both;
   display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 18px;
+  margin-bottom: 5px;
+/* 
   font-family: 'Crushed', cursive;
-  font-size: 17px;
+  font-size: 17px; */
   /* font-weight: 500; */
   font-style: italic;
   color: #FDFEFE;
 }
 
 .info-entry {
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 18px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 300;
+  margin-bottom: 8px;
+
 }
+
+
 
 .item-delete {
   font-size: 13px;
   line-height: 15px;
-  font-weight: 300;
+  font-weight: 500;
   font-style: italic;
-  text-decoration-color: #FDFEFE;
+  color: #FDFEFE;
   margin-bottom: 5px;
   text-align: right;
 }
@@ -323,25 +360,39 @@ height:100%; */
 .add-new-item-label {
   font-weight: 300;
   color: #FDFEFE;
+
+}
+
+.hidden {
+  display: none;
 }
 
 form {
   margin-bottom: 10px;
 }
 
-.add-new-item-label {
-  width: 75%;
+.add-new-item {
+  margin: 15px 0 5px 0;
+  display: block;
+  width: 80%;
+}
+
+.label {
   display: block;
 }
 
 .save-entry {
-  margin: 10px 0;
+  margin: 5px 0 10px 0;
   display: block;
   width: 20%;
+  /* text-align: right; */
 }
 
 .upload-button {
-
+  display: block;
+  text-align: center;
+  margin: 5px 0 15px 0;
+  width: 60%;
 }
 
 .admin-log-out {
@@ -353,20 +404,23 @@ form {
 /* log-in view */
 
 
-.log-in-header {
+.secondary-view-header {
   margin: 0 auto;
-  padding: 40px 0 15px 0;
-  font-family: 'Crushed', cursive;
+  padding: 50px 0 15px 0;
+  /* font-family: 'Crushed', cursive; */
   /* font-size: 3rem; */
-  font-size: 40px;
-  line-height: 44px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 38px;
+  line-height: 42px;
   vertical-align: top;
   text-align: center;
   /* color: #4D5656; */
+  /* border-bottom: #424949 5px double; */
   color: #424949;
+    /* color: #FDFEFE; */
   width: 80%;
-  margin-bottom: 30%;
-
+  margin-bottom: 20%;
 }
 
 .row {
@@ -380,6 +434,10 @@ form {
 .input.log-in {
   width: 80%;
   margin: 10px 0;
+}
+
+.log-in-button-div {
+  margin: 25px 0 0 0;
 }
 
 
@@ -413,10 +471,38 @@ form {
 /* #8ED062
 142, 208, 98 */
 
+
+
+/* <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,800|Pacifico" rel="stylesheet"> */
+
+/* font-family: 'Montserrat', sans-serif;
+font-family: 'Pacifico', cursive; */
+
+
+/* 
+<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Montserrat:100,300,400,800" rel="stylesheet">
+
+font-family: 'Montserrat', sans-serif;
+font-family: 'Abril Fatface', cursive; */
+
 /* <link href="https://fonts.googleapis.com/css?family=Crushed|Heebo:300,500,800" rel="stylesheet"> */
+
+
+/* <link href="https://fonts.googleapis.com/css?family=Crushed|Montserrat:100,300,400,800" rel="stylesheet"> */
+
+
+
+/* 
+<link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,800|Rock+Salt" rel="stylesheet">
+
+font-family: 'Montserrat', sans-serif;
+font-family: 'Rock Salt', cursive; */
 
 /* font-family: 'Crushed', cursive;
 font-family: 'Heebo', sans-serif; */
+
+
+
 
 
 /* .app-container
