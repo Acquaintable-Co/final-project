@@ -176,6 +176,7 @@ height:100%; */
 .app-initials {
   padding: 10px 0 10px 15px;
   float: left;
+  color: #424949;
   position: relative;
   /* font-family: 'Crushed', cursive; */
   font-family: 'Montserrat', sans-serif;
@@ -184,12 +185,14 @@ height:100%; */
   line-height: 1.5rem;
   /* align-content: flex-start; */
   vertical-align: top;
-  width: 18%;
 }
 
 .nav-q-mark {
   color: #FDFEFE;
   vertical-align: top;
+  float: left;
+  padding: 5px 0 5px 0;
+  font-size: 1.5rem;
 }
 
 .new-search-icon {
