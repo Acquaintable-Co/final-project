@@ -25,16 +25,17 @@
     <% if current_profile && @profile.id == current_profile.id %>
     <%= form_with model: @profile, local: true do |form| %>
 
-    <%= form.label "Upload or replace a Menu" %>
-    <%= form.file_field :menu, class: "button is-small upload-button"%>
 
-    <%= form.label "Upload or replace a 360 image" %>
-    <%= form.file_field :vr_image, class: "button is-small upload-button" %>
+    <%= form.label "Upload or replace a Menu", class: "upload-file-label", type: "text" %>
+    <%= form.file_field :menu %>
 
-    <%= form.label "Upload or replace a Floor Plan" %>
-    <%= form.file_field :floor_plan, class: "button is-small upload-button"%>
+    <%= form.label "Upload or replace a 360 image", class: "upload-file-label", type:"text"  %>
+    <%= form.file_field :vr_image %>
 
-    <%= form.submit "submit", class: "button is-small upload-button" %>
+    <%= form.label "Upload or replace a Floor Plan", class: "upload-file-label", type:"text"  %>
+    <%= form.file_field :floor_plan %>
+
+    <%= form.submit "submit", class: "button  upload-button" %>
     <% end %>
     <% end %>
 
@@ -73,14 +74,14 @@
             </span> 
 
             <% end %>
-            <% end %>    
         </div>
+            <% end %>    
 
             <% if current_profile && @profile.id == current_profile.id %>
             <%= form_with model: @offer, url: offers_path, local: true do |f| %>
         
-            <%= f.text_field :offer_detail, class: 'input is-small add-new-item', placeholder: "enter new Fare item here" %> 
-            <a class="button save-entry is-small" >
+            <%= f.text_field :offer_detail, class: 'input add-new-item', type: "text", placeholder: 'enter new "fare" item here' %> 
+            <a class="button save-entry" >
             <%= f.submit %> </a>
             <% end %>
             <% end %>                    
@@ -101,15 +102,16 @@
             </span>
 
             <% end %>
-            <% end %>
         </div>
+            <% end %>    
+
 
             <% if current_profile && @profile.id == current_profile.id %>
             <%= form_with model: @hack, url: hacks_path, local: true do |f| %>
         
-            <%= f.text_field :hack_detail, class: 'input is-small add-new-item', placeholder: "enter new Tips item here" %>
+            <%= f.text_field :hack_detail, class: 'input add-new-item', placeholder: 'enter new "tips" item here', type: "text" %>
 
-            <a class="button save-entry is-small" >
+            <a class="button save-entry" >
             <%= f.submit %> </a>
             <% end %>
             <% end %>
@@ -138,16 +140,15 @@
             </span> 
 
             <% end %>
-            <% end %>
         </div>
-
+            <% end %>    
 
             <% if current_profile && @profile.id == current_profile.id %>
             <%= form_with model: @location, url: locations_path, local: true do |f| %>
         
-            <%= f.text_field :location_detail, class: 'input is-small add-new-item', placeholder: "enter new Specs item here" %>
+            <%= f.text_field :location_detail, class: 'input add-new-item', placeholder: 'enter new "specs" item here', type: "text" %>
             
-            <a class="button save-entry is-small" >
+            <a class="button save-entry" >
             <%= f.submit %> </a>
                 <% end %>
                 <% end %>   
@@ -155,7 +156,7 @@
 </div>
 
     <% if current_profile %>  
-    <%= link_to "log out of administator view", logout_path, method: :delete, class:"button is-fullwidth admin-log-out" %>
+    <%= link_to "log out of admin view", logout_path, method: :delete, class:"button is-fullwidth admin-log-out" %>
     <% end %></a>
 
 </div>   

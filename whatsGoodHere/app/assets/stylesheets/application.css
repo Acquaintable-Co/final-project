@@ -31,7 +31,7 @@ body {
   /* font-family: 'Heebo', sans-serif;
   font-weight: 300; */
   font-family: 'Montserrat', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 16px;
 }
 
@@ -93,15 +93,14 @@ height:100%; */
   color: #424949;
   /* margin: 10px 0 30px 0; */
   margin: 0 auto;
-  width: 80%;
+  width: 85%;
   /* font-family: 'Heebo', sans-serif;
   font-weight: 300; */
   /* font-family: 'Montserrat', sans-serif; */
   font-family: 'Pacifico', cursive;
   /* font-weight: 400; */
-  font-size: 20px;
+  font-size: 22px;
   line-height: 30px;
-  font-weight: 500;
   /* font-weight: bold; */
   text-align: center;
 }
@@ -130,16 +129,17 @@ height:100%; */
   margin: 0 auto;
 }
 
-/* .home-browse-button {
-  margin: 0 auto;
-  align-self: center;
-} */
+.home-browse-button {
+  margin: 10px auto 20px auto;
+  align-text: center;
+}
 
 .button.main {
   background: #C1E5AA;
   border: #FDFEFE;
+  color: #FDFEFE
   margin: 0 auto;
-  font-weight: 500;
+  font-weight: 400;
   align-self: center;
 }
 
@@ -243,7 +243,7 @@ height:100%; */
   /* font-family: 'Heebo', sans-serif;
   font-weight: 500; */
   font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   text-align: center;
   margin-top: 4px;
   padding-bottom: 4px;
@@ -253,7 +253,7 @@ height:100%; */
   color: #FDFEFE;
   font-size: 15px;
   line-height: 18px;
-  font-weight: 500;
+  font-weight: 600;
   text-align: center;
   margin-top: 4px;
 }
@@ -305,7 +305,7 @@ height:100%; */
   text-align: right;
   /* float: right; */
   /* text-align: right; */
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .fas {
@@ -349,7 +349,6 @@ height:100%; */
 .info-entry {
   font-size: 16px;
   line-height: 20px;
-  font-weight: 500;
   display: block;
 }
 
@@ -358,7 +357,7 @@ height:100%; */
 .item-delete {
   font-size: 13px;
   line-height: 15px;
-  font-weight: 500;
+  font-weight: 600;
   font-style: italic;
   color: #FDFEFE;
   margin-bottom: 5px;
@@ -366,7 +365,7 @@ height:100%; */
 }
 
 .add-new-item-label {
-  font-weight: 300;
+  font-weight: 400;
   color: #FDFEFE;
 
 }
@@ -377,6 +376,29 @@ height:100%; */
 
 form {
   margin-bottom: 10px;
+  display: block;
+}
+
+.file-label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 20px;
+  text-align: center;
+  display: block;
+  margin-top: 10px;
+  letter-spacing: -0.5px;
+}
+
+.upload-file-label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 20px;
+  text-align: center;
+  display: block;
+  margin-top: 10px;
+  letter-spacing: -0.5px;
 }
 
 .add-new-item {
@@ -399,7 +421,7 @@ form {
 .upload-button {
   display: block;
   text-align: center;
-  margin: 5px 0 15px 0;
+  margin: 5px auto 15px auto;
   width: 60%;
 }
 
@@ -455,8 +477,20 @@ form {
 .browse-list-item {
   margin: 0 auto;
   text-align: center;
+  color: #424949;
 }
 
+.browse-list-item a:link {
+  color: #424949;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 32px;
+}
+
+.browse-list-item a:hover {
+  color: #FDFEFE;   
+}
 
 
 
@@ -513,7 +547,13 @@ font-family: 'Rock Salt', cursive; */
 font-family: 'Heebo', sans-serif; */
 
 
+/* Pencil Font Awesome
+<i class="fas fa-pencil-alt"></i> */
 
+
+/* Clipboard Font Awesome for daily specials section?
+<i class="fas fa-clipboard"></i>
+Download SVGPerfect for when you want to use just one icon as a vector on the desktop or in your own icon workflow. */
 
 
 /* .app-container
@@ -535,7 +575,25 @@ font-family: 'Heebo', sans-serif; */
 .info-category-header
 .info-entry */
 
-/* 
+/* Raman On Empty
+The Pesto’s Yet To Come
+Willy Lo Mein
+Udon Own Me
+Knish From A Rose
+Beignet and the Jets
+Al Dente On the Western Front
+Second To Naan
+Toast the Rainbow
+Squab Goals
+Chicken of the Sea of the Land
+Brioche With Death
+A Queso the Mondays
+Goofus and Galette
+Muffin But Net
+Loaf of My Life
+Fondue Diligence
+Cheddar Off Dead
+The Strudel Is Real
 At Bulma, breakpoints are set at 768px, 769px, 1024px, 1216px, and 1408px
 
 @media (min-width: 640px){
