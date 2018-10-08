@@ -1,5 +1,6 @@
 <div class="secondary-view-header">Search Results</div>
 
+
 <% @browse.each do |profile| %>
-    <p><%= profile.restaurant %></p>
+    <h3 class="browse-list-item"><%= link_to profile.restaurant, profile_path(profile) %></h3>
 <% end %>
