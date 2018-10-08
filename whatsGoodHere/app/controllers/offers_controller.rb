@@ -10,7 +10,8 @@ class OffersController < ApplicationController
     else
     @offer = Offer.new(offer_detail: offer_params[:offer_detail], profile_id: current_profile.id)
       if @offer.save
-        redirect_to profile_path(@offer.profile_id)
+        respond_to :js
+        # redirect_to profile_path(@offer.profile_id)
       else
         @offer.errors
       end

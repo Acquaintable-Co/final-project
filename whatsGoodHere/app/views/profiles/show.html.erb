@@ -74,7 +74,7 @@
             <% end %>    
 
             <% if current_profile && @profile.id == current_profile.id %>
-            <%= form_with model: @offer, url: offers_path, local: true do |f| %>
+            <%= form_with model: @offer, url: offers_path, remote: true do |f| %>
         
             <%= f.text_field :offer_detail, class: 'input is-small add-new-item', placeholder: "enter new Fare item here" %> 
             <a class="button save-entry is-small" >
