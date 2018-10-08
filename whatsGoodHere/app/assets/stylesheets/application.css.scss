@@ -41,7 +41,7 @@ background-attachment:fixed;
 height:100%; */
 
 .app-background {
-  background-image: url(WGH-fork-mobile.jpg);
+  background-image: asset_url("WGH-fork-mobile.jpg");
   background-size:cover; 
   background-repeat:no-repeat;
   background-attachment:fixed;
