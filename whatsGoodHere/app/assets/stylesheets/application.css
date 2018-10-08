@@ -28,6 +28,11 @@ body {
   background-color: #8ED062;
   min-width: 320px;
   height: 100vh;
+  /* font-family: 'Heebo', sans-serif;
+  font-weight: 300; */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
 }
 
 /* background-size:cover; 
@@ -42,28 +47,37 @@ height:100%; */
   background-attachment:fixed;
   height: 100vh;
   background-color: transparent;
+  overflow: hidden;
 } 
 
-.html {
 
-  
-}
 
 /* main app homepage */
 
+
+.site-header {
+  background-color: transparent;
+}
+
 .app-title {
   margin: 0 auto;
-  padding-top: 40px;
-  font-family: 'Crushed', cursive;
+  padding: 40px 0 15px 0;
+  /* font-family: 'Crushed', cursive; */
+  font-family: 'Montserrat', sans-serif;
+  
+  /* font-family: 'Montserrat', sans-serif; */
+  /* font-family: 'Rock Salt', cursive; */
+
+  font-weight: 800;
   /* font-size: 3rem; */
-  font-size: 70px;
-  line-height: 75px;
+  font-size: 65px;
+  line-height: 70px;
   vertical-align: top;
   text-align: center;
   /* color: #4D5656; */
   color: #424949;
   width: 80%;
-  margin-bottom: 35%;
+  margin-bottom: 30%;
 }
 
 .q-mark {
@@ -77,145 +91,373 @@ height:100%; */
 .app-subhead {
   /* color: #4D5656; */
   color: #424949;
-  margin: 40px auto;
-  font-family: 'Heebo', sans-serif;
-  font-size: 1rem;
+  /* margin: 10px 0 30px 0; */
+  margin: 0 auto;
+  width: 80%;
+  /* font-family: 'Heebo', sans-serif;
+  font-weight: 300; */
+  /* font-family: 'Montserrat', sans-serif; */
+  font-family: 'Pacifico', cursive;
+  /* font-weight: 400; */
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 500;
   /* font-weight: bold; */
   text-align: center;
 }
 
 .home-search-area {
-  display: inline-flex;
-  align-content: flex-end;
+  /* display: inline-flex;
+  align-content: flex-end; */
+  margin-top: 5%;
   vertical-align: top;
-  margin: 0 20px;
+  width: 75%;
+  align-self: center;
   /* align-content: center; */
 }
 
 .input.home-search-bar {
+  display: block;
   background: #C1E5AA;
   border: #FDFEFE;
 }
+
+.or-between {
+  display: inline-block;
+  font-weight: bold; 
+  text-align: center;
+  align-self: center;
+  margin: 0 auto;
+}
+
+/* .home-browse-button {
+  margin: 0 auto;
+  align-self: center;
+} */
 
 .button.main {
   background: #C1E5AA;
   border: #FDFEFE;
-  margin-left: 10px;
+  margin: 0 auto;
   font-weight: 500;
+  align-self: center;
 }
 
-.is-left {
-  background: transparent;
-  /* border: #FDFEFE; */
-  color: #FDFEFE;
-  color: black;
-}
+
+
 
 /* profile page */
+
 
 .app-container.profile {
   margin: 0;
   padding: 0;
   background-color: #8ED062;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .top-nav-bar {
   display: block;
-  margin-bottom: 30px;
+  /* margin: 0px 0; */
+  overflow: hidden;
   /* display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: flex-start */
 }
 
-.nav-search-bar {
+/* .nav-search-bar {
   vertical-align: top;
   display: inline-block;
   background: #C1E5AA;
   border: #FDFEFE;
-}
+} */
 
 .app-initials {
   padding: 10px 0 10px 15px;
   float: left;
-  font-family: 'Crushed', cursive;
+  color: #424949;
+  position: relative;
+  /* font-family: 'Crushed', cursive; */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
   font-size: 1.75rem;
   line-height: 1.5rem;
   /* align-content: flex-start; */
   vertical-align: top;
-  width: 18%;
 }
 
 .nav-q-mark {
   color: #FDFEFE;
   vertical-align: top;
+  float: left;
+  padding: 5px 0 5px 0;
+  font-size: 1.5rem;
 }
 
-.control {
-  align-content: flex-end;
-}
-
-.nav-search-area {
-  display: inline-flex;
-  /* display: inline-block; */
+.new-search-icon {
+  padding: 10px 15px 0 0;
+  font-size: 22px;
+  line-height: 24px;
+  color: #FDFEFE;
+  vertical-align: top;
+  width: 18%;
   float: right;
-  align-content: flex-end;
+  text-align: right;
 }
 
 .top-info {
   clear: both;
   background: #424949;
-
+  padding: 10px;
 }
 
-.button.top-nav {
+/* .button.top-nav {
   vertical-align: top;
   display: inline-block;
   background: #C1E5AA;
   border: #FDFEFE;
   margin-left: 10px;
   font-weight: 500;
-}
+} */
 
 .business-name {
-  font-size: 1.75rem;
+  font-size: 32px;
+  line-height: 34px;
   font-weight: 800;
   text-align: center;
   color: #FDFEFE;
+  padding: 10px 0;
 }
 
 .address-phone {
   color: #F59841;
-  font-size: 1rem;
+  font-size: 17px;
+  line-height: 19px;
+  /* font-family: 'Heebo', sans-serif;
+  font-weight: 500; */
+  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   text-align: center;
+  margin-top: 4px;
+  padding-bottom: 4px;
 }
 
 .hours {
   color: #FDFEFE;
-  font-size: 1rem;
+  font-size: 15px;
+  line-height: 18px;
   font-weight: 500;
   text-align: center;
+  margin-top: 4px;
 }
 
+.admin-log-out {
+  width: 80%;
+  margin-top: 10px;
+  padding: 20px;
+}
+
+
 .info-section {
+  display: block;
+  padding: 0 10px;
+}
+
+.header-with-asset-link {
   display: block;
 }
 
 .info-category-header {
-  margin: 0 auto;
-  padding-top: 15px;
-  padding-left: 15px;
-  font-family: 'Crushed', cursive;
-  font-size: 2.25rem;
-  line-height: 2.25rem;
+  /* display: inine-block; */
+  width: 50%;
+  display: inline-block;
+  /* float: left; */
+  /* padding-top: 5px; */
+  margin: 20px 0 10px 0;
+  /* font-family: 'Crushed', cursive; */
+  font-family: 'Pacifico', cursive;
+  /* font-size: 2.25rem; */
+  font-size: 40px;
+  line-height: 44px;
   vertical-align: top;
   text-align: left;
   /* color: #4D5656; */
   color: #424949;
 }
 
+.view-icon {
+  /* padding: 20px 0 15px 0; */
+  margin: 25px 0 5px 0;
+
+  font-size: 22px;
+  line-height: 24px;
+  color: #FDFEFE;
+  vertical-align: top;
+  width: 40%;
+  display: inline-block;
+  text-align: right;
+  /* float: right; */
+  /* text-align: right; */
+  font-weight: 500;
+}
+
+.fas {
+  display: inline-block;
+  /* padding: 10px 15px 0 0; */
+  font-size: 30px;
+  line-height: 30px;
+  color: #424949;
+  vertical-align: top;
+  text-align: center;
+}
+
+.view-caption {
+  /* color: #FDFEFE; */
+  color: #424949;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 800;
+  padding-top: 5px;
+  text-align: right;
+  /* vertical-align: top; */
+  /* width: 25%; */
+}
+
+.expand-link {
+  clear: both;
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 18px;
+  margin-bottom: 5px;
+/* 
+  font-family: 'Crushed', cursive;
+  font-size: 17px; */
+  /* font-weight: 500; */
+  font-style: italic;
+  color: #FDFEFE;
+}
+
+.info-entry {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 300;
+  margin-bottom: 8px;
+
+}
+
+
+
+.item-delete {
+  font-size: 13px;
+  line-height: 15px;
+  font-weight: 500;
+  font-style: italic;
+  color: #FDFEFE;
+  margin-bottom: 5px;
+  text-align: right;
+}
+
+.add-new-item-label {
+  font-weight: 300;
+  color: #FDFEFE;
+
+}
+
+.hidden {
+  display: none;
+}
+
+form {
+  margin-bottom: 10px;
+}
+
+.add-new-item {
+  margin: 15px 0 5px 0;
+  display: block;
+  width: 80%;
+}
+
+.label {
+  display: block;
+}
+
+.save-entry {
+  margin: 5px 0 10px 0;
+  display: block;
+  width: 20%;
+  /* text-align: right; */
+}
+
+.upload-button {
+  display: block;
+  text-align: center;
+  margin: 5px 0 15px 0;
+  width: 60%;
+}
+
+.admin-log-out {
+  margin-bottom: 30px;
+  width: 60%;
+}
+
+
+/* log-in view */
+
+
+.secondary-view-header {
+  margin: 0 auto;
+  padding: 50px 0 15px 0;
+  /* font-family: 'Crushed', cursive; */
+  /* font-size: 3rem; */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 38px;
+  line-height: 42px;
+  vertical-align: top;
+  text-align: center;
+  /* color: #4D5656; */
+  /* border-bottom: #424949 5px double; */
+  color: #424949;
+    /* color: #FDFEFE; */
+  width: 80%;
+  margin-bottom: 20%;
+}
+
+.row {
+  align-content: center;
+}
+
+.app-container.log-in {
+  text-align: center;
+}
+
+.input.log-in {
+  width: 80%;
+  margin: 10px 0;
+}
+
+.log-in-button-div {
+  margin: 25px 0 0 0;
+}
+
+
+
+/* browse view */
+
+
+
+
+
+
+/* Bewlow, NOTES TO USE & DELETE */
+
+
+/* .form.label {
+
+} */
 
 /*
   * phones: < 768px
@@ -232,10 +474,38 @@ height:100%; */
 /* #8ED062
 142, 208, 98 */
 
+
+
+/* <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,800|Pacifico" rel="stylesheet"> */
+
+/* font-family: 'Montserrat', sans-serif;
+font-family: 'Pacifico', cursive; */
+
+
+/* 
+<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Montserrat:100,300,400,800" rel="stylesheet">
+
+font-family: 'Montserrat', sans-serif;
+font-family: 'Abril Fatface', cursive; */
+
 /* <link href="https://fonts.googleapis.com/css?family=Crushed|Heebo:300,500,800" rel="stylesheet"> */
+
+
+/* <link href="https://fonts.googleapis.com/css?family=Crushed|Montserrat:100,300,400,800" rel="stylesheet"> */
+
+
+
+/* 
+<link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,800|Rock+Salt" rel="stylesheet">
+
+font-family: 'Montserrat', sans-serif;
+font-family: 'Rock Salt', cursive; */
 
 /* font-family: 'Crushed', cursive;
 font-family: 'Heebo', sans-serif; */
+
+
+
 
 
 /* .app-container
