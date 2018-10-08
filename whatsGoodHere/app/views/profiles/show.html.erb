@@ -40,12 +40,17 @@
 
     <% if @profile.vr_image.attached? %>
     <div id="myEmbeddedScene">
-        
-        <a-scene embedded="">
-        <a-sky src="<%= url_for(@profile.vr_image) %>"></a-sky>
-        </a-scene>
+   
+    
+    <a-scene embedded>
+    <a-assets>
+      <img id="vr-image" crossorigin src=<%= url_for(@profile.vr_image) %>>
+    </a-assets>
+  <a-sky src="#vr-image"></a-sky>
+  </a-scene>
     </div>
     <% end %>
+  
 
 
 <div class="info-section-container">
