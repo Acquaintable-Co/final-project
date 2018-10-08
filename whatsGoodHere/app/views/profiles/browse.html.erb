@@ -1,5 +1,5 @@
 <div class="secondary-view-header">Search Results</div>
 
 <% @browse.each do |profile| %>
-    <p><%= profile.restaurant %></p>
+    <p><%= link_to profile.restaurant, profile_path(profile) %></p>
 <% end %>
