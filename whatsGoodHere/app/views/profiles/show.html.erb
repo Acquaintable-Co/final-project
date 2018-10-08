@@ -47,7 +47,6 @@
     </div>
     <% end %>
 
-
 <div class="info-section-container">
 
     <div class="info-section">
@@ -71,9 +70,11 @@
             
             <span class="item-delete">
                 <%= link_to 'delete', offer_path(offer), method: :delete %> 
-            </span> </div>
+            </span> 
+
             <% end %>
             <% end %>    
+        </div>
 
             <% if current_profile && @profile.id == current_profile.id %>
             <%= form_with model: @offer, url: offers_path, local: true do |f| %>
@@ -97,10 +98,11 @@
 
             <span class="item-delete">
             <%= link_to 'delete', hack_path(hack), method: :delete %>
-            </span></div>
+            </span>
 
             <% end %>
             <% end %>
+        </div>
 
             <% if current_profile && @profile.id == current_profile.id %>
             <%= form_with model: @hack, url: hacks_path, local: true do |f| %>
@@ -133,10 +135,12 @@
 
             <span class="item-delete">
             <%= link_to 'delete', location_path(location), method: :delete %>
-            </span> </div>
+            </span> 
 
             <% end %>
             <% end %>
+        </div>
+
 
             <% if current_profile && @profile.id == current_profile.id %>
             <%= form_with model: @location, url: locations_path, local: true do |f| %>
