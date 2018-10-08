@@ -269,6 +269,7 @@ height:100%; */
 }
 
 .info-category-header {
+  clear: right;
   /* display: inine-block; */
   width: 50%;
   display: inline-block;
@@ -345,6 +346,7 @@ height:100%; */
   line-height: 20px;
   font-weight: 300;
   margin-bottom: 8px;
+  display: block;
 
 }
 
@@ -447,7 +449,10 @@ form {
 
 /* browse view */
 
-
+.browse-list-item {
+  margin: 0 auto;
+  text-align: center;
+}
 
 
 
