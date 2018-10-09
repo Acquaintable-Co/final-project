@@ -75,7 +75,7 @@
             
             <span class="item-delete">
                 <%= link_to 'edit', edit_offer_path(offer), class: "edit-offer_#{offer.id}", data: {remote: true} %> 
-                <%= link_to 'delete', offer_path(offer), method: :delete, data: {confirm: "Are you Sure?", remote: true}, class: "delete" %> 
+                <%= link_to 'delete', offer_path(offer), method: :delete, data: {confirm: "Are you Sure?", remote: true}, class: "deletes" %> 
             </span> 
             <% end %>
             </div>
@@ -84,9 +84,8 @@
                     $(this).closest("div").append("<%= j render 'offerEdit', offer: offer %>");
                     $('.edit-offer_<%= offer.id %>').hide()
                 });
-            </script>
-            <script>
-                $('.delete').on('click', function(){
+        
+                $('.deletes').on('click', function(){
                     $(this).closest("div").remove();
                 });
             </script>

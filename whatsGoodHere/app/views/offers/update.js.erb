@@ -1,0 +1,4 @@
+console.log("<%= @offer.offer_detail %>");
+$('.edit-offer-form').hide();
+$('.edit-offer_<%= @offer.id %>').show();
+$('#offer_<%= @offer.id %>').val("<%= @offer.offer_detail %>");
