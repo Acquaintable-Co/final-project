@@ -63,32 +63,42 @@
             <%= link_to "<i class='fas fa-utensils'></i><div class='view-caption'> view menu</div>".html_safe, rails_blob_path(@profile.menu, disposition: "menu"), target: "_new" %>
             <% end %> 
         </div>
-
         <a class="expand-link" onClick=showDetail('fare-detail')> ... see more</a>
         
+       
+        <div class="hidden fare-detail info-entry">   
         <% @profile.offers.each do |offer| %>
+            
 
-        <div class="hidden fare-detail info-entry"> •   
-
-            <%= offer.offer_detail %> 
+           <div class="fare-row"> • <span id="offer_<%= offer.id %>"><%= offer.offer_detail %></span>
             <% if current_profile && @profile.id == current_profile.id %>
             
             <span class="item-delete">
-                <%= link_to 'delete', offer_path(offer), method: :delete %> 
+                <%= link_to 'edit', edit_offer_path(offer), class: "edit-offer_#{offer.id}", data: {remote: true} %> 
+                <%= link_to 'delete', offer_path(offer), method: :delete, data: {confirm: "Are you Sure?", remote: true}, class: "delete" %> 
             </span> 
-
             <% end %>
+            </div>
+            <script>
+                $('.edit-offer_<%= offer.id %>').on('click', function(){
+                    $(this).closest("div").append("<%= j render 'offerEdit', offer: offer %>");
+                    $('.edit-offer_<%= offer.id %>').hide()
+                });
+            </script>
+            <script>
+                $('.delete').on('click', function(){
+                    $(this).closest("div").remove();
+                });
+            </script>
+           
             <% end %>    
-        </div>
-
+            </div>
+           
             <% if current_profile && @profile.id == current_profile.id %>
-            <%= form_with model: @offer, url: offers_path, remote: true do |f| %>
-        
-            <%= f.text_field :offer_detail, class: 'input is-small add-new-item', placeholder: "enter new Fare item here" %> 
-            <a class="button save-entry is-small" >
-            <%= f.submit %> </a>
-            <% end %>
-            <% end %>                    
+            <%= render 'offerForm' %>
+            <% end %>  
+            
+
 
         <div class="info-category-header tips">tips</div>
 
@@ -104,10 +114,11 @@
             <span class="item-delete">
             <%= link_to 'delete', hack_path(hack), method: :delete %>
             </span>
-
+        
             <% end %>
+            </div>
             <% end %>
-        </div>
+       
 
             <% if current_profile && @profile.id == current_profile.id %>
             <%= form_with model: @hack, url: hacks_path, local: true do |f| %>
@@ -120,20 +131,20 @@
             <% end %>
             
 
-        <div class="info-category-header specs">specs</div>
+    <div class="info-category-header specs">specs</div>
 
-            <div class="view-icon">
-                <% if @profile.floor_plan.attached? %>
-                <%= link_to "<i class='fas fa-map'></i> <br> 
-                view floor plan".html_safe, rails_blob_path(@profile.floor_plan, disposition: "floor plan"), target: "_new", class: "view-caption" %>
-                <% end %>                
-            </div>
+        <div class="view-icon">
+            <% if @profile.floor_plan.attached? %>
+            <%= link_to "<i class='fas fa-map'></i> <br> 
+            view floor plan".html_safe, rails_blob_path(@profile.floor_plan, disposition: "floor plan"), target: "_new", class: "view-caption" %>
+            <% end %>                
+        </div>
 
             <a class="expand-link" onClick=showDetail('specs-detail')> ... see more</a>
 
             <% @profile.locations.each do |location| %>
 
-            <div class="hidden specs-detail info-entry"> • 
+        <div class="hidden specs-detail info-entry"> • 
             <%= location.location_detail %> 
 
             <% if current_profile && @profile.id == current_profile.id %>
@@ -141,10 +152,10 @@
             <span class="item-delete">
             <%= link_to 'delete', location_path(location), method: :delete %>
             </span> 
-
             <% end %>
+            </div>
             <% end %>
-        </div>
+        
 
 
             <% if current_profile && @profile.id == current_profile.id %>

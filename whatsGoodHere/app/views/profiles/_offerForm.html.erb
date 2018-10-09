@@ -1,0 +1,6 @@
+<%= form_with model: @offer, url: offers_path, remote: true do |f| %>
+        
+  <%= f.text_field :offer_detail, id: 'offer_detail_field', class: 'input is-small add-new-item', placeholder: "enter new Fare item here" %> 
+  <a class="button save-entry is-small" >
+  <%= f.submit 'Submit', id: 'offer_submit' %> </a>
+  <% end %>

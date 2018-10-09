@@ -1,0 +1,8 @@
+<div class="edit-form">
+<%= form_with model: offer, class:"edit-offer-form" do |f| %>
+
+  <%= f.text_field :offer_detail, id: 'offer_detail_field', class: 'input is-small add-new-item', placeholder: "enter new Fare item here" %> 
+  <%= f.submit id: 'offer_edit_submit', class:"button save-entry is-small" %>
+
+<% end %>
+</div>

@@ -1,6 +1,6 @@
 class OffersController < ApplicationController
   #fare
-  before_action :set_offer, only: [:update, :destroy]
+  before_action :set_offer, only: [:edit, :update, :destroy]
   
 
   def create
@@ -18,13 +18,20 @@ class OffersController < ApplicationController
     end
   end
 
+  def edit
+  respond_to :js
+  end
+
+
   def update
-    @offer.update(offer_params)
+    @offer.update(offer_param)
+      respond_to :js
+    
   end
 
   def destroy
     @offer.destroy
-    redirect_to profile_path(@offer.profile_id)
+    respond_to :js
   end
 
   private
@@ -32,6 +39,10 @@ class OffersController < ApplicationController
   def set_offer
     @offer = Offer.find(params[:id])
   
+  end
+
+  def offer_param
+    params.require(:offer).permit(:offer_detail)
   end
 
   def offer_params

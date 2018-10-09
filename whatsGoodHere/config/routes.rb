@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   get 'browse', to: 'profiles#browse'
   resources :profiles
-  resources :offers, only: [:create, :update, :destroy]
-  resources :locations, only: [:create, :update, :destroy]
-  resources :highlights, only: [:create, :update, :destroy]
-  resources :hacks, only: [:create, :update, :destroy]
+  resources :offers, only: [:create, :update, :destroy, :edit]
+  resources :locations, only: [:create, :update, :destroy, :edit]
+  resources :highlights, only: [:create, :update, :destroy, :edit]
+  resources :hacks, only: [:create, :update, :destroy, :edit]
   root 'profiles#index'
 end
