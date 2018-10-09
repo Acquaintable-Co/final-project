@@ -1,5 +1,6 @@
-<h2>Search Results</h2>
+<div class="secondary-view-header"><i class='fas fa-map-marker-alt'></i><br>Search Results </div>
+
 
 <% @browse.each do |profile| %>
-    <p><%= profile.restaurant %></p>
+    <div class="browse-list-item"><%= link_to profile.restaurant, profile_path(profile), class: "browse-list-item" %></div>
 <% end %>
