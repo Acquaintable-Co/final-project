@@ -1,13 +1,19 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :delete]
   def index
-    puts 'hey yall index action*********************'
   end
 
   def show
   end
-
   
+  def nearby
+    if 
+       @nearby = Profile.near(lookup_ip_location, 5)
+    else
+      error
+    end
+  end
+
   def browse
     if params[:restaurant].present?
       @browse = Profile.search_by_restaurant(params[:restaurant])

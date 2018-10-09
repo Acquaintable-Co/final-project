@@ -1,0 +1,5 @@
+<h2>GeoSearch Results</h2>
+
+<% @nearby.each do |profile| %>
+    <p><%= link_to profile.restaurant, profile_path(profile) %></p>
+<% end %>
