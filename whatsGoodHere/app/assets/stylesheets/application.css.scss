@@ -22,6 +22,11 @@
   /* height: 100vh; */
 }
 
+html {
+  font-size: 16px;
+  line-height: 22px;
+}
+
 body {
   /* margin: 0;
   padding: 0; */
@@ -35,6 +40,10 @@ body {
   font-size: 16px;
 }
 
+img {
+  max-width: 100%;
+}
+
 /* background-size:cover; 
 background-repeat:no-repeat;
 background-attachment:fixed;
@@ -45,6 +54,7 @@ height:100%; */
   background-size:cover; 
   background-repeat:no-repeat;
   background-attachment:fixed;
+  // position: relative;
   height: 100vh;
   background-color: transparent;
   overflow: hidden;
@@ -61,22 +71,15 @@ height:100%; */
 
 .app-title {
   margin: 0 auto;
-  padding: 40px 0 15px 0;
-  /* font-family: 'Crushed', cursive; */
+  padding: 50px 0 15px 0;
+  max-width: 85vw;
   font-family: 'Montserrat', sans-serif;
-  
-  /* font-family: 'Montserrat', sans-serif; */
-  /* font-family: 'Rock Salt', cursive; */
-
   font-weight: 800;
-  /* font-size: 3rem; */
-  font-size: 65px;
-  line-height: 70px;
+  font-size: 3rem;
+  line-height: 3.25rem;
   vertical-align: top;
   text-align: center;
-  /* color: #4D5656; */
   color: #424949;
-  width: 80%;
   margin-bottom: 30%;
 }
 
@@ -93,16 +96,14 @@ height:100%; */
   color: #424949;
   /* margin: 10px 0 30px 0; */
   margin: 0 auto;
-  width: 85%;
-  /* font-family: 'Heebo', sans-serif;
-  font-weight: 300; */
-  /* font-family: 'Montserrat', sans-serif; */
+  max-width: 85vw;
   font-family: 'Pacifico', cursive;
-  /* font-weight: 400; */
-  font-size: 22px;
-  line-height: 30px;
-  /* font-weight: bold; */
+  // font-size: 22px;
+  // line-height: 30px;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
   text-align: center;
+  vertical-align: center;
 }
 
 .home-search-area {
@@ -122,7 +123,8 @@ height:100%; */
 }
 
 .or-between {
-  display: inline-block;
+  // display: inline-block;
+
   font-weight: bold; 
   text-align: center;
   align-self: center;
@@ -130,28 +132,26 @@ height:100%; */
 }
 
 .home-browse-button {
-  margin: 10px auto 20px auto;
-  align-text: center;
+  margin: 10px auto 30px auto;
+  text-align: center;
 }
 
 .button.main {
   background: #C1E5AA;
   border: #FDFEFE;
-  color: #FDFEFE
+  color: #FDFEFE;
   margin: 0 auto;
   font-weight: 400;
   align-self: center;
 }
 
 
-
-
 /* profile page */
 
 
 .app-container.profile {
-  margin: 0;
-  padding: 0;
+  margin: 0 auto;
+  padding-bottom: 25px;
   background-color: #8ED062;
   min-height: 100vh;
 }
@@ -260,8 +260,9 @@ height:100%; */
 
 .admin-log-out {
   width: 80%;
-  margin-top: 10px;
+  margin: 10px 0 0 0;
   padding: 20px;
+  // align-text: center;
 }
 
 
@@ -333,10 +334,12 @@ height:100%; */
 .expand-link {
   clear: both;
   display: block;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 800;
-  font-size: 16px;
-  line-height: 18px;
+  // font-family: 'Montserrat', sans-serif;
+  // font-weight: 800;
+  font-family: 'Pacifico', cursive;
+
+  font-size: 20px;
+  line-height: 22px;
   margin-bottom: 5px;
 /* 
   font-family: 'Crushed', cursive;
@@ -402,7 +405,7 @@ form {
 }
 
 .add-new-item {
-  margin: 15px 0 5px 0;
+  margin: 15px auto 5px auto;
   display: block;
   width: 80%;
 }
@@ -412,7 +415,7 @@ form {
 }
 
 .save-entry {
-  margin: 5px 0 10px 0;
+  margin: 5px auto 10px auto;
   display: block;
   width: 20%;
   /* text-align: right; */
@@ -425,8 +428,14 @@ form {
   width: 60%;
 }
 
-.admin-log-out {
-  margin-bottom: 30px;
+.admin-logout {
+  margin: 0 auto;
+text-align: center;
+}
+
+.button.admin-log-out {
+  text-align: center;
+  margin: 15px auto 5px auto;
   width: 60%;
 }
 
@@ -471,8 +480,8 @@ form {
 }
 
 
-
 /* browse view */
+
 
 .browse-list-item {
   margin: 0 auto;
@@ -493,13 +502,13 @@ form {
 }
 
 
-
-/* Bewlow, NOTES TO USE & DELETE */
+/* Below, NOTES TO USE & DELETE */
 
 
 /* .form.label {
 
 } */
+
 
 /*
   * phones: < 768px
@@ -513,9 +522,44 @@ form {
 @media screen and (min-width: 768px) {
 
 
+At Bulma, breakpoints are set at 768px, 769px, 1024px, 1216px, and 1408px
+
+@media (min-width: 640px){
+ 
+  ...
+   
+  }
+   
+  @media (min-width: 768px){
+   
+  ...
+   
+  }
+   
+  @media (min-width: 1024px){
+   
+  ...
+   
+  }
+   
+  @media (min-width: 1200px){
+   
+  ...
+   
+  } */ 
+  a-scene {
+    height: 300px;
+    width: 600px;
+  }
+  #myEmbeddedScene {
+    width:50%;
+    height:300px;
+  }
+
+
+
 /* #8ED062
 142, 208, 98 */
-
 
 
 /* <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,800|Pacifico" rel="stylesheet"> */
@@ -575,7 +619,7 @@ Download SVGPerfect for when you want to use just one icon as a vector on the de
 .info-category-header
 .info-entry */
 
-/* Raman On Empty
+/*Raman On Empty
 The Pesto’s Yet To Come
 Willy Lo Mein
 Udon Own Me
@@ -593,37 +637,4 @@ Muffin But Net
 Loaf of My Life
 Fondue Diligence
 Cheddar Off Dead
-The Strudel Is Real
-At Bulma, breakpoints are set at 768px, 769px, 1024px, 1216px, and 1408px
-
-@media (min-width: 640px){
- 
-  ...
-   
-  }
-   
-  @media (min-width: 768px){
-   
-  ...
-   
-  }
-   
-  @media (min-width: 1024px){
-   
-  ...
-   
-  }
-   
-  @media (min-width: 1200px){
-   
-  ...
-   
-  } */ 
-  a-scene {
-    height: 300px;
-    width: 600px;
-  }
-  #myEmbeddedScene {
-    width:50%;
-    height:300px;
-  }
+The Strudel Is Real */
