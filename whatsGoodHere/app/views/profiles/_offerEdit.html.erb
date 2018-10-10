@@ -1,0 +1,8 @@
+<div class="edit-form">
+<%= form_with model: offer, class:"edit-offer-form" do |f| %>
+
+  <%= f.text_field :offer_detail, id: 'offer-detail-field', class: 'input add-new-item' %> 
+  <%= f.submit "Update Fare", id: 'offer_submit', class:"button save-entry" %>
+
+<% end %>
+</div>
