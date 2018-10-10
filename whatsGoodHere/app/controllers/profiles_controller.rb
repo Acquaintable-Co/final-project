@@ -9,7 +9,6 @@ class ProfilesController < ApplicationController
   def nearby
     if 
        @nearby = Profile.near([location.latitude, location.longitude], 0.5)
-
     else
       error
     end
