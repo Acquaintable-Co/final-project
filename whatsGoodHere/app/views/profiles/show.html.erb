@@ -224,6 +224,7 @@
             <%= link_to 'delete', location_path(location), method: :delete, data: {confirm: "Are you Sure?", remote: true}, class: "deletes" %>
             </span> 
             <% end %>
+
         </div>
         <script>
             $('.edit-location_<%= location.id %>').on('click', function(){
@@ -237,6 +238,7 @@
         </script>        
         <% end %>
         </div>
+
             <a class="expand-link" onClick=showDetail('hideable-specs')> ... see more</a>    
 
             <% if current_profile && @profile.id == current_profile.id %>
@@ -246,7 +248,24 @@
 
             <%= f.submit 'save to "specs" list', class: "button is-warning save-entry" %>
                 <% end %>
-                <% end %>   
+                <% end %>
+
+
+            <% if @profile.vr_image.attached? %>
+            <div class="info-category-header 360view">360° view</div>  
+
+            <div id="myEmbeddedScene">
+        
+            <a-scene embedded>
+            <a-assets>
+            <img id="vr-image" crossorigin src=<%= url_for(@profile.vr_image) %>>
+            </a-assets>
+                <a-sky src="#vr-image"></a-sky>
+                </a-scene>
+            </div>
+            <% end %>
+        </div>  
+
     </div>          
 </div>
 
