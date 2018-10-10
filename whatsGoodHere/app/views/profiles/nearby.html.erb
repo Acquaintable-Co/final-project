@@ -1,4 +1,3 @@
-
 <div class="app-container profile">
     <div class="top-nav-bar">
         <div>
@@ -8,11 +7,9 @@
         <div class="new-search-icon"><i class="fa fa-search"></i></div>
     </div>
 
+<div class="secondary-view-header"><i class='fas fa-map-marker-alt'></i><br>What's Near<span class="secondary-vew-header-q">?</span></div>
 
-<div class="secondary-view-header"><i class='fas fa-map-marker-alt'></i><br>What's Here<span class="secondary-vew-header-q">?</span></div>
-
-
-<% @browse.each do |profile| %>
+<% @nearby.each do |profile| %>
     <div class="browse-list-item"><%= link_to profile.restaurant, profile_path(profile), class: "browse-list-item" %></div>
     <div class="list-divider">•</div>
 <% end %>
