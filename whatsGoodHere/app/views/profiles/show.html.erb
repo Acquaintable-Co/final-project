@@ -251,25 +251,14 @@
                 <% end %>
 
 
-            <% if @profile.vr_image.attached? %>
-            <div class="info-category-header 360view">360° view</div>  
-
-            <div id="myEmbeddedScene">
-        
-            <a-scene embedded>
-            <a-assets>
-            <img id="vr-image" crossorigin src=<%= url_for(@profile.vr_image) %>>
-            </a-assets>
-                <a-sky src="#vr-image"></a-sky>
-                </a-scene>
-            </div>
-            <% end %>
+            
         </div>  
 
     </div>          
 </div>
 
 <% if @profile.vr_image.attached? %>
+<div class="info-category-header 360view">360° view</div>  
     <div id="myEmbeddedScene">
         <a-scene embedded="true">
             <a-assets>
