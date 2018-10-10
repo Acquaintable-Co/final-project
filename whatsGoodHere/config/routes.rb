@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
   get 'browse', to: 'profiles#browse'
+  get 'nearby', to: 'profiles#nearby'
   resources :profiles
   resources :offers, only: [:create, :update, :destroy, :edit]
   resources :locations, only: [:create, :update, :destroy, :edit]
