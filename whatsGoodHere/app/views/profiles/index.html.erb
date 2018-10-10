@@ -4,6 +4,9 @@
     <img src="WGH-fork-mobile.jpg" />
   </div> %>
 
+
+<%= link_to 'admin log in', login_path, :class => 'admin-login-link' %>
+
   <header class="site-header">
     <div class="app-title">What's <br> Good <br> Here<span class="q-mark">?</span></div>
   </header>
@@ -15,8 +18,10 @@
 
 
   <div class="site-subhead">
+
     <div class="app-subhead">Get to know <br>the local spots
     </div>
+
   </div>
 
   <div class="home-search-area">
@@ -42,11 +47,11 @@
     <div class="home-search-button-row">
 
       <div class="home-browse-button">
-        <%= link_to 'see list', browse_path, :class => 'button main mobile' %>
+        <%= link_to 'see full list', browse_path, :class => 'button main mobile' %>
       </div>
 
       <div class="home-browse-button">
-        <%= link_to 'see list', browse_path, :class => 'button main is-large tablet-desktop' %>
+        <%= link_to 'see full list', browse_path, :class => 'button main is-large tablet-desktop' %>
       </div>
     
       <div class="home-geolocate-button">
