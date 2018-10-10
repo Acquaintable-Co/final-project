@@ -10,6 +10,8 @@ class Profile < ApplicationRecord
   has_one_attached :vr_image
   has_one_attached :floor_plan
   
+
+  
   geocoded_by :address
   after_validation :geocode
  

@@ -7,15 +7,15 @@ class ProfilesController < ApplicationController
   end
   
   def nearby
-       @nearby = Profile.near(request.location, 0.5)
+       @nearby = Profile.near(request.location.ip, 0.5)
        #@nearby = Profile.near([location.latitude, location.longitude], 0.5)
   end
 
   def browse
     if params[:restaurant].present?
-      @browse = Profile.search_by_restaurant(params[:restaurant])
+      @browse = Profile.search_by_restaurant(params[:restaurant])  
     else
-      @browse = Profile.all
+      @browse = Profile.order('restaurant asc')
     end
   end
 
