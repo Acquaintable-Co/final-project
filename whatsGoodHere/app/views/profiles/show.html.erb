@@ -210,16 +210,6 @@
                 <% end %>                
             </div>
 
-    <div class="info-category-header specs">specs</div>
-
-
-        <div class="view-icon">
-            <% if @profile.floor_plan.attached? %>
-            <%= link_to "<i class='fas fa-map'></i> <br> 
-            view floor plan".html_safe, rails_blob_path(@profile.floor_plan, disposition: "floor plan"), target: "_new", class: "view-caption" %>
-            <% end %>                
-        </div>
-
         <div class="specs-detail">
             <% @profile.locations.each_with_index do |location, idx| %>
 
