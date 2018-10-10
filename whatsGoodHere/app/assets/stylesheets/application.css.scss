@@ -532,6 +532,7 @@ form {
   background-color: rgb(0,0,0);
   background-color: rgb(0,0,0);
   color: white;
+}
 
 a-scene {
   height: 300px;
@@ -822,7 +823,7 @@ a-scene {
 // desktop:
 
     /* main app homepage */
-  @media (min-width: 1200px){
+  @media (min-width: 1200px) {
 
     input.home-search-bar.mobile {
       display: none;
@@ -846,9 +847,9 @@ a-scene {
 
     .app-background {
       background-image: asset_url("WGH-BGonly-H1300px.jpg");
-      background-size:cover; 
-      background-repeat:no-repeat;
-      background-attachment:fixed;
+      background-size: cover; 
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       // position: relative;
       height: 100vh;
       background-color: transparent;
@@ -861,8 +862,7 @@ a-scene {
       height: 20%;
       display: block;
       width: 100%;
-      background-repeat:no-repeat;
-      background-size:cover; 
+      background-repeat: no-repeat;
+      background-size: cover; 
   }
-
-} 
+}
