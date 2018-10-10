@@ -1,0 +1,5 @@
+console.log("<%= @location.location_detail %>");
+$('.edit-location-form').hide();
+$('.edit-location_<%= @location.id %>').show();
+console.log("<%= @location.id %>");
+$('#location_<%= @location.id %>').text("<%= @location.location_detail %>");

@@ -14,6 +14,7 @@
  *= require_tree .
  *= require_self
 */
+
 * {
   box-sizing: border-box;
   margin: 0 auto;
@@ -42,6 +43,8 @@ body {
 
 img {
   max-width: 100%;
+  height: auto;
+  width: auto;
 }
 
 /* background-size:cover; 
@@ -50,7 +53,7 @@ background-attachment:fixed;
 height:100%; */
 
 .app-background {
-  background-image: asset_url("WGH-fork-mobile.jpg");
+  background-image: asset_url("WGH-BGonly-V800px.jpg");
   background-size:cover; 
   background-repeat:no-repeat;
   background-attachment: fixed;
@@ -59,7 +62,6 @@ height:100%; */
   background-color: transparent;
   overflow: hidden;
 } 
-
 
 
 /* main app homepage */
@@ -71,7 +73,7 @@ height:100%; */
 
 .app-title {
   margin: 0 auto;
-  padding: 50px 0 15px 0;
+  padding: 40px 0 15px 0;
   max-width: 85vw;
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
@@ -79,12 +81,37 @@ height:100%; */
   line-height: 3.25rem;
   vertical-align: top;
   text-align: center;
-  color: #424949;
-  margin-bottom: 30%;
+  color: #FDFEFE;
+
+  // margin-bottom: 5%;
 }
 
 .q-mark {
-  color: #FDFEFE;
+  color: #424949;
+  // color: #FDFEFE;
+}
+
+
+.fork-imageH {
+    background-image: asset_url("WGH-fork-fullwidth-mobile.png");
+    // width: 100vw;
+    height: 15%;
+    display: block;
+    width: 100%;
+    background-repeat:no-repeat;
+    background-size:cover; 
+}
+
+.fork-imageH.tabletV {
+  display: none;
+}
+
+.fork-imageH.tabletH {
+  display: none;
+}
+
+.fork-imageH.desktop {
+  display: none;
 }
 
 .site-subhead {
@@ -100,8 +127,8 @@ height:100%; */
   font-family: 'Pacifico', cursive;
   // font-size: 22px;
   // line-height: 30px;
-  font-size: 1.5rem;
-  line-height: 1.75rem;
+  font-size: 1.75rem;
+  line-height: 2rem;
   text-align: center;
   vertical-align: center;
 }
@@ -109,7 +136,7 @@ height:100%; */
 .home-search-area {
   /* display: inline-flex;
   align-content: flex-end; */
-  margin-top: 5%;
+  margin-top: 8%;
   vertical-align: top;
   width: 75%;
   align-self: center;
@@ -124,28 +151,49 @@ height:100%; */
 
 .or-between {
   // display: inline-block;
-
-  font-weight: bold; 
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5rem;
   text-align: center;
   align-self: center;
-  margin: 0 auto;
+  margin: 5px auto 10px auto;
+}
+
+.home-search-button.row {
+  display: block;
 }
 
 .home-browse-button {
-  margin: 10px auto 30px auto;
+  // display: inline-block;
   text-align: center;
+  float: right;
+  vertical-align: top;
 }
 
 .button.main {
   background: #C1E5AA;
   border: #FDFEFE;
-  color: #FDFEFE;
+  color: #424949;
   margin: 0 auto;
   font-weight: 400;
   align-self: center;
 }
 
+.home-geolocate-button {
+  // margin: 10px auto 30px auto;
+  text-align: center;
+  float: left;
+  vertical-align: top;
+}
 
+.tablet-desktop {
+  display: none;
+}
+
+.is-large.tablet-desktop {
+  display: none;
+}
 /* profile page */
 
 
@@ -158,32 +206,18 @@ height:100%; */
 
 .top-nav-bar {
   display: block;
-  /* margin: 0px 0; */
   overflow: hidden;
-  /* display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-start */
 }
-
-/* .nav-search-bar {
-  vertical-align: top;
-  display: inline-block;
-  background: #C1E5AA;
-  border: #FDFEFE;
-} */
 
 .app-initials {
   padding: 10px 0 10px 15px;
   float: left;
   color: #424949;
   position: relative;
-  /* font-family: 'Crushed', cursive; */
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
   font-size: 1.75rem;
   line-height: 1.5rem;
-  /* align-content: flex-start; */
   vertical-align: top;
 }
 
@@ -217,15 +251,6 @@ height:100%; */
   background: #424949;
   padding: 10px;
 }
-
-/* .button.top-nav {
-  vertical-align: top;
-  display: inline-block;
-  background: #C1E5AA;
-  border: #FDFEFE;
-  margin-left: 10px;
-  font-weight: 500;
-} */
 
 .business-name {
   font-size: 32px;
@@ -262,9 +287,7 @@ height:100%; */
   width: 80%;
   margin: 10px 0 0 0;
   padding: 20px;
-  // align-text: center;
 }
-
 
 .info-section {
   display: block;
@@ -290,7 +313,10 @@ height:100%; */
   vertical-align: top;
   text-align: left;
   /* color: #4D5656; */
-  color: #424949;
+  // color: #424949;
+  color: #FDFEFE;
+
+  
 }
 
 .view-icon {
@@ -334,28 +360,20 @@ height:100%; */
 .expand-link {
   clear: both;
   display: block;
-  // font-family: 'Montserrat', sans-serif;
-  // font-weight: 800;
   font-family: 'Pacifico', cursive;
-
   font-size: 20px;
   line-height: 22px;
   margin-bottom: 5px;
-/* 
-  font-family: 'Crushed', cursive;
-  font-size: 17px; */
-  /* font-weight: 500; */
   font-style: italic;
-  color: #FDFEFE;
+  color: #424949;
 }
 
 .info-entry {
   font-size: 16px;
   line-height: 20px;
   display: block;
+  
 }
-
-
 
 .item-delete {
   font-size: 13px;
@@ -370,7 +388,6 @@ height:100%; */
 .add-new-item-label {
   font-weight: 400;
   color: #FDFEFE;
-
 }
 
 .hidden {
@@ -417,8 +434,7 @@ form {
 .save-entry {
   margin: 5px auto 10px auto;
   display: block;
-  width: 20%;
-  /* text-align: right; */
+  width: 60%;
 }
 
 .upload-button {
@@ -430,7 +446,7 @@ form {
 
 .admin-logout {
   margin: 0 auto;
-text-align: center;
+  text-align: center;
 }
 
 .button.admin-log-out {
@@ -446,20 +462,19 @@ text-align: center;
 .secondary-view-header {
   margin: 0 auto;
   padding: 50px 0 15px 0;
-  /* font-family: 'Crushed', cursive; */
-  /* font-size: 3rem; */
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
   font-size: 38px;
   line-height: 42px;
   vertical-align: top;
   text-align: center;
-  /* color: #4D5656; */
-  /* border-bottom: #424949 5px double; */
-  color: #424949;
-    /* color: #FDFEFE; */
+  color: #FDFEFE;
   width: 80%;
-  margin-bottom: 10%;
+  margin-bottom: 25px;
+}
+
+.secondary-vew-header-q {
+  color: #424949;
 }
 
 .row {
@@ -486,30 +501,22 @@ text-align: center;
 .browse-list-item {
   margin: 0 auto;
   text-align: center;
-  color: #424949;
-}
-
-.browse-list-item a:link {
-  color: #424949;
+  color: #FDFEFE;   
+  text-decoration: underline;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 18px;
   line-height: 32px;
 }
 
-.browse-list-item a:hover {
-  color: #FDFEFE;   
-}
-
-.browse-list-item {
-  color: red;
-  width: 30%;
-  height: 200px;
-  margin-bottom: 10px;
-  // background-color: #1ca0a0;
-  background-position: 50%;
-  background-image: url('https://media.altpress.com/uploads/2018/07/doggo.jpg');
-  border: solid black 2px
+.list-divider {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  text-decoration: none;
+  color: #424949;
+  text-align: center;
 }
 
 .modal {
@@ -525,141 +532,337 @@ text-align: center;
   background-color: rgb(0,0,0);
   background-color: rgb(0,0,0);
   color: white;
+
+a-scene {
+  height: 300px;
+  width: 600px;
 }
 
-/* Below, NOTES TO USE & DELETE */
+#myEmbeddedScene {
+  width:100%;
+  height:300px;
+}
 
+/* smaller file fields */
 
-/* .form.label {
-
-} */
-
-
-/*
-  * phones: < 768px
-  * tablets: >= 768px
-  * desktops: >= 992px
-  * big desktops: >= 1200px
-*/
-/*  
-/* 
-
-@media screen and (min-width: 768px) {
-
-
-At Bulma, breakpoints are set at 768px, 769px, 1024px, 1216px, and 1408px
-
-@media (min-width: 640px){
- 
-  ...
-   
+.file.is-small {
+  .file-label {
+    font-size: 0.75rem;
   }
-   
-  @media (min-width: 768px){
-   
-  ...
-   
+  
+  .fas {
+    font-size: 1rem;
   }
-   
-  @media (min-width: 1024px){
-   
-  ...
-   
+}
+
+
+// tablet V view:
+@media (min-width: 768px){
+
+    /* main app homepage */
+
+    input.home-search-bar.mobile {
+      display: none;
+    }
+
+    a.button.main.mobile {
+      display: none;
+    }
+
+    .fork-imageH.mobile {
+      display: none;
+    }
+    
+    .fork-imageH.tabletH {
+      display: none;
+    }
+    
+    .fork-imageH.desktop {
+      display: none;
+    }
+
+    .app-background {
+      background-image: asset_url("WGH-BGonly-V800px.jpg");
+      background-size:cover; 
+      background-repeat:no-repeat;
+      background-attachment:fixed;
+      // position: relative;
+      height: 100vh;
+      background-color: transparent;
+      overflow: hidden;
+    } 
+
+    .site-header {
+      background-color: transparent;
+    }
+
+    .app-title {
+      margin: 0 auto;
+      padding: 80px 0 15px 0;
+      max-width: 85vw;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 6.25rem;
+      line-height: 6.75rem;
+      vertical-align: top;
+      text-align: center;
+      color: #424949;
+      // margin-bottom: 5%;
+    }
+
+
+    .q-mark {
+      color: #FDFEFE;
+    }
+
+    .fork-imageH {
+      background-image: asset_url("WGH-fork-fullwidth-tabletV.png");
+      // width: 100vw;
+      height: 20%;
+      display: block;
+      width: 100%;
+      background-repeat:no-repeat;
+      background-size:cover; 
   }
+    
+    .site-subhead {
+      margin-top: 20px;
+    }
+    
+    .app-subhead {
+      color: #424949;
+      margin: 0 auto;
+      max-width: 85vw;
+      font-family: 'Pacifico', cursive;
+      // font-size: 22px;
+      // line-height: 30px;
+      font-size: 2.75rem;
+      line-height: 3.5rem;
+      text-align: center;
+      vertical-align: top;
+    }
+    
+    .home-search-area {
+      /* display: inline-flex;
+      align-content: flex-end; */
+      margin-top: 5%;
+      vertical-align: top;
+      width: 75%;
+      align-self: center;
+      /* align-content: center; */
+    }
+    
+    .input.home-search-bar {
+      display: block;
+      background: #C1E5AA;
+      border: #FDFEFE;
+    }
+    
+    .or-between {
+      // display: inline-block;
+    
+      font-weight: bold; 
+      text-align: center;
+      align-self: center;
+      margin: 0 auto;
+
+    }
+    
+    .home-browse-button {
+      margin: 10px auto 30px auto;
+      text-align: center;
+    }
+    
+    .button.main {
+      background: #C1E5AA;
+      border: #FDFEFE;
+      color: #424949;
+      margin: 0 auto;
+      font-weight: 400;
+      display: inline-block;
+      text-align: center;
+      // align-self: center;
+    }
+
+  }    
+
+
+
+// tablet HORIZONTAL:
+
+@media (min-width: 1024px){
    
+    /* main app homepage */
+
+
+    input.home-search-bar.mobile {
+      display: none;
+    }
+
+    a.button.main.mobile {
+      display: none;
+    }
+
+    .fork-imageH.mobile {
+      display: none;
+    }
+    
+    .fork-imageH.tabletV {
+      display: none;
+    }
+    
+    .fork-imageH.desktop {
+      display: none;
+    }
+
+
+    .app-background {
+      background-image: asset_url("WGH-BGonly-H1300px.jpg");
+      background-size:cover; 
+      background-repeat:no-repeat;
+      background-attachment:fixed;
+      // position: relative;
+      height: 100vh;
+      background-color: transparent;
+      overflow: hidden;
+    } 
+
+    .site-header {
+      background-color: transparent;
+    }
+
+    .fork-imageV {
+      background-image: asset_url("WGH-fork-fullheight-tabletH.png");
+      // width: 100vw;
+      height: 20%;
+      display: block;
+      width: 100%;
+      background-repeat:no-repeat;
+      background-size:cover; 
+  }
+
+    .app-title {
+      margin: 0 auto;
+      padding: 80px 0 15px 0;
+      max-width: 85vw;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 6rem;
+      line-height: 6.25rem;
+      vertical-align: top;
+      text-align: center;
+      color: #424949;
+      margin-bottom: 30%;
+    }
+
+
+    .q-mark {
+      color: #FDFEFE;
+    }
+    
+    .site-subhead {
+      margin-top: 20px;
+    }
+    
+    .app-subhead {
+      color: #424949;
+      margin: 0 auto;
+      max-width: 85vw;
+      font-family: 'Pacifico', cursive;
+      // font-size: 22px;
+      // line-height: 30px;
+      font-size: 2.75rem;
+      line-height: 3.25rem;
+      text-align: center;
+      vertical-align: top;
+    }
+    
+    .home-search-area {
+      /* display: inline-flex;
+      align-content: flex-end; */
+      margin-top: 5%;
+      vertical-align: top;
+      width: 75%;
+      align-self: center;
+      /* align-content: center; */
+    }
+    
+    .input.home-search-bar {
+      display: block;
+      background: #C1E5AA;
+      border: #FDFEFE;
+    }
+    
+    .or-between {
+      // display: inline-block;
+    
+      font-weight: bold; 
+      text-align: center;
+      align-self: center;
+      margin: 0 auto;
+
+    }
+    
+    .home-browse-button {
+      margin: 10px auto 30px auto;
+      text-align: center;
+    }
+    
+    .button.main {
+      background: #C1E5AA;
+      border: #FDFEFE;
+      color: #424949;
+      margin: 0 auto;
+      font-weight: 400;
+      // align-self: center;
+    }
+}       
+
+  
+// desktop:
+
+    /* main app homepage */
   @media (min-width: 1200px){
-   
-  ...
-   
-  } */ 
-  a-scene {
-    height: 300px;
-    width: 600px;
+
+    input.home-search-bar.mobile {
+      display: none;
+    }
+
+    a.button.main.mobile {
+      display: none;
+    }
+
+    .fork-imageH.mobile {
+      display: none;
+    }
+    
+    .fork-imageH.tabletV {
+      display: none;
+    }
+    
+    .fork-imageH.tabletH {
+      display: none;
+    }
+
+    .app-background {
+      background-image: asset_url("WGH-BGonly-H1300px.jpg");
+      background-size:cover; 
+      background-repeat:no-repeat;
+      background-attachment:fixed;
+      // position: relative;
+      height: 100vh;
+      background-color: transparent;
+      overflow: hidden;
+    } 
+
+    .fork-imageV {
+      background-image: asset_url("WGH-fork-fullheight-desktop1400.png");
+      // width: 100vw;
+      height: 20%;
+      display: block;
+      width: 100%;
+      background-repeat:no-repeat;
+      background-size:cover; 
   }
-  #myEmbeddedScene {
-    width:50%;
-    height:300px;
-  }
 
-
-
-/* #8ED062
-142, 208, 98 */
-
-
-/* <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,800|Pacifico" rel="stylesheet"> */
-
-/* font-family: 'Montserrat', sans-serif;
-font-family: 'Pacifico', cursive; */
-
-
-/* 
-<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Montserrat:100,300,400,800" rel="stylesheet">
-
-font-family: 'Montserrat', sans-serif;
-font-family: 'Abril Fatface', cursive; */
-
-/* <link href="https://fonts.googleapis.com/css?family=Crushed|Heebo:300,500,800" rel="stylesheet"> */
-
-
-/* <link href="https://fonts.googleapis.com/css?family=Crushed|Montserrat:100,300,400,800" rel="stylesheet"> */
-
-
-
-/* 
-<link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,800|Rock+Salt" rel="stylesheet">
-
-font-family: 'Montserrat', sans-serif;
-font-family: 'Rock Salt', cursive; */
-
-/* font-family: 'Crushed', cursive;
-font-family: 'Heebo', sans-serif; */
-
-
-/* Pencil Font Awesome
-<i class="fas fa-pencil-alt"></i> */
-
-
-/* Clipboard Font Awesome for daily specials section?
-<i class="fas fa-clipboard"></i>
-Download SVGPerfect for when you want to use just one icon as a vector on the desktop or in your own icon workflow. */
-
-
-/* .app-container
-.app-background
-.site-header
-.app-title
-.q-mark
-.site-subheader
-.app-subhead */
-
-
-/* .top-info
-.name-field
-.top-search-area
-.business-name
-.address-phone
-.hours
-.info-section
-.info-category-header
-.info-entry */
-
-/*Raman On Empty
-The Pesto’s Yet To Come
-Willy Lo Mein
-Udon Own Me
-Knish From A Rose
-Beignet and the Jets
-Al Dente On the Western Front
-Second To Naan
-Toast the Rainbow
-Squab Goals
-Chicken of the Sea of the Land
-Brioche With Death
-A Queso the Mondays
-Goofus and Galette
-Muffin But Net
-Loaf of My Life
-Fondue Diligence
-Cheddar Off Dead
-The Strudel Is Real */
+} 
