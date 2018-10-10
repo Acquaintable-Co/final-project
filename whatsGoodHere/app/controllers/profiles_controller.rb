@@ -8,7 +8,8 @@ class ProfilesController < ApplicationController
   
   def nearby
     if 
-       @nearby = Profile.near(lookup_ip_location, 5)
+       @nearby = Profile.near([location.latitude, location.longitude], 30)
+
     else
       error
     end
