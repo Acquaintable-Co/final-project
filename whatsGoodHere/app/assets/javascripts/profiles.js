@@ -27,12 +27,10 @@ window.onload = function () {
       modal.style.display = 'none'
     }
   }
-}
 
-window.onload = function () {
-  var modal = document.getElementById('tips-modal')
-  var btn = document.getElementById('tips-info')
-  var span = document.getElementsByClassName('close')
+  modal = document.getElementById('tips-modal')
+  btn = document.getElementById('tips-info')
+  span = document.getElementsByClassName('close')
   btn.onclick = function () {
     console.log('hi')
     modal.style.display = 'block'
@@ -46,12 +44,10 @@ window.onload = function () {
       modal.style.display = 'none'
     }
   }
-}
 
-window.onload = function () {
-  var modal = document.getElementById('specs-modal')
-  var btn = document.getElementById('specs-info')
-  var span = document.getElementsByClassName('close')
+  modal = document.getElementById('specs-modal')
+  btn = document.getElementById('specs-info')
+  span = document.getElementsByClassName('close')
   btn.onclick = function () {
     console.log('hi')
     modal.style.display = 'block'
