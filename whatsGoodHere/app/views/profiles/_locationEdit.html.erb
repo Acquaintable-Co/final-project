@@ -1,0 +1,8 @@
+<div class="edit-form">
+<%= form_with model: location, class:"edit-location-form" do |f| %>
+
+  <%= f.text_field :location_detail, id: 'location-detail-field', class: 'input add-new-item' %> 
+  <%= f.submit "Update Spec", id: 'location_submit', class:"button save-entry" %>
+
+<% end %>
+</div>

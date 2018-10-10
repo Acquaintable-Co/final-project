@@ -33,7 +33,7 @@ body {
   padding: 0; */
   background-color: #8ED062;
   min-width: 320px;
-  height: 100vh;
+  height: 100%vh;
   /* font-family: 'Heebo', sans-serif;
   font-weight: 300; */
   font-family: 'Montserrat', sans-serif;
@@ -43,6 +43,8 @@ body {
 
 img {
   max-width: 100%;
+  height: auto;
+  width: auto;
 }
 
 /* background-size:cover; 
@@ -51,10 +53,10 @@ background-attachment:fixed;
 height:100%; */
 
 .app-background {
-  background-image: asset_url("WGH-fork-mobile.jpg");
+  background-image: asset_url("WGH-BGonly-V800px.jpg");
   background-size:cover; 
   background-repeat:no-repeat;
-  background-attachment:fixed;
+  background-attachment: fixed;
   // position: relative;
   height: 100vh;
   background-color: transparent;
@@ -71,7 +73,7 @@ height:100%; */
 
 .app-title {
   margin: 0 auto;
-  padding: 50px 0 15px 0;
+  padding: 40px 0 15px 0;
   max-width: 85vw;
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
@@ -80,13 +82,36 @@ height:100%; */
   vertical-align: top;
   text-align: center;
   color: #FDFEFE;
-  margin-bottom: 30%;
+
+  // margin-bottom: 5%;
 }
 
 .q-mark {
   color: #424949;
-
   // color: #FDFEFE;
+}
+
+
+.fork-imageH {
+    background-image: asset_url("WGH-fork-fullwidth-mobile.png");
+    // width: 100vw;
+    height: 15%;
+    display: block;
+    width: 100%;
+    background-repeat:no-repeat;
+    background-size:cover; 
+}
+
+.fork-imageH.tabletV {
+  display: none;
+}
+
+.fork-imageH.tabletH {
+  display: none;
+}
+
+.fork-imageH.desktop {
+  display: none;
 }
 
 .site-subhead {
@@ -102,8 +127,8 @@ height:100%; */
   font-family: 'Pacifico', cursive;
   // font-size: 22px;
   // line-height: 30px;
-  font-size: 1.5rem;
-  line-height: 1.75rem;
+  font-size: 1.75rem;
+  line-height: 2rem;
   text-align: center;
   vertical-align: center;
 }
@@ -111,7 +136,7 @@ height:100%; */
 .home-search-area {
   /* display: inline-flex;
   align-content: flex-end; */
-  margin-top: 5%;
+  margin-top: 8%;
   vertical-align: top;
   width: 75%;
   align-self: center;
@@ -127,17 +152,23 @@ height:100%; */
 .or-between {
   // display: inline-block;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 800;
-  font-size: 1.25rem;
+  font-weight: 600;
+  font-size: 1rem;
   line-height: 1.5rem;
   text-align: center;
   align-self: center;
-  margin: 0 auto;
+  margin: 5px auto 10px auto;
+}
+
+.home-search-button.row {
+  display: block;
 }
 
 .home-browse-button {
-  margin: 10px auto 30px auto;
+  // display: inline-block;
   text-align: center;
+  float: right;
+  vertical-align: top;
 }
 
 .button.main {
@@ -147,6 +178,13 @@ height:100%; */
   margin: 0 auto;
   font-weight: 400;
   align-self: center;
+}
+
+.home-geolocate-button {
+  // margin: 10px auto 30px auto;
+  text-align: center;
+  float: left;
+  vertical-align: top;
 }
 
 .tablet-desktop {
@@ -481,13 +519,28 @@ form {
   text-align: center;
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1; 
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 500px; 
+  height: 500px;
+  overflow: auto; 
+  background-color: rgb(0,0,0);
+  background-color: rgb(0,0,0);
+  color: white;
+}
+
 a-scene {
   height: 300px;
   width: 600px;
 }
 
 #myEmbeddedScene {
-  width:50%;
+  width:100%;
   height:300px;
 }
 
@@ -504,17 +557,33 @@ a-scene {
 }
 
 
-// tablet view:
+// tablet V view:
 @media (min-width: 768px){
 
     /* main app homepage */
 
-    .mobile {
+    input.home-search-bar.mobile {
+      display: none;
+    }
+
+    a.button.main.mobile {
+      display: none;
+    }
+
+    .fork-imageH.mobile {
+      display: none;
+    }
+    
+    .fork-imageH.tabletH {
+      display: none;
+    }
+    
+    .fork-imageH.desktop {
       display: none;
     }
 
     .app-background {
-      background-image: asset_url("WGH-BGfork-tabletV.jpg");
+      background-image: asset_url("WGH-BGonly-V800px.jpg");
       background-size:cover; 
       background-repeat:no-repeat;
       background-attachment:fixed;
@@ -534,18 +603,28 @@ a-scene {
       max-width: 85vw;
       font-family: 'Montserrat', sans-serif;
       font-weight: 800;
-      font-size: 6rem;
-      line-height: 6.25rem;
+      font-size: 6.25rem;
+      line-height: 6.75rem;
       vertical-align: top;
       text-align: center;
       color: #424949;
-      margin-bottom: 30%;
+      // margin-bottom: 5%;
     }
 
 
     .q-mark {
       color: #FDFEFE;
     }
+
+    .fork-imageH {
+      background-image: asset_url("WGH-fork-fullwidth-tabletV.png");
+      // width: 100vw;
+      height: 20%;
+      display: block;
+      width: 100%;
+      background-repeat:no-repeat;
+      background-size:cover; 
+  }
     
     .site-subhead {
       margin-top: 20px;
@@ -559,7 +638,7 @@ a-scene {
       // font-size: 22px;
       // line-height: 30px;
       font-size: 2.75rem;
-      line-height: 3.25rem;
+      line-height: 3.5rem;
       text-align: center;
       vertical-align: top;
     }
@@ -601,6 +680,8 @@ a-scene {
       color: #424949;
       margin: 0 auto;
       font-weight: 400;
+      display: inline-block;
+      text-align: center;
       // align-self: center;
     }
 
@@ -608,18 +689,36 @@ a-scene {
 
 
 
-// tablet horizontal:
+// tablet HORIZONTAL:
 
 @media (min-width: 1024px){
    
     /* main app homepage */
 
-    .mobile {
+
+    input.home-search-bar.mobile {
       display: none;
     }
 
+    a.button.main.mobile {
+      display: none;
+    }
+
+    .fork-imageH.mobile {
+      display: none;
+    }
+    
+    .fork-imageH.tabletV {
+      display: none;
+    }
+    
+    .fork-imageH.desktop {
+      display: none;
+    }
+
+
     .app-background {
-      background-image: asset_url("WGH-fork-desktopH.jpg");
+      background-image: asset_url("WGH-BGonly-H1300px.jpg");
       background-size:cover; 
       background-repeat:no-repeat;
       background-attachment:fixed;
@@ -632,6 +731,16 @@ a-scene {
     .site-header {
       background-color: transparent;
     }
+
+    .fork-imageV {
+      background-image: asset_url("WGH-fork-fullheight-tabletH.png");
+      // width: 100vw;
+      height: 20%;
+      display: block;
+      width: 100%;
+      background-repeat:no-repeat;
+      background-size:cover; 
+  }
 
     .app-title {
       margin: 0 auto;
@@ -713,8 +822,47 @@ a-scene {
   
 // desktop:
 
-  // @media (min-width: 1200px){
-   
-  // ...
-   
-  // } 
+    /* main app homepage */
+  @media (min-width: 1200px) {
+
+    input.home-search-bar.mobile {
+      display: none;
+    }
+
+    a.button.main.mobile {
+      display: none;
+    }
+
+    .fork-imageH.mobile {
+      display: none;
+    }
+    
+    .fork-imageH.tabletV {
+      display: none;
+    }
+    
+    .fork-imageH.tabletH {
+      display: none;
+    }
+
+    .app-background {
+      background-image: asset_url("WGH-BGonly-H1300px.jpg");
+      background-size: cover; 
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      // position: relative;
+      height: 100vh;
+      background-color: transparent;
+      overflow: hidden;
+    } 
+
+    .fork-imageV {
+      background-image: asset_url("WGH-fork-fullheight-desktop1400.png");
+      // width: 100vw;
+      height: 20%;
+      display: block;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-size: cover; 
+  }
+}

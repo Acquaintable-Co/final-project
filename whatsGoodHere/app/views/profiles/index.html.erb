@@ -8,8 +8,14 @@
     <div class="app-title">What's <br> Good <br> Here<span class="q-mark">?</span></div>
   </header>
 
+<div class="fork-imageH mobile"></div>
+<div class="fork-imageH tabletV"></div>
+<div class="fork-imageV tabletH"></div>
+<div class="fork-imageV desktop"></div>
+
+
   <div class="site-subhead">
-    <div class="app-subhead">Get to know the local spots
+    <div class="app-subhead">Get to know <br>the local spots
     </div>
   </div>
 
@@ -30,24 +36,26 @@
           <% end %>
         </div>
     </div>
-    
-    
-<div class="or-between">
-  <h4>or</h4>
-</div>
 
-<div class="home-browse-button">
-  <%= link_to 'what\'s nearby', nearby_path, :class => 'button main' %>
-</div>
+    <div class="home-search-button-row">
+
+      <div class="home-browse-button">
+        <%= link_to 'see list', browse_path, :class => 'button main mobile' %>
+      </div>
+
+      <div class="home-browse-button">
+        <%= link_to 'see list', browse_path, :class => 'button main is-large tablet-desktop' %>
+      </div>
     
-<div class="or-between">
-  <h4>or</h4>
-</div>
+      <div class="home-geolocate-button">
+        <%= link_to "what's nearby", nearby_path, :class => 'button main mobile' %>
+      </div>
 
-<div class="home-browse-button">
-  <%= link_to 'see full list', browse_path, :class => 'button main' %>
-</div>
+      <div class="home-geolocate-button">
+        <%= link_to "what's nearby", nearby_path, :class => 'button main is-large tablet-desktop' %>
+      </div>
 
+    </div>
 
    </div>
 
