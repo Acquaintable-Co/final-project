@@ -8,8 +8,14 @@
     <div class="app-title">What's <br> Good <br> Here<span class="q-mark">?</span></div>
   </header>
 
+<div class="fork-imageH mobile"></div>
+<div class="fork-imageH tabletV"></div>
+<div class="fork-imageV tabletH"></div>
+<div class="fork-imageV desktop"></div>
+
+
   <div class="site-subhead">
-    <div class="app-subhead">Scout all you need to know<br> about Durham's <br> restaurants and bars
+    <div class="app-subhead">Get to know <br>the local spots
     </div>
   </div>
 
@@ -18,20 +24,41 @@
     <div class="field">
         <div class="control">
           <%= form_tag(browse_path, method: :get) do %>
-            <%= text_field_tag :restaurant, params[:restaurant], :class => 'input home-search-bar', :type => 'text', :placeholder => 'search for venue'  %>
+            <%= text_field_tag :restaurant, params[:restaurant], :class => 'input home-search-bar mobile', :type => 'text', :placeholder => 'search for venue'  %>
           <% end %>
-                <%# <span class="icon is-left">
-                <i class="fa fa-search"></>
-              </span> %>
+        </div>
+    </div>    
+
+    <div class="field">
+       <div class="control">
+          <%= form_tag(browse_path, method: :get) do %>
+            <%= text_field_tag :restaurant, params[:restaurant], :class => 'input home-search-bar is-large tablet-desktop', :type => 'text', :placeholder => 'search for venue'  %>
+          <% end %>
         </div>
     </div>
     
-    <div class="or-between"><h4>or</h4></div>
+    <div class="or-between">or</div>
     
-    <div class="home-browse-button">
-        <%= link_to 'see list', browse_path, :class => 'button main' %>
+    <div class="home-search-button-row">
+
+      <div class="home-browse-button">
+        <%= link_to 'see list', browse_path, :class => 'button main mobile' %>
+      </div>
+
+      <div class="home-browse-button">
+        <%= link_to 'see list', browse_path, :class => 'button main is-large tablet-desktop' %>
+      </div>
+    
+      <div class="home-geolocate-button">
+        <%= link_to "what's nearby", browse_path, :class => 'button main mobile' %>
+      </div>
+
+      <div class="home-geolocate-button">
+        <%= link_to "what's nearby", browse_path, :class => 'button main is-large tablet-desktop' %>
+      </div>
+
     </div>
-   
+
    </div>
 
   </div>

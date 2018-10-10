@@ -27,15 +27,63 @@
 
 
     <%= form.label "Upload or replace a Menu", class: "upload-file-label", type: "text" %>
-    <%= form.file_field :menu %>
+
+    <div class="field">
+        <div class="file is-small">
+            <label class="file-label">
+                <%= form.file_field :menu, class: "file-input" %>
+                <span class="file-cta">
+                    <span class="file-icon icon">
+                        <i class="fas fa-upload"></i>
+                    </span>
+                    <span class="file-label">
+                        Choose a file…
+                    </span>
+                </span>
+            </label>
+        </div>
+    </div>
+
 
     <%= form.label "Upload or replace a 360 image", class: "upload-file-label", type:"text"  %>
-    <%= form.file_field :vr_image %>
+
+    <div class="field">
+        <div class="file is-small">
+            <label class="file-label">
+                <%= form.file_field :vr_image, class: "file-input" %>
+                <span class="file-cta">
+                    <span class="file-icon icon">
+                        <i class="fas fa-upload"></i>
+                    </span>
+                    <span class="file-label">
+                        Choose a file…
+                    </span>
+                </span>
+            </label>
+        </div>
+    </div>
+
 
     <%= form.label "Upload or replace a Floor Plan", class: "upload-file-label", type:"text"  %>
-    <%= form.file_field :floor_plan %>
 
-    <%= form.submit "submit", class: "button  upload-button" %>
+    <div class="field">
+        <div class="file is-small">
+            <label class="file-label">
+                <%= form.file_field :floor_plan, class: "file-input" %>
+                <span class="file-cta">
+                    <span class="file-icon icon">
+                        <i class="fas fa-upload"></i>
+                    </span>
+                    <span class="file-label">
+                        Choose a file…
+                    </span>
+                </span>
+            </label>
+        </div>
+    </div>
+
+
+    <%= form.submit "upload file", class: "button is-warning upload-button" %>
     <% end %>
     <% end %>
   
@@ -124,8 +172,7 @@
         
             <%= f.text_field :hack_detail, class: 'input add-new-item', id: 'hack_detail_field', placeholder: 'enter a new "tips" item here', type: "text" %>
 
-            <a class="button save-entry" >
-            <%= f.submit %> </a>
+            <%= f.submit 'save to "tips" list', class: "button is-warning save-entry" %>
             <% end %>
             <% end %>
             
@@ -171,10 +218,9 @@
             <% if current_profile && @profile.id == current_profile.id %>
             <%= form_with model: @location, url: locations_path do |f| %>
         
-            <%= f.text_field :location_detail, class: 'input add-new-item',id: 'location_detail_field', placeholder: 'enter a new "specs" item here', type: "text" %>
-            
-            <a class="button save-entry" >
-            <%= f.submit %> </a>
+            <%= f.text_field :location_detail, class: 'input add-new-item', id: 'location_detail_field', placeholder: 'enter a new "specs" item here', type: "text" %>
+
+            <%= f.submit 'save to "specs" list', class: "button is-warning save-entry" %>
                 <% end %>
                 <% end %>   
     </div>          
@@ -194,7 +240,7 @@
 
 <div class="admin-logout">
     <% if current_profile %>  
-    <%= link_to "admin log out", logout_path, method: :delete, class: "button admin-log-out" %>
+    <%= link_to "admin log out", logout_path, method: :delete, class: "button is-dark admin-log-out" %>
     <% end %></a>
 </div>
 
