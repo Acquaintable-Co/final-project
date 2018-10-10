@@ -1,5 +1,15 @@
-<h2>GeoSearch Results</h2>
+<div class="app-container profile">
+    <div class="top-nav-bar">
+        <div>
+          <%= link_to "wgh", profiles_path, class: "app-initials" %><span class="nav-q-mark">?</span>
+        </div>
+        
+        <div class="new-search-icon"><i class="fa fa-search"></i></div>
+    </div>
+
+<div class="secondary-view-header"><i class='fas fa-map-marker-alt'></i><br>What's Near<span class="secondary-vew-header-q">?</span></div>
 
 <% @nearby.each do |profile| %>
-    <p><%= link_to profile.restaurant, profile_path(profile) %></p>
+    <div class="browse-list-item"><%= link_to profile.restaurant, profile_path(profile), class: "browse-list-item" %></div>
+    <div class="list-divider">•</div>
 <% end %>

@@ -7,11 +7,8 @@ class ProfilesController < ApplicationController
   end
   
   def nearby
-    if 
-       @nearby = Profile.near([location.latitude, location.longitude], 0.5)
-    else
-      error
-    end
+       @nearby = Profile.near(request.location, 0.5)
+       #@nearby = Profile.near([location.latitude, location.longitude], 0.5)
   end
 
   def browse
