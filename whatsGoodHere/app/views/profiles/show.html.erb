@@ -255,7 +255,7 @@
         </div>  
 
     </div>          
-</div>
+
 
 <% if @profile.vr_image.attached? %>
 <div class="info-category-header 360view">360° view</div>  
@@ -269,7 +269,7 @@
         </a-scene>
     </div>
 <% end %>
-
+</div>
 <div class="admin-logout">
     <% if current_profile %>  
     <%= link_to "admin log out", logout_path, method: :delete, class: "button is-dark admin-log-out" %>
