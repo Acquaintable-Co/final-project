@@ -91,6 +91,8 @@
     <div class="info-section">
 
         <div class="info-category-header fare">fare
+        <% if current_profile && @profile.id == current_profile.id %>
+        
         <button id="fare-info">More Info</button>
         <div id="fare-modal" class="modal">
         <div class="modal-content">
@@ -98,6 +100,7 @@
         <p>This section is where you want to...</p>
       </div>
     </div>
+    <% end %>
         </div>
     
     
@@ -145,6 +148,9 @@
                               
 
         <div class="info-category-header tips">tips
+        
+        <% if current_profile && @profile.id == current_profile.id %>
+        
         <button id="tips-info">More Info</button>
         <div id="tips-modal" class="modal">
         <div class="modal-content">
@@ -152,6 +158,7 @@
         <p>This section is where you want to...</p>
       </div>
     </div>
+    <% end %>
         </div>
 
         <div class="tips-detail">
@@ -194,13 +201,15 @@
             <% end %>
             
         <div class="info-category-header specs">specs
-        <button id="specs-info">More Info</button>
+        <% if current_profile && @profile.id == current_profile.id %>
+        <button id="specs-info"">More Info</button>
         <div id="specs-modal" class="modal">
         <div class="modal-content">
         <span class="close">&times;</span>
         <p>This section is where you want to...</p>
       </div>
     </div>
+    <% end %>
         </div>
 
             <div class="view-icon">
