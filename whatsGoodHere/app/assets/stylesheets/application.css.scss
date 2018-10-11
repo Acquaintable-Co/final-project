@@ -33,7 +33,10 @@ body {
   padding: 0; */
   background-color: #8ED062;
   min-width: 320px;
-  height: 100%vh;
+  height: 100%;
+
+  // min-height: 100vh;
+
   /* font-family: 'Heebo', sans-serif;
   font-weight: 300; */
   font-family: 'Montserrat', sans-serif;
@@ -85,8 +88,8 @@ height:100%; */
   max-width: 85vw;
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
-  font-size: 3.25rem;
-  line-height: 3.75rem;
+  font-size: 4rem;
+  line-height: 4.5rem;
   vertical-align: top;
   text-align: center;
   color: #FDFEFE;
@@ -99,6 +102,10 @@ height:100%; */
   // color: #FDFEFE;
 }
 
+.q-mark-logo {
+  width: 30px;
+  display: inline-block;
+}
 
 .fork-imageH.mobile {
     background-image: asset_url("WGH-fork-fullwidth-m.png");
@@ -208,7 +215,7 @@ height:100%; */
 /* profile page */
 
 
-.app-container.profile {
+.app-container.profile, .app-container.log-in, .app-container.browse {
   margin: 0 auto;
   padding-bottom: 25px;
   background-color: #8ED062;
@@ -294,15 +301,20 @@ height:100%; */
   margin-top: 4px;
 }
 
+.file-cta {
+  padding-bottom: 3px;
+}
+
+
 .admin-log-out {
   width: 80%;
-  margin: 10px 0 0 0;
+  margin: 10px 0 30px 0;
   padding: 20px;
 }
 
 .info-section {
   display: block;
-  padding: 0 10px;
+  padding: 0 20px;
 }
 
 .header-with-asset-link {
@@ -311,7 +323,7 @@ height:100%; */
 
 .info-category-header {
   /* display: inine-block; */
-  width: 45%;
+  width: 50%;
   display: inline-block;
   /* float: left; */
   /* padding-top: 5px; */
@@ -337,7 +349,8 @@ height:100%; */
   color: #FDFEFE;
   vertical-align: top;
   width: 40%;
-  display: inline-block;
+  // display: inline-block;
+float: right;
   text-align: right;
   /* float: right; */
   /* text-align: right; */
@@ -394,6 +407,11 @@ height:100%; */
   text-align: right;
 }
 
+.info-category-header.pano-view {
+  padding: 15px 50px;
+  width: 60%;
+}
+
 .add-new-item-label {
   font-weight: 400;
   color: #FDFEFE;
@@ -419,11 +437,15 @@ form {
   letter-spacing: -0.5px;
 }
 
+.file-label {
+  padding-bottom: 10px;
+}
+
 .upload-file-label {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  font-size: 18px;
-  line-height: 20px;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
   text-align: center;
   display: block;
   margin-top: 10px;
@@ -454,15 +476,17 @@ form {
 }
 
 .admin-logout {
-  margin: 0 auto;
+  margin: 20px auto;
   text-align: center;
 }
 
 .button.admin-log-out {
+  // margin: 15px auto 5px auto;
+  margin: 10px auto 30px auto;
   text-align: center;
-  margin: 15px auto 5px auto;
   width: 60%;
 }
+
 
 
 /* log-in view */
@@ -712,20 +736,21 @@ a-scene {
 
     // profile page:
 
+    
     .app-container.profile {
       margin: 0 auto;
       padding-bottom: 25px;
       background-color: #8ED062;
       min-height: 100vh;
 //background-texture on interior pages:
-      background-image: asset_url("WGH-BGonly-V800px.jpg");
-      background-size:cover; 
-      background-repeat:no-repeat;
-      background-attachment:fixed;
-      // position: relative;
-      height: 100vh;
-      background-color: transparent;
-      overflow: hidden;
+      // background-image: asset_url("WGH-BGonly-V800px.jpg");
+      // background-size:cover; 
+      // background-repeat:no-repeat;
+      // background-attachment:fixed;
+      // // position: relative;
+      // height: 100vh;
+      // background-color: transparent;
+      // overflow: hidden;
     }
     
     // .top-nav-bar {
@@ -733,6 +758,16 @@ a-scene {
     //   overflow: hidden;
     // }
     
+
+
+    .app-container.profile, .app-container.log-in, .app-container.browse {
+      margin: 0 auto;
+      padding-bottom: 25px;
+      background-color: #8ED062;
+      min-height: 100vh;
+    }
+
+
     .app-initials {
       padding: 10px 0 10px 20px;
       float: left;
@@ -773,7 +808,8 @@ a-scene {
     .top-info {
       clear: both;
       background: #424949;
-      padding: 10px;
+      // padding: 10px auto 30px auto;
+      margin: 0 auto 30px auto;
     }
     
     .business-name {
@@ -813,18 +849,20 @@ a-scene {
       padding: 20px;
     }
     
+    .info-category-header.pano-view {
+      padding: 0 50px;
+      width: 60%;
+    }
+
     .info-section {
       display: block;
-      padding: 0 10px;
+      padding: 15px 50px;
     }
     
     .header-with-asset-link {
       display: block;
     }
-    
-    .info-section {
-      padding: 15px 50px;
-    }
+  
 
     .info-category-header {
       /* display: inine-block; */
@@ -832,7 +870,7 @@ a-scene {
       display: inline-block;
       /* float: left; */
       /* padding-top: 5px; */
-      margin: 20px 0 10px 0;
+      // margin: 20px 0 10px 0;
       /* font-family: 'Crushed', cursive; */
       font-family: 'Pacifico', cursive;
       /* font-size: 2.25rem; */
@@ -946,10 +984,10 @@ a-scene {
       letter-spacing: -0.5px;
     }
     
-    .add-new-item {
+input.add-new-item {
       margin: 15px auto 5px auto;
       display: block;
-      width: 80%;
+      width: 60%;
     }
     
     .label {
@@ -985,7 +1023,7 @@ a-scene {
   }    
 
 
-
+////
 // tablet HORIZONTAL:
 
 @media (min-width: 1024px){
@@ -1046,17 +1084,18 @@ a-scene {
       max-width: 85vw;
       font-family: 'Montserrat', sans-serif;
       font-weight: 800;
+      border: #FDFEFE;
       font-size: 6rem;
       line-height: 6.25rem;
       vertical-align: top;
       text-align: center;
-      color: #424949;
+      // border: #FDFEFE;
       margin-bottom: 30%;
     }
 
 
     .q-mark {
-      color: #FDFEFE;
+      color: #424949;
     }
     
     .site-subhead {
@@ -1117,7 +1156,7 @@ a-scene {
     }
 }       
 
-  
+/////  
 // desktop:
 
     /* main app homepage */
