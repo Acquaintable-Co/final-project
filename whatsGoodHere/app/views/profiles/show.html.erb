@@ -101,10 +101,10 @@
       </div>
     </div>
     <% end %>
+
         </div>
     
     
-
         <div class="view-icon">
             <% if @profile.menu.attached? %>
             <%= link_to "<i class='fas fa-utensils'></i><div class='view-caption'> view menu</div>".html_safe, rails_blob_path(@profile.menu, disposition: "menu"), target: "_new" %>
@@ -124,34 +124,33 @@
                     <%= link_to 'delete', offer_path(offer), method: :delete, data: {confirm: "Are you Sure?", remote: true}, class: "deletes" %> 
                 </span> 
                 <% end %>
-                </div>
+            </div>
                
-                <script>
-                    $('.edit-offer_<%= offer.id %>').on('click', function(){
-                        $(this).closest("div").append("<%= j render 'offerEdit', offer: offer %>");
-                        $('.edit-offer_<%= offer.id %>').hide()
-                    });
+            <script>
+                $('.edit-offer_<%= offer.id %>').on('click', function(){
+                    $(this).closest("div").append("<%= j render 'offerEdit', offer: offer %>");
+                    $('.edit-offer_<%= offer.id %>').hide()
+                });
 
-                    $('.deletes').on('click', function(){
-                        $(this).closest("div").remove();
-                    });
-                </script>
-           
-            
-        <% end %>         
+                $('.deletes').on('click', function(){
+                    $(this).closest("div").remove();
+                });
+            </script>
+            <% end %>         
         </div>
+
         <a class="expand-link" onClick=showDetail('hideable-fare')> ... see more</a>
 
             <% if current_profile && @profile.id == current_profile.id %>
             <%= render 'offerForm' %>
             <% end %> 
                               
-
         <div class="info-category-header tips">tips
         
         <% if current_profile && @profile.id == current_profile.id %>
         
         <button id="tips-info">More Info</button>
+
         <div id="tips-modal" class="modal">
         <div class="modal-content">
         <span class="close">&times;</span>
@@ -159,24 +158,26 @@
       </div>
     </div>
     <% end %>
+
         </div>
 
         <div class="tips-detail">
         <% @profile.hacks.each_with_index do |hack, idx| %>
         
-        <div class="<%= 'hidden hideable-tips' if idx > 2 %> info-entry"> •
+            <div class="<%= 'hidden hideable-tips' if idx > 2 %> info-entry"> •
+                
+            <span id="hack_<%= hack.id %>"><%= hack.hack_detail %></span>
+
+                <% if current_profile && @profile.id == current_profile.id %>
+
+                <span class="item-delete">
+                <%= link_to 'edit', edit_hack_path(hack), class: "edit-hack_#{hack.id}", data: {remote: true} %>
+                <%= link_to 'delete', hack_path(hack), method: :delete, data: {confirm: "Are you Sure?", remote: true}, class: "deletes" %>
+                </span>
             
-        <span id="hack_<%= hack.id %>"><%= hack.hack_detail %></span>
+                <% end %>
+            </div>
 
-            <% if current_profile && @profile.id == current_profile.id %>
-
-            <span class="item-delete">
-            <%= link_to 'edit', edit_hack_path(hack), class: "edit-hack_#{hack.id}", data: {remote: true} %>
-            <%= link_to 'delete', hack_path(hack), method: :delete, data: {confirm: "Are you Sure?", remote: true}, class: "deletes" %>
-            </span>
-        
-            <% end %>
-        </div>
         <script>
             $('.edit-hack_<%= hack.id %>').on('click', function(){
                 $(this).closest("div").append("<%= j render 'hackEdit', hack: hack %>");
@@ -189,6 +190,7 @@
         </script>
             <% end %>    
         </div>
+
         <a class="expand-link" onClick=showDetail('hideable-tips')> ... see more</a>
 
             <% if current_profile && @profile.id == current_profile.id %>
@@ -201,7 +203,7 @@
             <% end %>
             
         <div class="info-category-header specs">specs
-        <% if current_profile && @profile.id == current_profile.id %>
+<% if current_profile && @profile.id == current_profile.id %>
         <button id="specs-info"">More Info</button>
         <div id="specs-modal" class="modal">
         <div class="modal-content">
@@ -210,14 +212,15 @@
       </div>
     </div>
     <% end %>
+
         </div>
 
-            <div class="view-icon">
-                <% if @profile.floor_plan.attached? %>
-                <%= link_to "<i class='fas fa-map'></i> <br> 
-                view floor plan".html_safe, rails_blob_path(@profile.floor_plan, disposition: "floor plan"), target: "_new", class: "view-caption" %>
-                <% end %>                
-            </div>
+        <div class="view-icon">
+            <% if @profile.floor_plan.attached? %>
+            <%= link_to "<i class='fas fa-map'></i> <br> 
+            view floor plan".html_safe, rails_blob_path(@profile.floor_plan, disposition: "floor plan"), target: "_new", class: "view-caption" %>
+            <% end %>                
+        </div>
 
         <div class="specs-detail">
             <% @profile.locations.each_with_index do |location, idx| %>
@@ -234,18 +237,20 @@
             </span> 
             <% end %>
 
-        </div>
-        <script>
-            $('.edit-location_<%= location.id %>').on('click', function(){
-                $(this).closest("div").append("<%= j render 'locationEdit', location: location %>");
-                $('.edit-location_<%= location.id %>').hide()
-            });
+            </div>
 
-            $('.deletes').on('click', function(){
-                $(this).closest("div").remove();
-            });
-        </script>        
-        <% end %>
+            <script>
+                $('.edit-location_<%= location.id %>').on('click', function(){
+                    $(this).closest("div").append("<%= j render 'locationEdit', location: location %>");
+                    $('.edit-location_<%= location.id %>').hide()
+                });
+
+                $('.deletes').on('click', function(){
+                    $(this).closest("div").remove();
+                });
+            </script>        
+            <% end %>
+
         </div>
 
             <a class="expand-link" onClick=showDetail('hideable-specs')> ... see more</a>    
@@ -258,27 +263,27 @@
             <%= f.submit 'save to "specs" list', class: "button is-warning save-entry" %>
                 <% end %>
                 <% end %>
-
-
             
-        </div>  
+    </div>  
+
+        <% if @profile.vr_image.attached? %>
+        <div class="info-category-header pano-view">360° view</div>  
+            <div id="myEmbeddedScene">
+                <a-scene embedded="true">
+                    <a-assets>
+                        <img id="vr-image" crossorigin src=<%= url_for(@profile.vr_image) %>>
+                    </a-assets>
+
+                    <a-sky src="#vr-image"></a-sky>
+                </a-scene>
+            </div>
+        <% end %>
 
     </div>          
 
 
-<% if @profile.vr_image.attached? %>
-<div class="info-category-header 360view">360° view</div>  
-    <div id="myEmbeddedScene">
-        <a-scene embedded="true">
-            <a-assets>
-                <img id="vr-image" crossorigin src=<%= url_for(@profile.vr_image) %>>
-            </a-assets>
-
-            <a-sky src="#vr-image"></a-sky>
-        </a-scene>
-    </div>
-<% end %>
 </div>
+
 <div class="admin-logout">
     <% if current_profile %>  
     <%= link_to "admin log out", logout_path, method: :delete, class: "button is-dark admin-log-out" %>
