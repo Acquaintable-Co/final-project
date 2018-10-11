@@ -7,8 +7,10 @@ class ProfilesController < ApplicationController
   end
   
   def nearby
-       #@nearby = Profile.near(request.remote_ip, 0.5)
-       @nearby = Profile.near([location.latitude, location.longitude], 0.5)
+
+       @nearby = Profile.near(request.remote_ip, 0.5)
+       #@nearby = Profile.near([location.latitude, location.longitude], 0.5)
+
   end
 
   def browse

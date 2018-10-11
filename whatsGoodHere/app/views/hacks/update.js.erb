@@ -1,0 +1,5 @@
+console.log("<%= @hack.hack_detail %>");
+$('.edit-hack-form').hide();
+$('.edit-hack_<%= @hack.id %>').show();
+console.log("<%= @hack.id %>");
+$('#hack_<%= @hack.id %>').text("<%= @hack.hack_detail %>");

@@ -1,6 +1,6 @@
 class LocationsController < ApplicationController
   #specs
-  before_action :set_location, only: [:update, :destroy]
+  before_action :set_location, only: [:edit, :update, :destroy]
  
   def create
     
@@ -9,16 +9,20 @@ class LocationsController < ApplicationController
     else
         @location = Location.new(location_detail: location_params[:location_detail], profile_id: current_profile.id)
       if @location.save
-        redirect_to profile_path(@location.profile_id)
+        respond_to :js
       else
         @location.errors
       end
     end
   end
 
+  def edit
+    respond_to :js
+  end
+
   def update
-     if  @location.update(location_params)
-      redirect_to profile_path(@location.profile_id)
+     if  @location.update(location_param)
+      respond_to :js
     else
       @location.errors
     end
@@ -26,13 +30,17 @@ class LocationsController < ApplicationController
 
   def destroy
     @location.destroy
-    redirect_to profile_path(@location.profile_id)
+    respond_to :js
   end
 
   private
 
   def set_location
     @location = Location.find(params[:id])
+  end
+
+  def location_param
+    params.require(:location).permit(:location_detail)
   end
 
   def location_params
