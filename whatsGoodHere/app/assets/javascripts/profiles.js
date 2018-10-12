@@ -10,55 +10,64 @@ function showDetail (className) {
   }
 }
 
+
 window.onload = function () {
-  var modal = document.getElementById('fare-modal')
-  var btn = document.getElementById('fare-info')
-  var span = document.getElementsByClassName('close')
-  btn.onclick = function () {
-    console.log('hi')
-    modal.style.display = 'block'
-  }
-  span.onclick = function () {
-    modal.style.display = 'none'
+  var modalFare = document.querySelector("#modalFare");
+  var triggerFare = document.querySelector("#triggerFare");
+  var closeButtonFare = document.querySelector("#close-buttonFare");
+
+  function toggleModalFare() {
+    modalFare.classList.toggle("modal")
+      modalFare.classList.toggle("show-modal");
   }
 
-  window.onclick = function (event) {
-    if (event.target === modal) {
-      modal.style.display = 'none'
-    }
+  function windowOnClickFare(event) {
+      if (event.target === modalFare) {
+          toggleModal();
+      }
   }
 
-  modal = document.getElementById('tips-modal')
-  btn = document.getElementById('tips-info')
-  span = document.getElementsByClassName('close')
-  btn.onclick = function () {
-    console.log('hi')
-    modal.style.display = 'block'
-  }
-  span.onclick = function () {
-    modal.style.display = 'none'
+  triggerFare.addEventListener("click", toggleModalFare);
+  closeButtonFare.addEventListener("click", toggleModalFare);
+  window.addEventListener("click", windowOnClickFare);
+
+  var modalTips = document.querySelector("#modalTips");
+  var triggerTips = document.querySelector("#triggerTips");
+  var closeButtonTips = document.querySelector("#close-buttonTips");
+
+  function toggleModalTips() {
+    modalTips.classList.toggle("modal")
+      modalTips.classList.toggle("show-modal");
   }
 
-  window.onclick = function (event) {
-    if (event.target === modal) {
-      modal.style.display = 'none'
-    }
+  function windowOnClickTips(event) {
+      if (event.target === modalTips) {
+          toggleModal();
+      }
   }
 
-  modal = document.getElementById('specs-modal')
-  btn = document.getElementById('specs-info')
-  span = document.getElementsByClassName('close')
-  btn.onclick = function () {
-    console.log('hi')
-    modal.style.display = 'block'
-  }
-  span.onclick = function () {
-    modal.style.display = 'none'
+  triggerTips.addEventListener("click", toggleModalTips);
+  closeButtonTips.addEventListener("click", toggleModalTips);
+  window.addEventListener("click", windowOnClickTips);
+
+  var modalSpecs = document.querySelector("#modalSpecs");
+  var triggerSpecs = document.querySelector("#triggerSpecs");
+  var closeButtonSpecs = document.querySelector("#close-buttonSpecs");
+
+  function toggleModalSpecs() {
+    modalSpecs.classList.toggle("modal")
+      modalSpecs.classList.toggle("show-modal");
   }
 
-  window.onclick = function (event) {
-    if (event.target === modal) {
-      modal.style.display = 'none'
-    }
+  function windowOnClickSpecs(event) {
+      if (event.target === modalSpecs) {
+          toggleModal();
+      }
   }
+
+  triggerSpecs.addEventListener("click", toggleModalSpecs);
+  closeButtonSpecs.addEventListener("click", toggleModalSpecs);
+  window.addEventListener("click", windowOnClickSpecs);
+
 }
+  
