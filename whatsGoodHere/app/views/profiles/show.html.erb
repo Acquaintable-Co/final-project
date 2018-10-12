@@ -97,7 +97,7 @@
         <div class="modal" id="modalFare">
             <div class="modal-content">
                 <span class="close-button" id="close-buttonFare">×</span>
-                <h2>"Fare"</h2>
+                <h2 class="modal-head">"Fare"</h2>
                 <p>This section should contain general descriptions of what your establishment offers to customers.</p>
                         <p>Examples: <br>
                         - “Global Street Food” <br>
@@ -149,9 +149,9 @@
         <% if @profile.offers.length > 3  %>
             <a class="expand-link" onClick=showDetail('hideable-fare')> ... see more</a>
         <% end %>
-            <% if current_profile && @profile.id == current_profile.id %>
+        <% if current_profile && @profile.id == current_profile.id %>
             <%= render 'offerForm' %>
-            <% end %> 
+        <% end %> 
                               
         <div class="info-category-header tips">tips
         
