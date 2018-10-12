@@ -138,9 +138,9 @@
             </script>
             <% end %>         
         </div>
-
-        <a class="expand-link" onClick=showDetail('hideable-fare')> ... see more</a>
-
+        <% if @profile.offers.length > 3  %>
+            <a class="expand-link" onClick=showDetail('hideable-fare')> ... see more</a>
+        <% end %>
             <% if current_profile && @profile.id == current_profile.id %>
             <%= render 'offerForm' %>
             <% end %> 
@@ -190,9 +190,9 @@
         </script>
             <% end %>    
         </div>
-
+        <% if @profile.hacks.length > 3  %>
         <a class="expand-link" onClick=showDetail('hideable-tips')> ... see more</a>
-
+        <% end %>
             <% if current_profile && @profile.id == current_profile.id %>
             <%= form_with model: @hack, url: hacks_path do |f| %>
         
@@ -252,9 +252,9 @@
             <% end %>
 
         </div>
-
+            <% if @profile.locations.length > 3  %>
             <a class="expand-link" onClick=showDetail('hideable-specs')> ... see more</a>    
-
+            <% end %>
             <% if current_profile && @profile.id == current_profile.id %>
             <%= form_with model: @location, url: locations_path do |f| %>
         
