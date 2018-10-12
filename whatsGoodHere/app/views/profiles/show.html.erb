@@ -93,14 +93,22 @@
         <div class="info-category-header fare">fare
         <% if current_profile && @profile.id == current_profile.id %>
         
-        <button id="fare-info">More Info</button>
-        <div id="fare-modal" class="modal">
-        <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>This section is where you want to...</p>
-      </div>
-    </div>
-    <% end %>
+        <button class="trigger" id="triggerFare">Click here to trigger the modal!</button>
+        <div class="modal" id="modalFare">
+            <div class="modal-content">
+                <span class="close-button" id="close-buttonFare">×</span>
+                <h2>"Fare"</h2>
+                <p>This section should contain general descriptions of what your establishment offers to customers.</p>
+                        <p>Examples: <br>
+                        - “Global Street Food” <br>
+                        - “Beer, Spirits and Wine” <br>
+                        - “House Made Cocktails” <br>
+                        - “Pint Night Wednesdays” <br>
+                        - “$2 PBR Mondays” <br>
+                        - “Trivia Sundays”</p>
+            </div>
+        </div>
+        <% end %>
 
         </div>
     
@@ -149,15 +157,14 @@
         
         <% if current_profile && @profile.id == current_profile.id %>
         
-        <button id="tips-info">More Info</button>
-
-        <div id="tips-modal" class="modal">
-        <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>This section is where you want to...</p>
-      </div>
-    </div>
-    <% end %>
+        <button class="trigger" id="triggerTips">Click here to trigger the modal!</button>
+        <div class="modal" id="modalTips">
+            <div class="modal-content">
+                <span class="close-button" id="close-buttonTips">×</span>
+                <h1>Hello, I am a modal!</h1>
+            </div>
+        </div>
+        <% end %>
 
         </div>
 
@@ -203,15 +210,24 @@
             <% end %>
             
         <div class="info-category-header specs">specs
-<% if current_profile && @profile.id == current_profile.id %>
-        <button id="specs-info"">More Info</button>
-        <div id="specs-modal" class="modal">
-        <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>This section is where you want to...</p>
-      </div>
-    </div>
-    <% end %>
+        <% if current_profile && @profile.id == current_profile.id %>
+            <button class="trigger" id="triggerSpecs">Click here to trigger the modal!</button>
+            <div class="modal" id="modalSpecs">
+                <div class="modal-content">
+                    <span class="close-button" id="close-buttonSpecs">×</span>
+                    <h2>"Fare"</h2>
+                    <p>This section should contain general descriptions of what your establishment offers to customers.</p>
+                    ​
+                            <p>Examples: <br>
+                            - “Global Street Food” <br>
+                            - “Beer, Spirits and Wine” <br>
+                            - “House Made Cocktails” <br>
+                            - “Pint Night Wednesdays” <br>
+                            - “$2 PBR Mondays” <br>
+                            - “Trivia Sundays”</p>
+                </div>
+            </div>
+        <% end %>
 
         </div>
 
