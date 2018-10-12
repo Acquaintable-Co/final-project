@@ -26,7 +26,7 @@
     <%= form_with model: @profile, local: true do |form| %>
 
  
-    <%= form.label "Upload or replace a Menu", class: "upload-file-label", type: "text" %>
+    <%= form.label "Upload or replace menu", class: "upload-file-label", type: "text" %>
 
     <div class="field">
         <div class="file is-small">
@@ -44,13 +44,12 @@
         </div>
     </div>
 
-
-    <%= form.label "Upload or replace a 360 image", class: "upload-file-label", type:"text"  %>
+    <%= form.label "Upload or replace specials image", class: "upload-file-label", type:"text"  %>
 
     <div class="field">
         <div class="file is-small">
             <label class="file-label">
-                <%= form.file_field :vr_image, class: "file-input" %>
+                <%= form.file_field :special, class: "file-input" %>
                 <span class="file-cta">
                     <span class="file-icon icon">
                         <i class="fas fa-upload"></i>
@@ -63,12 +62,30 @@
         </div>
     </div>
 
-    <%= form.label "Upload or replace a Floor Plan", class: "upload-file-label", type:"text"  %>
+    <%= form.label "Upload or replace floor plan", class: "upload-file-label", type:"text"  %>
 
     <div class="field">
         <div class="file is-small">
             <label class="file-label">
                 <%= form.file_field :floor_plan, class: "file-input" %>
+                <span class="file-cta">
+                    <span class="file-icon icon">
+                        <i class="fas fa-upload"></i>
+                    </span>
+                    <span class="file-label">
+                        Choose a file…
+                    </span>
+                </span>
+            </label>
+        </div>
+    </div>
+
+    <%= form.label "Upload or replace 360 image", class: "upload-file-label", type:"text"  %>
+
+    <div class="field">
+        <div class="file is-small">
+            <label class="file-label">
+                <%= form.file_field :vr_image, class: "file-input" %>
                 <span class="file-cta">
                     <span class="file-icon icon">
                         <i class="fas fa-upload"></i>
@@ -93,7 +110,8 @@
         <div class="info-category-header fare">fare
         <% if current_profile && @profile.id == current_profile.id %>
         
-        <button class="trigger" id="triggerFare">Click here to trigger the modal!</button>
+
+        <button class="trigger" id="triggerFare"><i class="fas fa-question-circle"></i></button>
         <div class="modal" id="modalFare">
             <div class="modal-content">
                 <span class="close-button" id="close-buttonFare">×</span>
@@ -111,7 +129,6 @@
         <% end %>
 
         </div>
-    
     
         <div class="view-icon">
             <% if @profile.menu.attached? %>
@@ -151,13 +168,14 @@
         <% end %>
         <% if current_profile && @profile.id == current_profile.id %>
             <%= render 'offerForm' %>
-        <% end %> 
-                              
+
+            <% end %> 
+
         <div class="info-category-header tips">tips
         
         <% if current_profile && @profile.id == current_profile.id %>
         
-        <button class="trigger" id="triggerTips">Click here to trigger the modal!</button>
+        <button class="trigger" id="triggerTips"><i class="fas fa-question-circle"></i></button>
         <div class="modal" id="modalTips">
             <div class="modal-content">
                 <span class="close-button" id="close-buttonTips">×</span>
@@ -211,13 +229,13 @@
             
         <div class="info-category-header specs">specs
         <% if current_profile && @profile.id == current_profile.id %>
-            <button class="trigger" id="triggerSpecs">Click here to trigger the modal!</button>
+            <button class="trigger" id="triggerSpecs"><i class="fas fa-question-circle"></i></button>
             <div class="modal" id="modalSpecs">
                 <div class="modal-content">
                     <span class="close-button" id="close-buttonSpecs">×</span>
                     <h2>"Fare"</h2>
                     <p>This section should contain general descriptions of what your establishment offers to customers.</p>
-                    ​
+                    
                             <p>Examples: <br>
                             - “Global Street Food” <br>
                             - “Beer, Spirits and Wine” <br>
@@ -228,6 +246,7 @@
                 </div>
             </div>
         <% end %>
+
 
         </div>
 

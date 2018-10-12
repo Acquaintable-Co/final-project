@@ -5,78 +5,61 @@
   </div> %>
 
 
-<%= link_to 'admin log in', login_path, :class => 'admin-login-link' %>
+
 
   <header class="site-header">
     <div class="app-title">What's <br> Good <br> Here<span class="q-mark">?</span></div>
   </header>
 
-
-  <%# <header class="site-header">
-    <div class="app-title">What's <br> Good <br> Here
-    <span class="q-mark-logo"> %>
-    <%# <%=image_tag("WGH-logomark.png", alt: "Whats Good Here logo") %> 
-    <%# </span></div>
-  </header>  %>
-
-
-
-  <%# <header class="site-header">
-    <div class="app-title">What's <br> Good <br> Here<span class="q-mark-logo"><img src="asset_url('WGH-logomark.png')"</span></div>
-  </header> %>
-
 <div class="fork-imageH mobile"></div>
 <div class="fork-imageH tabletV"></div>
 
-<div class="fork-imageV tabletH">
-<%# <%= image_tag("WGH-fork-fullheight-tH.png", alt: "fork vertical", class: "fork-imageV tabletH") %> </div> 
+<div class="fork-imageV tabletH"></div> 
 
-<div class="fork-imageV desktop"></div>
-
+  <div class="fork-imageV desktop"></div>
 
   <div class="site-subhead">
-
     <div class="app-subhead">Get to know <br>the local spots
     </div>
+  </div>
 
+  <div class="home-search-button-row">
+    <div class="home-browse-button">
+      <%= link_to 'see full list', browse_path, :class => 'button main mobile is-mobile' %>
+    </div>
+    <div class="home-browse-button">
+      <%= link_to 'see full list', browse_path, :class => 'button main is-large tablet-desktop is-tablet-desktop' %>
+    </div>
+    <div class="home-geolocate-button">
+      <%= link_to "what's nearby", nearby_path, :class => 'button main mobile is-mobile' %>
+    </div>
+    <div class="home-geolocate-button">
+      <%= link_to "what's nearby", nearby_path, :class => 'button main is-large tablet-desktop is-tablet-desktop' %>
+    </div>
   </div>
 
   <div class="home-search-area">
 
-    <div class="field">
-        <div class="control">
-          <%= form_tag(browse_path, method: :get) do %>
-            <%= text_field_tag :restaurant, params[:restaurant], :class => 'input home-search-bar mobile', :type => 'text', :placeholder => 'search for venue'  %>
-          <% end %>
-        </div>
+    <div class="field has-addons is-mobile">
+      <div class="control">
+        <%= form_tag(browse_path, method: :get) do %>
+          <%= text_field_tag :restaurant, params[:restaurant], :class => 'input home-search-bar mobile is-mobile', :type => 'text', :placeholder => 'or find a venue'  %>
+        <% end %>
+      </div>
+      <div class="control">
+        <a class="button main-search-mobile is-mobile">Search</a>
+      </div>
     </div>    
 
-    <div class="field">
-       <div class="control">
-          <%= form_tag(browse_path, method: :get) do %>
-            <%= text_field_tag :restaurant, params[:restaurant], :class => 'input home-search-bar is-large tablet-desktop', :type => 'text', :placeholder => 'search for venue'  %>
-          <% end %>
-        </div>
-    </div>
-
-    <div class="home-search-button-row">
-
-      <div class="home-browse-button">
-        <%= link_to 'see full list', browse_path, :class => 'button main mobile' %>
+    <div class="field has-addons is-tablet-desktop">
+      <div class="control">
+        <%= form_tag(browse_path, method: :get) do %>
+          <%= text_field_tag :restaurant, params[:restaurant], :class => 'input is-large home-search-bar tablet-desktop is-tablet-desktop', :type => 'text', :placeholder => 'or find a venue'  %>
+        <% end %>
       </div>
-
-      <div class="home-browse-button">
-        <%= link_to 'see full list', browse_path, :class => 'button main is-large tablet-desktop' %>
+      <div class="control">
+        <a class="button is-large main-search-tablet-desktop is-tablet-desktop">Search</a>
       </div>
-    
-      <div class="home-geolocate-button">
-        <%= link_to "what's nearby", nearby_path, :class => 'button main mobile' %>
-      </div>
-
-      <div class="home-geolocate-button">
-        <%= link_to "what's nearby", nearby_path, :class => 'button main is-large tablet-desktop' %>
-      </div>
-
     </div>
 
    </div>
