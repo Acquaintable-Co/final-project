@@ -32,9 +32,6 @@ body {
   background-color: #8ED062;
   min-width: 320px;
   height: 100%;
-
-  // min-height: 100vh;
-
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -76,19 +73,19 @@ height:100%; */
 //   color: #424949;
 // }
 
-// .site-header {
-//   background-color: transparent;
-// }
+.site-header {
+  background-color: transparent;
+}
 
 
 .app-title {
   margin: 0 auto;
-  padding: 40px 0 5px 0;
+  padding: 60px 0 15px 0;
   max-width: 85vw;
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
   font-size: 4rem;
-  line-height: 4.5rem;
+  line-height: 4.25rem;
   vertical-align: top;
   text-align: center;
   color: #FDFEFE;
@@ -109,7 +106,7 @@ height:100%; */
 .fork-imageH.mobile {
     background-image: asset_url("WGH-fork-fullwidth-m.png");
     // width: 100vw;
-    height: 20%;
+    height: 16%;
     display: block;
     width: 100%;
     background-repeat:no-repeat;
@@ -135,7 +132,7 @@ height:100%; */
 .app-subhead {
   /* color: #4D5656; */
   color: #424949;
-  margin: 2px auto 40px auto;
+  margin: 2px auto 20px auto;
   // margin: 0 auto;
   max-width: 85vw;
   font-family: 'Pacifico', cursive;
@@ -167,7 +164,6 @@ height:100%; */
   margin: 0 auto;
   align-content: space-between;
 }
-
 
 .home-browse-button {
   // display: inline-block;
@@ -612,7 +608,7 @@ a-scene {
 
   .app-title {
     margin: 0 auto;
-    padding: 30px 0 5px 0;
+    padding: 50px 0 5px 0;
     max-width: 85vw;
     font-size: 3.5rem;
     line-height: 3.75rem;
@@ -621,12 +617,12 @@ a-scene {
   }
 
   .app-subhead {
-    margin: 2px auto 30px auto;
+    margin: -10px auto 15px auto;
     max-width: 85vw;
     font-size: 1.75rem;
     line-height: 2rem;
     text-align: center;
-    vertical-align: center;
+    // vertical-align: top;
   }
 
   .button.is-large.main-search-tablet-desktop {
@@ -702,7 +698,7 @@ a-scene {
     .fork-imageH.tabletV {
       background-image: asset_url("WGH-fork-fullwidth-tV.png");
       // width: 100vw;
-      height: 25%;
+      height: 18%;
       display: block;
       width: 100%;
       background-repeat:no-repeat;
@@ -1175,27 +1171,25 @@ a-scene {
 
     .fork-imageV.tabletH {
       background-image: asset_url("WGH-fork-fullheight-tH.png");
-      // width: 100vw;
       height: 100vh;
-      width: 30%;
+      width: 20%;
       float: right;
       display: block;
+      background-repeat: no-repeat;
+      // margin-right: 2%;
   }
 
     .app-title {
       // margin: 0 auto;
-      margin: 20px 20px 25px 80px;
+      margin: 20px 120px 25px 120px;
       max-width: 60vw;
       font-family: 'Montserrat', sans-serif;
       font-weight: 800;
       border: #FDFEFE;
       font-size: 6rem;
       line-height: 6.25rem;
-      // vertical-align: top;
       text-align: center;
       float: left;
-      // border: #FDFEFE;
-      // margin-bottom: 30%;
     }
 
 
@@ -1238,17 +1232,26 @@ a-scene {
       border: #FDFEFE;
     }
     
-    .or-between {
-      // display: inline-block;
+    // .or-between {
+    //   // display: inline-block;
     
-      font-weight: bold; 
-      text-align: center;
-      align-self: center;
-      margin: 0 auto;
+    //   font-weight: bold; 
+    //   text-align: center;
+    //   align-self: center;
+    //   margin: 0 auto;
 
+    // }
+    
+    .home-search-button-row {
+      // display: flex;
+      // align-content: center;
+      width: 80%;
+      // margin-top: 10px;
+      margin: 25px auto;
+      // align-content: space-between;
     }
-    
-    
+
+
     .home-browse-button {
       margin: 10px auto 30px auto;
       text-align: center;
@@ -1292,11 +1295,13 @@ a-scene {
     .fork-imageV.desktop {
       background-image: asset_url("WGH-fork-fullheight-tH.png");
       // width: 100vw;
-      height: 20%;
+      height: 100vh;
+      width: 20%;
       display: block;
-      width: 100%;
       background-repeat: no-repeat;
       background-size: cover; 
+      margin: 0 2%;
+      float: right;
   }
 
 
