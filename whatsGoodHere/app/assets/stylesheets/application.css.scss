@@ -44,11 +44,11 @@ body {
   display: none;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  width: auto;
-}
+// img {
+//   max-width: 100%;
+//   height: auto;
+//   width: auto;
+// }
 
 /* background-size:cover; 
 background-repeat:no-repeat;
@@ -147,25 +147,6 @@ height:100%; */
   vertical-align: center;
 }
 
-.home-search-area {
-  display: flex;
-  margin-top: 16px;
-  vertical-align: top;
-  width: 80%;
-}
-
-.input.home-search-bar {
-  display: block;
-  background: #C1E5AA;
-  border: #FDFEFE;
-}
-
-
-.input.home-search-bar.is-large.tablet-desktop {
-  display: none;
-}
-
-
 // .or-between {
 //   display: inline-block;
 //   font-family: 'Montserrat', sans-serif;
@@ -222,6 +203,25 @@ height:100%; */
 // }
 
 .button.is-large.main-search-tablet-desktop {
+  display: none;
+}
+
+
+.home-search-area {
+  display: flex;
+  margin-top: 16px;
+  vertical-align: top;
+  width: 80%;
+}
+
+.input.home-search-bar {
+  display: block;
+  background: #C1E5AA;
+  border: #FDFEFE;
+}
+
+
+.input.home-search-bar.is-large.tablet-desktop {
   display: none;
 }
 
@@ -506,9 +506,9 @@ form {
 /* log-in view */
 
 
-.secondary-view-header {
+.secondary-view-header.log-in {
   margin: 0 auto;
-  padding: 50px 0 15px 0;
+  padding: 100px 0 15px 0;
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
   font-size: 38px;
@@ -519,6 +519,8 @@ form {
   width: 80%;
   margin-bottom: 25px;
 }
+
+a class="button is-success is-inverted"
 
 .secondary-vew-header-q {
   color: #424949;
@@ -637,7 +639,7 @@ a-scene {
 
 
 ///
-// tablet V view:
+// tablet VERTICAL view:
 
 @media (min-width: 768px){
 
@@ -647,17 +649,20 @@ a-scene {
       display: none;
     }
 
-    .is-tablet-desktop {
-      display: block;
-    }
-
-    // input.home-search-bar.mobile {
+    // .input.home-search-bar.mobile.is-mobile {
     //   display: none;
     // }
+
+
+    .field.has-addons.is-tablet-desktop {
+      display: inline-block;
+    }
+
 
     a.button.main.mobile {
       display: none;
     }
+
 
     .app-background {
       background-image: asset_url("WGH-BGonly-V800px.jpg");
@@ -670,6 +675,7 @@ a-scene {
       overflow: hidden;
     } 
 
+    // may remove this if we don't set cookie
     .admin-login-link {
       font-size: 1.25rem;
       line-height: 2.5rem;
@@ -740,18 +746,18 @@ a-scene {
       vertical-align: top;
     }
     
-    .home-search-button-row {
-      display: flex;
-      width: 75%;
-      margin: 0 auto;
-      align-content: space-between;
-    }
+    // .home-search-button-row {
+    //   display: flex;
+    //   width: 75%;
+    //   margin: 0 auto;
+    //   align-content: space-between;
+    // }
 
-    .home-browse-button {
-      margin: 10px auto 30px auto;
-      text-align: center;
-      flex: left;
-    }
+    // .home-browse-button {
+    //   margin: 10px auto 30px auto;
+    //   text-align: center;
+    //   flex: left;
+    // }
     
     .button.main {
       background: #C1E5AA;
@@ -764,37 +770,72 @@ a-scene {
       // align-self: center;
     }
 
-    .home-geolocate-button {
-      // margin: 10px auto 30px auto;
-      text-align: center;
-      vertical-align: top;
-      flex: right;
-    }
 
-    .home-search-area {
-      display: flex;
-      margin-top: 5%;
-      vertical-align: top;
-      width: 75%;
-      // align-self: center;
-      /* align-content: center; */
-    }
+    // .home-geolocate-button {
+    //   // margin: 10px auto 30px auto;
+    //   text-align: center;
+    //   vertical-align: top;
+    //   flex: right;
+    // }
+
+    // .home-search-area {
+    //   display: flex;
+    //   margin-top: 5%;
+    //   vertical-align: top;
+    //   width: 75%;
+    // }
     
-    .input.home-search-bar.mobile.is-mobile {
-      display: flex;
+    // .home-search-area.is-tablet-desktop {
+    //   display: block;
+    // }
+
+    // .input.home-search-bar.mobile.is-mobile {
+    //   display: flex;
+    // }
+
+    .field.has-addons.is-mobile {
+      display: none;
     }
 
     .button.main-search-mobile {
       display: none;
     }
 
-    .input.home-search-bar.tablet-desktop {
+    .input.is-large.home-search-bar.is-tablet-desktop {
       display: flex;
       background: #C1E5AA;
       border: #FDFEFE;
       margin: 0 auto;
     }
-    
+
+
+
+
+    .field.has-addons.is-tablet-desktop {
+      display: block;
+    }
+
+    .button.is-large.is-tablet-desktop {
+      display: inline-block
+    }
+
+    .input.is-mobile {
+      display: none;
+    }
+
+  
+    .field.has-addons.is-mobile {
+      display: none;
+    }
+
+
+  //  .home-search-area {
+  //     display: flex;
+  //     margin-top: 5%;
+  //     vertical-align: top;
+  //     width: 75%;
+  //  }
+
     // .or-between {    
     //   font-weight: bold; 
     //   text-align: center;
@@ -1054,7 +1095,7 @@ a-scene {
       letter-spacing: -0.5px;
     }
     
-input.add-new-item {
+    input.add-new-item {
       margin: 15px auto 5px auto;
       display: block;
       width: 60%;
@@ -1088,8 +1129,6 @@ input.add-new-item {
       width: 60%;
     }
 
-
-
   }    
 
 
@@ -1101,7 +1140,7 @@ input.add-new-item {
     /* main app homepage */
 
 
-    input.home-search-bar.mobile {
+    .input.home-search-bar.is-mobile {
       display: none;
     }
 
@@ -1121,8 +1160,6 @@ input.add-new-item {
       display: none;
     }
 
-
-
     .app-background {
       background-image: asset_url("WGH-BGonly-H1300px.jpg");
       background-size:cover; 
@@ -1137,7 +1174,6 @@ input.add-new-item {
     .site-header {
       background-color: transparent;
     }
-
 
     .admin-login-link {
       font-size: 1.25rem;
@@ -1209,7 +1245,7 @@ input.add-new-item {
       /* align-content: center; */
     }
     
-    .input.home-search-bar {
+    .input.home-search-bar.is-tablet-desktop {
       display: block;
       background: #C1E5AA;
       border: #FDFEFE;
@@ -1224,6 +1260,7 @@ input.add-new-item {
       margin: 0 auto;
 
     }
+    
     
     .home-browse-button {
       margin: 10px auto 30px auto;
@@ -1246,11 +1283,11 @@ input.add-new-item {
     /* main app homepage */
   @media (min-width: 1200px) {
 
-    input.home-search-bar.mobile {
+    .input.home-search-bar.is-mobile {
       display: none;
     }
 
-    a.button.main.mobile {
+    .a.button.main.mobile {
       display: none;
     }
 
@@ -1288,6 +1325,7 @@ input.add-new-item {
       display: none;
     }
 
-
-} 
-
+    .input.is-mobile {
+      display: none;
+    }
+}

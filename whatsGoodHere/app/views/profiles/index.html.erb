@@ -28,8 +28,7 @@
 <div class="fork-imageH mobile"></div>
 <div class="fork-imageH tabletV"></div>
 
-<div class="fork-imageV tabletH">
-<%# <%= image_tag("WGH-fork-fullheight-tH.png", alt: "fork vertical", class: "fork-imageV tabletH") %> </div> 
+<div class="fork-imageV tabletH"></div> 
 
   <div class="fork-imageV desktop"></div>
 
@@ -55,7 +54,7 @@
 
   <div class="home-search-area">
 
-    <div class="field has-addons">
+    <div class="field has-addons is-mobile">
       <div class="control">
         <%= form_tag(browse_path, method: :get) do %>
           <%= text_field_tag :restaurant, params[:restaurant], :class => 'input home-search-bar mobile is-mobile', :type => 'text', :placeholder => 'or find a venue'  %>
@@ -66,10 +65,10 @@
       </div>
     </div>    
 
-    <div class="field has-addons">
+    <div class="field has-addons is-tablet-desktop">
       <div class="control">
         <%= form_tag(browse_path, method: :get) do %>
-          <%= text_field_tag :restaurant, params[:restaurant], :class => 'input home-search-bar is-large tablet-desktop is-tablet-desktop', :type => 'text', :placeholder => 'or find a venue'  %>
+          <%= text_field_tag :restaurant, params[:restaurant], :class => 'input is-large home-search-bar tablet-desktop is-tablet-desktop', :type => 'text', :placeholder => 'or find a venue'  %>
         <% end %>
       </div>
       <div class="control">
