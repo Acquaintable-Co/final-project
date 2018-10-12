@@ -11,20 +11,21 @@ function showDetail (className) {
 }
 
 window.onload = function () {
-  var modal = document.getElementById('fare-modal')
+  var faremodal = document.getElementById('fare-modal')
   var btn = document.getElementById('fare-info')
-  var span = document.getElementsByClassName('close')
+  var span = document.getElementsByClassName('modal-close')
   btn.onclick = function () {
     console.log('hi')
-    modal.style.display = 'block'
+    faremodal.style.display = 'block'
   }
   span.onclick = function () {
-    modal.style.display = 'none'
+    faremodal.style.display = 'none'
   }
 
   window.onclick = function (event) {
-    if (event.target === modal) {
-      modal.style.display = 'none'
+    console.log(event.target)
+    if (event.target === faremodal) {
+      faremodal.style.display = 'none'
     }
   }
 

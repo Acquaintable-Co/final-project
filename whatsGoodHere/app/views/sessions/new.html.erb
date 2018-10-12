@@ -1,5 +1,17 @@
 <div class="app-container log-in">
 
+    <div class="top-nav-bar">
+        <div>
+          <%= link_to "wgh", profiles_path, class: "app-initials" %><span class="nav-q-mark">?</span>
+        </div>
+        
+        <div class="new-search-icon"><i class="fa fa-search"></i></div>
+    </div>
+
+<div class="interior-logo"><%= image_tag("WGH-logomark-int100.png", :alt => "What's Good Here logo") %></div>
+
+
+
 <% provide(:title, "Log in") %>
 <div class="secondary-view-header log-in">Administrator<br>Log in</div>
 
@@ -12,7 +24,7 @@
       <%= f.password_field :password, class: 'input log-in', placeholder: 'password' %>
 
     <div class="log-in-button-div">
-      <%= f.submit "Log in", class: "button" %>
+      <%= f.submit "log in", class: "button" %>
     <% end %>
     </div>
 

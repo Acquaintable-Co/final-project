@@ -44,13 +44,12 @@
         </div>
     </div>
 
-
-    <%= form.label "Upload or replace 360 image", class: "upload-file-label", type:"text"  %>
+    <%= form.label "Upload or replace specials image", class: "upload-file-label", type:"text"  %>
 
     <div class="field">
         <div class="file is-small">
             <label class="file-label">
-                <%= form.file_field :vr_image, class: "file-input" %>
+                <%= form.file_field :special, class: "file-input" %>
                 <span class="file-cta">
                     <span class="file-icon icon">
                         <i class="fas fa-upload"></i>
@@ -81,6 +80,24 @@
         </div>
     </div>
 
+    <%= form.label "Upload or replace 360 image", class: "upload-file-label", type:"text"  %>
+
+    <div class="field">
+        <div class="file is-small">
+            <label class="file-label">
+                <%= form.file_field :vr_image, class: "file-input" %>
+                <span class="file-cta">
+                    <span class="file-icon icon">
+                        <i class="fas fa-upload"></i>
+                    </span>
+                    <span class="file-label">
+                        Choose a file…
+                    </span>
+                </span>
+            </label>
+        </div>
+    </div>
+
 
     <%= form.submit "upload file", class: "button is-warning upload-button" %>
     <% end %>
@@ -93,17 +110,28 @@
         <div class="info-category-header fare">fare
         <% if current_profile && @profile.id == current_profile.id %>
         
-        <button id="fare-info">More Info</button>
+        <button id="fare-info"><i class="fas fa-question-circle"></i></button>
+
         <div id="fare-modal" class="modal">
-        <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>This section is where you want to...</p>
-      </div>
-    </div>
+            <div class="modal-background"></div>
+                <div class="modal-content">
+                <h1>"fare"</h1>
+                <p>This section should contain general descriptions of what your establishment offers to customers.</p>
+
+                <p>Examples: <br>
+                - “Global Street Food” <br>
+                - “Beer, Spirits and Wine” <br>
+                - “House Made Cocktails” <br>
+                - “Pint Night Wednesdays” <br>
+                - “$2 PBR Mondays” <br>
+                - “Trivia Sundays”</p>
+                </div>
+            <button class="close" aria-label="close"></button>
+        </div>
+
     <% end %>
 
         </div>
-    
     
         <div class="view-icon">
             <% if @profile.menu.attached? %>
@@ -144,12 +172,13 @@
             <% if current_profile && @profile.id == current_profile.id %>
             <%= render 'offerForm' %>
             <% end %> 
-                              
+
+
         <div class="info-category-header tips">tips
         
         <% if current_profile && @profile.id == current_profile.id %>
         
-        <button id="tips-info">More Info</button>
+        <button id="tips-info"><i class="fas fa-question-circle"></i></button>
 
         <div id="tips-modal" class="modal">
         <div class="modal-content">
@@ -204,7 +233,8 @@
             
         <div class="info-category-header specs">specs
 <% if current_profile && @profile.id == current_profile.id %>
-        <button id="specs-info"">More Info</button>
+
+        <button id="specs-info"><i class="fas fa-question-circle"></i></button>
         <div id="specs-modal" class="modal">
         <div class="modal-content">
         <span class="close">&times;</span>
