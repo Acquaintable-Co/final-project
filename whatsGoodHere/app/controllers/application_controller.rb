@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   # def location
   #   if params[:location].blank?
   #     if Rails.env.test? || Rails.env.development?
-  #       @location ||= Geocoder.search("50.111.7.147").first
+  #       @location ||= Geocoder.search("24.163.60.146").first
   #     else
   #       @location ||= request.location
   #     end
@@ -21,3 +21,7 @@ class ApplicationController < ActionController::Base
       @current_profile ||= Profile.find(session[:profile_id]) if session[:profile_id]
     end
 end
+
+# 106 Ellerbee IP 24.163.60.146
+
+# Momentum IP 50.111.7.147
