@@ -10,9 +10,7 @@
         <div class="name-field">
             <h1 class="business-name">
             <%= @profile.restaurant %></h1>
-                <% if flash[:error_message] %>
-                <p class="flash-error"><%= flash[:error_message] %></p>
-                <% end %>
+               
         </div>  
 
         <div class="address-phone"><%= @profile.address %>  |  <%= @profile.phone %>
@@ -21,9 +19,12 @@
         <div class="hours"> <%= @profile.hours %> </div>
     </div>
 
+    <% if flash[:notice] %>
+        <p class="notification is-success" id="notice"><%= flash[:notice] %></p>
+    <% end %>
     <% if current_profile && @profile.id == current_profile.id %>
     <%= form_with model: @profile, local: true do |form| %>
-
+      
  
     <%= form.label "Upload or replace menu", class: "upload-file-label", type: "text" %>
 
@@ -62,7 +63,7 @@
     </div>
 
     <%= form.label "Upload or replace floor plan", class: "upload-file-label", type:"text"  %>
-
+  
     <div class="field">
         <div class="file is-small">
             <label class="file-label">
@@ -165,6 +166,7 @@
         <% if @profile.offers.length > 3  %>
             <a class="expand-link" onClick=showDetail('hideable-fare')> ... see more</a>
         <% end %>
+        <p id="offer-error"></p>
         <% if current_profile && @profile.id == current_profile.id %>
             <%= render 'offerForm' %>
 
@@ -217,6 +219,7 @@
         <% if @profile.hacks.length > 3  %>
         <a class="expand-link" onClick=showDetail('hideable-tips')> ... see more</a>
         <% end %>
+        <p id="tips-error"></p>
             <% if current_profile && @profile.id == current_profile.id %>
             <%= form_with model: @hack, url: hacks_path do |f| %>
         
@@ -289,6 +292,7 @@
             <% if @profile.locations.length > 3  %>
             <a class="expand-link" onClick=showDetail('hideable-specs')> ... see more</a>    
             <% end %>
+            <p id="spec-error"></p>
             <% if current_profile && @profile.id == current_profile.id %>
             <%= form_with model: @location, url: locations_path do |f| %>
         

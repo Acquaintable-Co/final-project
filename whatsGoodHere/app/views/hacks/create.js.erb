@@ -1,2 +1,7 @@
-$(".tips-detail").append("<div> • <%= @hack.hack_detail %></div>")
+if (document.getElementById('hack_detail_field').value != "") {
+$(".tips-detail").append("<div class='info-entry'> • <%= @hack.hack_detail %></div>")
 $('#hack_detail_field').val('');
+$("#tips-error").remove()
+} else {
+  $("#tips-error").html("<span class='has-text-danger'>Can not be blank</span>")
+}

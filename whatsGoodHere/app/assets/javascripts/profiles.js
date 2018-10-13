@@ -1,3 +1,13 @@
+$(document).load(removeFlash());
+
+function removeFlash() {
+  setTimeout(() => {
+
+    $('#notice').fadeOut(300, function () {
+      this.remove();
+    });
+  }, 3000);
+}
 
 function showDetail (className) {
   var divs = document.getElementsByClassName(className)
@@ -9,6 +19,8 @@ function showDetail (className) {
     }
   }
 }
+
+
 
 
 window.onload = function () {
