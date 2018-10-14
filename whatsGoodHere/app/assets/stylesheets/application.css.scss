@@ -19,8 +19,6 @@
   box-sizing: border-box;
   margin: 0 auto;
   padding: 0;
-  /* min-width: 640px; */
-  /* height: 100vh; */
 }
 
 html {
@@ -40,17 +38,6 @@ body {
 .is-tablet-desktop {
   display: none;
 }
-
-// img {
-//   max-width: 100%;
-//   height: auto;
-//   width: auto;
-// }
-
-/* background-size:cover; 
-background-repeat:no-repeat;
-background-attachment:fixed;
-height:100%; */
 
 .app-background {
   background-image: asset_url("WGH-BGonly-V800px.jpg");
@@ -73,10 +60,9 @@ height:100%; */
 //   color: #424949;
 // }
 
-.site-header {
-  background-color: transparent;
-}
-
+// .site-header {
+//   background-color: transparent;
+// }
 
 .app-title {
   margin: 0 auto;
@@ -205,13 +191,12 @@ height:100%; */
 
 .home-search-area {
   display: flex;
-  margin-top: 16px;
-  vertical-align: top;
-  width: 80%;
+  margin: 16px;
+  padding-bottom: 20px;
 }
 
 .input.home-search-bar {
-  display: block;
+  display: inline;
   background: #C1E5AA;
   border: #FDFEFE;
 }
@@ -595,6 +580,72 @@ a-scene {
   }
 }
 
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+}
+
+.modal-head {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+  
+}
+
+.modal-content {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-35%, -100%);
+  background-color: white;
+  padding: 1rem 1.5rem;
+  width: 20rem;
+  border-radius: 0.5rem;
+}
+
+.modal-content p {
+  margin-top: 10px;
+}
+
+.italic-modal {
+  font-style: italic;
+}
+
+.close-button {
+  float: right;
+  width: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  background-color: lightgray;
+}
+.close-button:hover {
+  background-color: darkgray;
+}
+.show-modal {
+  opacity: 1;
+  
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  visibility: visible;
+  transform: scale(1.0);
+  // transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+
 
 // 5E iPhone 320px width
 // 5E iPhone 320px width
@@ -832,12 +883,6 @@ a-scene {
       display: none;
     }
 
-    // .or-between {    
-    //   font-weight: bold; 
-    //   text-align: center;
-    //   align-self: center;
-    //   margin: 0 auto 10px auto;
-    // }
     
 
     // profile page:
@@ -864,7 +909,6 @@ a-scene {
     //   overflow: hidden;
     // }
     
-
 
     .app-container.profile, .app-container.log-in, .app-container.browse {
       margin: 0 auto;
@@ -1144,6 +1188,11 @@ a-scene {
 
 ////
 // tablet HORIZONTAL:
+// tablet HORIZONTAL:
+// tablet HORIZONTAL:
+// tablet HORIZONTAL:
+// tablet HORIZONTAL:
+
 
 @media (min-width: 1024px){
    
@@ -1304,8 +1353,14 @@ a-scene {
     
 }       
 
-/////  
-// desktop:
+
+
+// desktop 1200
+// desktop 1200
+// desktop 1200
+// desktop 1200
+// desktop 1200
+
 
     /* main app homepage */
   @media (min-width: 1200px) {
@@ -1360,63 +1415,6 @@ a-scene {
     
 }
 
-.modal {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  visibility: hidden;
-}
-
-.modal-head {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 800;
-  font-size: 2rem;
-  line-height: 2.75rem;
-  
-}
-
-.modal-content {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
-  font-weight: 300;
-  font-size: 1.25rem;
-  line-height: 2rem;
-  color: black;
-  position: absolute;
-  top: 50%;
-  left: 50%; 
-  transform: translate(-35%, -100%);
-  background-color: white;
-  padding: 1rem 1.5rem;
-  width: 20rem;
-  border-radius: 0.5rem;
-}
-
-.close-button {
-  float: right;
-  width: 1.5rem;
-  line-height: 1.5rem;
-  text-align: center;
-  cursor: pointer;
-  border-radius: 0.25rem;
-  background-color: lightgray;
-}
-.close-button:hover {
-  background-color: darkgray;
-}
-.show-modal {
-  opacity: 1;
-  
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  visibility: visible;
-  transform: scale(1.0);
-  // transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
-}
 
 
 
