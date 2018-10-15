@@ -174,6 +174,9 @@
             <%= render 'offerForm' %>
 
             <% end %> 
+        <% if @profile.special.attached? %> 
+            <%= link_to (image_tag @profile.special), rails_blob_path(@profile.special, disposition: "special"), target: "_new" %>
+        <% end %> 
 
         <div class="info-category-header tips">tips
         
