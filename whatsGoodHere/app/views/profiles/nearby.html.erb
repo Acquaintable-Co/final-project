@@ -10,12 +10,10 @@
 
 <div class="secondary-view-header">What's Near<span class="secondary-vew-header-q">?</span></div>
 
-
-
-
-
-
 <% @nearby.each do |profile| %>
     <div class="browse-list-item"><%= link_to profile.restaurant, profile_path(profile), class: "browse-list-item" %></div>
     <div class="list-divider">•</div>
 <% end %>
+
+
+
