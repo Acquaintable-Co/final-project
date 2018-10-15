@@ -35,10 +35,6 @@ body {
   font-size: 16px;
 }
 
-.is-tablet-desktop {
-  display: none;
-}
-
 .app-background {
   background-image: asset_url("WGH-BGonly-V800px.jpg");
   background-size:cover; 
@@ -120,6 +116,10 @@ body {
   justify-content: center;
 }
 
+button.button.is-light {
+  display: inline;
+}
+
 // .home-browse-button {
 //   text-align: center;
 //   flex: left;
@@ -134,16 +134,12 @@ body {
 //   margin-left: 3px;
 // }
 
-// .button.main {
-//   background: #C1E5AA;
-//   border: #FDFEFE;
-//   color: #424949;
-//   margin: 0 auto;
-//   font-weight: 400;
-// }
-
-.button.is-large.main-search-tablet-desktop {
-  display: none;
+.button.main {
+  background: #C1E5AA;
+  border: #FDFEFE;
+  color: #424949;
+  margin: 0 auto;
+  font-weight: 600;
 }
 
 .home-search-area {
@@ -152,19 +148,53 @@ body {
   padding-bottom: 20px;
   justify-content: center;
   text-align: center;
+  // width: 85%;
 }
 
-.input.home-search-bar.mobile.is-mobile {
+.input.home-search-bar.is-mobile {
   display: inline-block;
   background: #C1E5AA;
   border: #FDFEFE;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
 }
 
-.input.button.is-mobile {
+.field.is-mobile {
+  width: 85%;
+}
+
+button.button.is-light {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.control.search-bar, .control.search-button {
   display: inline-block;
 }
 
-.input.home-search-bar.is-large.is-tablet-desktop {
+// .input.is-large.home-search-bar.is-tablet-desktop {
+//   display: none;
+// }
+
+// .button.is-light.is-tablet-desktop {
+//   display: none;
+// }
+
+// .button.is-large.main-search-tablet-desktop {
+//   display: none;
+// }
+
+
+
+
+// .control.search-button.is-tablet-desktop {
+//   display: none;
+// }
+
+.is-tablet-desktop {
   display: none;
 }
 
@@ -507,13 +537,15 @@ form {
 }
 
 .list-divider {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 800;
-  font-size: 1.75rem;
-  line-height: 2.5rem;
-  text-decoration: none;
-  color: #424949;
+  // font-family: 'Montserrat', sans-serif;
+  // font-weight: 800;
+  // font-size: 1.75rem;
+  // line-height: 2.5rem;
+  // text-decoration: none;
+  // color: #424949;
+  width: 10px;
   text-align: center;
+  padding: 5px 0;
 }
 
 a-scene {
@@ -790,9 +822,9 @@ a-scene {
       margin: 0 auto;
     }
 
-    .button.is-large.is-tablet-desktop {
-      display: inline-block
-    }
+    // .button.is-large.is-tablet-desktop {
+    //   display: inline-block;
+    // }
 
     // .input.is-mobile {
     //   display: none;
@@ -1231,7 +1263,7 @@ a-scene {
     }
 
     .home-search-area {
-      display: flex;
+      // display: flex;
       width: 60%;
       margin: 20px 100px 10px 70px;
 
