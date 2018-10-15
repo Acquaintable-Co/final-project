@@ -111,27 +111,29 @@ body {
 
 .home-search-button-row {
   display: flex;
-  width: 85%;
+  width: 87%;
   margin: 0 auto;
-  justify-content: center;
+  align-content: space-between;
+  padding-top: 5px;
+  padding-left: 2px;
 }
 
-button.button.is-light {
-  display: inline;
-}
+// button.button.is-light {
+//   display: inline;
+// }
 
 // .home-browse-button {
 //   text-align: center;
 //   flex: left;
 //   vertical-align: top;
-//   margin-right: 4px;
+//   // margin-right: 4px;
 // }
 
 // .home-geolocate-button {
 //   text-align: center;
 //   flex: right;
 //   vertical-align: top;
-//   margin-left: 3px;
+//   // margin-left: 3px;
 // }
 
 .button.main {
@@ -140,29 +142,33 @@ button.button.is-light {
   color: #424949;
   margin: 0 auto;
   font-weight: 600;
+  align-content: space-between;
 }
 
+
 .home-search-area {
-  display: flex;
-  margin: 16px;
+  // display: flex;
+  margin: 14px auto;
   padding-bottom: 20px;
-  justify-content: center;
+  // align-content: space-between;
+  // justify-content: center;
   text-align: center;
-  // width: 85%;
+  width: 84%;
 }
+
 
 .input.home-search-bar.is-mobile {
   display: inline-block;
-  background: #C1E5AA;
-  border: #FDFEFE;
+  // background: #C1E5AA;
+  // border: #FDFEFE;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 1rem;
 }
 
-.field.is-mobile {
-  width: 85%;
-}
+// .field.is-mobile {
+//   width: 85%;
+// }
 
 button.button.is-light {
   display: inline-block;
@@ -198,6 +204,9 @@ button.button.is-light {
   display: none;
 }
 
+.button.is-light.is-tablet-desktop {
+  display: none;
+}
 
 /* profile page */
 

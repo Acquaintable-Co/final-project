@@ -21,45 +21,48 @@
   <div class="home-search-button-row">
 
     <div class="home-browse-button">
-      <%= link_to 'see full list', browse_path, :class => 'button main is-mobile' %>
+      <%= link_to 'see full list', browse_path, :class => 'button main is-expanded is-mobile ' %>
     </div>
+
     <div class="home-browse-button">
-      <%= link_to 'see full list', browse_path, :class => 'button main is-large is-tablet-desktop' %>
+      <%= link_to 'see full list', browse_path, :class => 'button main is-large is-expanded is-tablet-desktop' %>
     </div>
+
     <div class="home-geolocate-button">
-      <%= link_to "what's nearby", nearby_path, :class => 'button main is-mobile' %>
+      <%= link_to "what's nearby", nearby_path, :class => 'button main is-expanded is-mobile' %>
     </div>
+    
     <div class="home-geolocate-button">
-      <%= link_to "what's nearby", nearby_path, :class => 'button main is-large is-tablet-desktop' %>
+      <%= link_to "what's nearby", nearby_path, :class => 'button main is-large is-expanded is-tablet-desktop' %>
     </div>
 
   </div>
 
   <div class="home-search-area">
 
-    <div class="field is-grouped">
+    <div class="field is-grouped is-mobile">
+
       <div class="control search-bar is-expanded">
         <%= form_tag(browse_path, method: :get) do %>
-        <%= text_field_tag :restaurant, params[:restaurant], :class => 'input home-search-bar is-mobile', :type => 'text', :placeholder => 'or find a venue' %>
+        <%= text_field_tag :restaurant, params[:restaurant], :class => 'input home-search-bar is-mobile', :type => 'text', :placeholder => 'or, find a venue' %>
       </div>
 
       <div class="control search-button">
-      <button class="button is-light is-mobile">submit</button>
+      <button class="button is-light is-mobile">search</button>
       </div>
 
         <% end %>
     </div>
 
-
-    <div class="field is-grouped">
+    <div class="field is-grouped is-tablet-desktop">
 
       <div class="control search-bar is-expanded">
         <%= form_tag(browse_path, method: :get) do %>
-          <%= text_field_tag :restaurant, params[:restaurant], :class => 'input is-large home-search-bar is-tablet-desktop', :type => 'text', :placeholder => 'or find a venue'  %>
+          <%= text_field_tag :restaurant, params[:restaurant], :class => 'input is-large home-search-bar is-tablet-desktop', :type => 'text', :placeholder => 'or, find a venue'  %>
       </div>
 
       <div class="control search-button">
-        <button class="button is-light is-tablet-desktop">submit</button>
+        <button class="button is-light is-tablet-desktop">search</button>
       </div>
 
         <% end %>
