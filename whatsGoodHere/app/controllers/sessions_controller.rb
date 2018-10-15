@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
   def destroy
     session[:profile_id] = nil
     flash[:notice] = "You've been logged out"
-    redirect_to root_path
+    redirect_to after_sign_out_path_for(:url)
   end
 
 end
