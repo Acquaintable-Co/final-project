@@ -1,3 +1,8 @@
-$(".fare-detail").append("<div> • <%= @offer.offer_detail %></div>")
+if (document.getElementById('offer_detail_field').value != "") {
+$(".fare-detail").append("<div class='info-entry'> • <%= @offer.offer_detail %></div>")
 $('#offer_detail_field').val('');
+$("#offer-error").remove()
+} else {
+  $("#offer-error").html("<span class='has-text-danger'>Can not be blank</span>")
+}
 
