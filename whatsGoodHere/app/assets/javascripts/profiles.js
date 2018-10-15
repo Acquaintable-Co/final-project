@@ -25,14 +25,13 @@ function getLocation(){
       navigator.geolocation.getCurrentPosition(function (position){
          var lat = position.coords.latitude
          var long = position.coords.longitude
-        console.log(lat)
-        console.log(long)
+      
 
          $.ajax({
           type: 'GET',
           url: '/nearby',
-          data: { lat: position.coords.latitude, long: position.coords.longitude },
-          contentType: 'application/json'
+          data: { lat: position.coords.latitude, long: position.coords.longitude }
+          
           });
 
       });
