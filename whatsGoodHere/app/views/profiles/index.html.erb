@@ -36,11 +36,9 @@
     <div class="field has-addons is-mobile">
       <div class="control">
         <%= form_tag(browse_path, method: :get) do %>
-          <%= text_field_tag :restaurant, params[:restaurant], :class => 'input home-search-bar mobile is-mobile is-expanded', :type => 'text', :placeholder => 'or find a venue'  %>
+          <%= text_field_tag :restaurant, params[:restaurant], :class => 'input home-search-bar mobile is-mobile', :type => 'text', :placeholder => 'or find a venue'  %>
+          <%= submit_tag 'Search', class: 'button is-mobile' %>
         <% end %>
-      </div>
-      <div class="control">
-        <a class="button main-search-mobile is-mobile">Search</a>
       </div>
     </div>    
 
@@ -48,10 +46,8 @@
       <div class="control">
         <%= form_tag(browse_path, method: :get) do %>
           <%= text_field_tag :restaurant, params[:restaurant], :class => 'input is-large home-search-bar is-tablet-desktop', :type => 'text', :placeholder => 'or find a venue'  %>
+          <%= submit_tag 'Search', class: 'button is-tablet-desktop' %>
         <% end %>
-      </div>
-      <div class="control">
-        <a class="button is-large main-search-tablet-desktop is-tablet-desktop">Search</a>
       </div>
     </div>
 
