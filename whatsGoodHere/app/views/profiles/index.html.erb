@@ -14,20 +14,20 @@
 
     <div class="app-subhead is-tablet-desktop">Get to know the local spots
     </div>
-    </div>
+  </div>
 
   <div class="home-search-button-row">
     <div class="home-browse-button">
-      <%= link_to 'see full list', browse_path, :class => 'button main mobile is-mobile' %>
+      <%= link_to 'see full list', browse_path, :class => 'button main is-mobile' %>
     </div>
     <div class="home-browse-button">
-      <%= link_to 'see full list', browse_path, :class => 'button main is-large tablet-desktop is-tablet-desktop' %>
+      <%= link_to 'see full list', browse_path, :class => 'button main is-large is-tablet-desktop' %>
     </div>
     <div class="home-geolocate-button">
-      <%= link_to "what's nearby", nearby_path, :class => 'button main mobile is-mobile' %>
+      <%= link_to "what's nearby", nearby_path, :class => 'button main is-mobile' %>
     </div>
     <div class="home-geolocate-button">
-      <%= link_to "what's nearby", nearby_path, :class => 'button main is-large tablet-desktop is-tablet-desktop' %>
+      <%= link_to "what's nearby", nearby_path, :class => 'button main is-large is-tablet-desktop' %>
     </div>
   </div>
 
@@ -36,7 +36,7 @@
     <div class="field has-addons is-mobile">
       <div class="control">
         <%= form_tag(browse_path, method: :get) do %>
-          <%= text_field_tag :restaurant, params[:restaurant], :class => 'input home-search-bar mobile is-mobile', :type => 'text', :placeholder => 'or find a venue'  %>
+          <%= text_field_tag :restaurant, params[:restaurant], :class => 'input home-search-bar mobile is-mobile is-expanded', :type => 'text', :placeholder => 'or find a venue'  %>
         <% end %>
       </div>
       <div class="control">
@@ -47,7 +47,7 @@
     <div class="field has-addons is-tablet-desktop">
       <div class="control">
         <%= form_tag(browse_path, method: :get) do %>
-          <%= text_field_tag :restaurant, params[:restaurant], :class => 'input is-large home-search-bar tablet-desktop is-tablet-desktop', :type => 'text', :placeholder => 'or find a venue'  %>
+          <%= text_field_tag :restaurant, params[:restaurant], :class => 'input is-large home-search-bar is-tablet-desktop', :type => 'text', :placeholder => 'or find a venue'  %>
         <% end %>
       </div>
       <div class="control">

@@ -60,34 +60,22 @@ body {
 //   color: #424949;
 // }
 
-// .site-header {
-//   background-color: transparent;
-// }
 
 .app-title {
   margin: 0 auto;
-  padding: 60px 0 15px 0;
+  padding: 70px 0 15px 0;
   max-width: 85vw;
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
   font-size: 4rem;
   line-height: 4.25rem;
-  vertical-align: top;
   text-align: center;
   color: #FDFEFE;
-
-  // margin-bottom: 5%;
 }
 
 .q-mark {
   color: #424949;
-  // color: #FDFEFE;
 }
-
-// .q-mark-logo {
-//   width: 40px;
-//   display: inline-block;
-// }
 
 .fork-imageH.mobile {
     background-image: asset_url("WGH-fork-fullwidth-m.png");
@@ -99,60 +87,40 @@ body {
     background-size:cover; 
 }
 
-.fork-imageH.tabletV {
-  display: none;
-}
+    .fork-imageH.tabletV {
+      display: none;
+    }
 
-.fork-imageV.tabletH {
-  display: none;
-}
+    .fork-imageV.tabletH {
+      display: none;
+    }
 
-.fork-imageV.desktop {
-  display: none;
-}
+    .fork-imageV.desktop {
+      display: none;
+    }
 
 .site-subhead {
   margin-top: 20px;
 }
 
 .app-subhead {
-  /* color: #4D5656; */
   color: #424949;
   margin: 2px auto 20px auto;
-  // margin: 0 auto;
   max-width: 85vw;
   font-family: 'Pacifico', cursive;
-  // font-size: 22px;
-  // line-height: 30px;
   font-size: 1.75rem;
   line-height: 2rem;
   text-align: center;
-  vertical-align: center;
 }
-
-// .or-between {
-//   display: inline-block;
-//   font-family: 'Montserrat', sans-serif;
-//   font-weight: 600;
-//   font-size: 1rem;
-//   line-height: 1.5rem;
-//   text-align: center;
-//   align-self: center;
-//   margin: 5px auto 10px auto;
-//   color: #424949;
-// }
 
 .home-search-button-row {
   display: flex;
-  // align-content: center;
   width: 80%;
-  // margin-top: 10px;
   margin: 0 auto;
   align-content: space-between;
 }
 
 .home-browse-button {
-  // display: inline-block;
   text-align: center;
   flex: left;
   vertical-align: top;
@@ -160,7 +128,6 @@ body {
 }
 
 .home-geolocate-button {
-  // margin: 10px auto 30px auto;
   text-align: center;
   flex: right;
   vertical-align: top;
@@ -173,21 +140,11 @@ body {
   color: #424949;
   margin: 0 auto;
   font-weight: 400;
-  // align-self: center;
 }
-
-.tablet-desktop {
-  display: none;
-}
-
-// .button.is-large.main-search-tablet-desktop {
-//   display: none;
-// }
 
 .button.is-large.main-search-tablet-desktop {
   display: none;
 }
-
 
 .home-search-area {
   display: flex;
@@ -201,8 +158,7 @@ body {
   border: #FDFEFE;
 }
 
-
-.input.home-search-bar.is-large.tablet-desktop {
+.input.home-search-bar.is-large.is-tablet-desktop {
   display: none;
 }
 
@@ -239,12 +195,10 @@ body {
   float: left;
   color: #424949;
   position: relative;
-  /* font-family: 'Crushed', cursive; */
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
   font-size: 1.75rem;
   line-height: 1.5rem;
-  /* align-content: flex-start; */
   vertical-align: top;
 }
 
@@ -278,8 +232,6 @@ body {
   color: #F59841;
   font-size: 17px;
   line-height: 19px;
-  /* font-family: 'Heebo', sans-serif;
-  font-weight: 500; */
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   text-align: center;
@@ -300,8 +252,8 @@ body {
   padding-bottom: 3px;
 }
 
-
 .admin-log-out {
+  font-weight: 800;
   width: 80%;
   margin: 10px 0 30px 0;
   padding: 20px;
@@ -317,26 +269,18 @@ body {
 }
 
 .info-category-header {
-  /* display: inine-block; */
   width: 50%;
   display: inline-block;
-  /* float: left; */
-  /* padding-top: 5px; */
   margin: 20px 0 10px 0;
-  /* font-family: 'Crushed', cursive; */
   font-family: 'Pacifico', cursive;
-  /* font-size: 2.25rem; */
   font-size: 40px;
   line-height: 44px;
   vertical-align: top;
   text-align: left;
-  /* color: #4D5656; */
-  // color: #424949;
   color: #FDFEFE;
 }
 
 i.fas.fa-question-circle {
-  // width: 20px;
   font-size: 1.25rem;
   line-height: 3.55rem;
 }
@@ -351,8 +295,7 @@ i.fas.fa-question-circle {
   color: #FDFEFE;
   vertical-align: top;
   width: 40%;
-  // display: inline-block;
-float: right;
+  float: right;
   text-align: right;
   /* float: right; */
   /* text-align: right; */
@@ -370,15 +313,12 @@ float: right;
 }
 
 .view-caption {
-  /* color: #FDFEFE; */
   color: #424949;
   font-size: 14px;
   line-height: 16px;
   font-weight: 800;
   padding-top: 5px;
   text-align: right;
-  /* vertical-align: top; */
-  /* width: 25%; */
 }
 
 .expand-link {
@@ -484,12 +424,10 @@ form {
 }
 
 .button.admin-log-out {
-  // margin: 15px auto 5px auto;
   margin: 10px auto 30px auto;
   text-align: center;
   width: 60%;
 }
-
 
 
 /* log-in view */
@@ -498,7 +436,7 @@ form {
 .interior-logo {
   margin: 0 auto;
   padding: 12% 0 2% 0;
-  width: 12%;
+  width: 15%;
 }
 
 .secondary-view-header {
@@ -543,15 +481,15 @@ form {
   text-decoration: underline;
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
-  font-size: 18px;
-  line-height: 32px;
+  font-size: 1.25rem;
+  line-height: 2rem;
 }
 
 .list-divider {
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
-  font-size: 1.25rem;
-  line-height: 1.5rem;
+  font-size: 1.75rem;
+  line-height: 2.5rem;
   text-decoration: none;
   color: #424949;
   text-align: center;
@@ -594,7 +532,6 @@ a-scene {
   font-weight: 800;
   font-size: 1.75rem;
   line-height: 2.25rem;
-  
 }
 
 .modal-content {
@@ -635,7 +572,6 @@ a-scene {
 }
 .show-modal {
   opacity: 1;
-  
   left: 0;
   top: 0;
   width: 100%;
@@ -659,14 +595,14 @@ a-scene {
 
   .app-title {
     margin: 0 auto;
-    padding: 50px 0 5px 0;
+    padding: 55px 0 5px 0;
     max-width: 85vw;
     font-size: 3.5rem;
     line-height: 3.75rem;
     vertical-align: top;
     text-align: center;
   }
-
+  
   .app-subhead {
     margin: -10px auto 15px auto;
     max-width: 85vw;
@@ -695,6 +631,10 @@ a-scene {
     color: #FDFEFE;
   }
 
+  .fork-imageH.mobile {
+    height: 15%;
+  }
+
 }
 
 
@@ -716,7 +656,7 @@ a-scene {
       display: none;
     }
 
-    a.button.main.mobile {
+    a.button.main.is-mobile {
       display: none;
     }
 
@@ -743,16 +683,14 @@ a-scene {
 
     .app-title {
       margin: 0 auto;
-      padding: 70px 0 5px 0;
+      padding: 110px 0 30px 0;
       max-width: 85vw;
       font-family: 'Montserrat', sans-serif;
       font-weight: 800;
       font-size: 6rem;
       line-height: 6.5rem;
-      vertical-align: top;
       text-align: center;
       color: #FDFEFE;
-      // margin-bottom: 5%;
     }
 
     .q-mark {
@@ -783,91 +721,51 @@ a-scene {
 
     .site-subhead {
       margin-top: 20px;
+      display: block;
     }
+
+    // .app-subhead.is-tablet-desktop {
+    //   display: inline;
+    // }
     
-    .app-subhead {
+    .app-subhead.is-tablet-desktop {
       color: #424949;
-      margin: 0 auto;
-      max-width: 85vw;
       font-family: 'Pacifico', cursive;
-      // font-size: 22px;
-      // line-height: 30px;
       font-size: 2.75rem;
       line-height: 3.5rem;
       text-align: center;
-      vertical-align: top;
+      margin: 0 auto;
+      padding: 30px 0;
+      display: block;
+      width: 75%;
     }
-    
-    .home-search-button-row {
-      // display: flex;
-      // align-content: center;
-      width: 80%;
-      // margin-top: 10px;
-      margin: 25px auto;
-      // align-content: space-between;
-    }
+
     
     .home-search-area {
       // display: flex;
-      margin-top: 16px;
-      vertical-align: top;
+      margin: 16px auto 20px auto;
       width: 80%;
     }
-    
 
-    .input.home-search-bar {
-      display: block;
-      background: #C1E5AA;
-      border: #FDFEFE;
+    .home-search-button-row {
+      display: flex;
+      align-content: center;
+      width: 80%;
+      margin-top: 10px;
+      margin: 25px auto;
+      align-content: space-between;
     }
 
-    
     .button.main {
-      background: #C1E5AA;
-      border: #FDFEFE;
-      color: #424949;
       margin: 0 auto;
       font-weight: 400;
       display: inline-block;
       text-align: center;
-      // align-self: center;
     }
 
 
-    // .home-geolocate-button {
-    //   // margin: 10px auto 30px auto;
-    //   text-align: center;
-    //   vertical-align: top;
-    //   flex: right;
-    // }
-
-    // .home-search-area {
-    //   display: flex;
-    //   margin-top: 5%;
-    //   vertical-align: top;
-    //   width: 75%;
-    // }
-    
-    // .home-search-area.is-tablet-desktop {
-    //   display: block;
-    // }
-
-    // .input.home-search-bar.mobile.is-mobile {
-    //   display: flex;
-    // }
-
-    // .field.has-addons.is-mobile {
-    //   display: none;
-    // }
-
-    // .button.main-search-mobile {
-    //   display: none;
-    // }
-
     .input.is-large.home-search-bar.is-tablet-desktop {
       display: inline-block;
-      background: #C1E5AA;
-      border: #FDFEFE;
       margin: 0 auto;
     }
 
@@ -883,7 +781,6 @@ a-scene {
       display: none;
     }
 
-    
 
     // profile page:
 
@@ -893,22 +790,7 @@ a-scene {
       padding-bottom: 25px;
       background-color: #8ED062;
       min-height: 100vh;
-//background-texture on interior pages:
-      // background-image: asset_url("WGH-BGonly-V800px.jpg");
-      // background-size:cover; 
-      // background-repeat:no-repeat;
-      // background-attachment:fixed;
-      // // position: relative;
-      // height: 100vh;
-      // background-color: transparent;
-      // overflow: hidden;
     }
-    
-    // .top-nav-bar {
-    //   display: block;
-    //   overflow: hidden;
-    // }
-    
 
     .app-container.profile, .app-container.log-in, .app-container.browse {
       margin: 0 auto;
@@ -916,7 +798,6 @@ a-scene {
       background-color: #8ED062;
       min-height: 100vh;
     }
-
 
     .app-initials {
       padding: 10px 0 10px 20px;
@@ -935,12 +816,10 @@ a-scene {
       float: left;
       color: #FDFEFE;
       position: relative;
-      /* font-family: 'Crushed', cursive; */
       font-family: 'Montserrat', sans-serif;
       font-weight: 800;
       font-size: 2.25rem;
       line-height: 2.75rem;
-      /* align-content: flex-start; */
       vertical-align: top;
     }
     
@@ -958,7 +837,6 @@ a-scene {
     .top-info {
       clear: both;
       background: #424949;
-      // padding: 10px auto 30px auto;
       margin: 0 auto 30px auto;
     }
     
@@ -992,61 +870,60 @@ a-scene {
       text-align: center;
       margin-top: 4px;
     }
-    
-    .admin-log-out {
-      width: 80%;
-      margin: 10px 0 0 0;
-      padding: 20px;
+
+    .upload-file-label {
+      font-weight: 800;
+      font-size: 22px;
+      line-height: 26px;
+      text-align: center;
+      display: block;
+      margin-top: 10px;
+      letter-spacing: -0.5px;
     }
+
+    // .admin-log-out {
+    //   width: 80%;
+    //   margin: 10px 0 0 0;
+    //   padding: 20px;
+    // }
     
     .info-category-header.pano-view {
-      padding: 0 50px;
+      padding: 0 75px;
       width: 60%;
     }
 
     .info-section {
       display: block;
-      padding: 15px 50px;
+      padding: 30px 75px;
     }
     
     .header-with-asset-link {
       display: block;
     }
-  
 
     .info-category-header {
-      /* display: inine-block; */
-      width: 45%;
+      width: 60%;
       display: inline-block;
-      /* float: left; */
-      /* padding-top: 5px; */
-      // margin: 20px 0 10px 0;
-      /* font-family: 'Crushed', cursive; */
       font-family: 'Pacifico', cursive;
-      /* font-size: 2.25rem; */
       font-size: 3rem;
       line-height: 3.75rem;
       vertical-align: top;
       text-align: left;
-      /* color: #4D5656; */
-      // color: #424949;
       color: #FDFEFE;
     }
-    
-    .view-icon {
-      /* padding: 20px 0 15px 0; */
-      margin: 25px 0 5px 0;
-    
-      // font-size: 22px;
-      // line-height: 24px;
-      vertical-align: top;
-      width: 40%;
+
+
+    .info-category-header.info-category-header.pano-view {
+      width: 60%;
       display: inline-block;
-      text-align: right;
-      /* float: right; */
-      /* text-align: right; */
-      font-weight: 600;
+      font-family: 'Pacifico', cursive;
+      font-size: 3rem;
+      line-height: 3.75rem;
+      vertical-align: top;
+      text-align: left;
+      color: #FDFEFE;
     }
+
     
     .fas {
       display: inline-block;
@@ -1057,17 +934,27 @@ a-scene {
       vertical-align: top;
       text-align: center;
     }
+
+    .view-icon {
+      /* padding: 20px 0 15px 0; */
+      margin: 30px 0 5px 0;
+    
+      // font-size: 22px;
+      // line-height: 24px;
+      vertical-align: top;
+      width: 40%;
+      display: inline-block;
+      text-align: right;
+      font-weight: 600;
+    }
     
     .view-caption {
-      /* color: #FDFEFE; */
       color: #424949;
-      font-size: 14px;
-      line-height: 16px;
+      font-size: 1rem;
+      line-height: 1.25rem;
       font-weight: 800;
       padding-top: 5px;
       text-align: right;
-      /* vertical-align: top; */
-      /* width: 25%; */
     }
     
     .expand-link {
@@ -1140,8 +1027,10 @@ a-scene {
       width: 60%;
     }
     
-    .label {
+    .label.upload-file-label{
       display: block;
+      font: 1.5rem;
+      line-height: 2rem;
     }
     
     .save-entry {
@@ -1160,13 +1049,14 @@ a-scene {
     .admin-logout {
       margin: 0 auto;
       text-align: center;
+      padding-bottom: 30px;
     }
     
-    .button.admin-log-out {
-      text-align: center;
-      margin: 15px auto 5px auto;
-      width: 60%;
-    }
+    // .button.admin-log-out {
+    //   text-align: center;
+    //   margin: 15px auto 5px auto;
+    //   width: 60%;
+    // }
 
 // interior pages
 
@@ -1181,8 +1071,10 @@ a-scene {
       line-height: 45px;
     }
 
-
-
+    .browse-list-item {
+      font-size: .75rem;
+      font-size: 1.75rem;
+    }
   }    
 
 
@@ -1202,8 +1094,6 @@ a-scene {
     .input.home-search-bar.is-mobile {
       display: none;
     }
-
-
 
     a.button.main.mobile {
       display: none;
@@ -1229,12 +1119,8 @@ a-scene {
       // position: relative;
       height: 100vh;
       background-color: transparent;
-      overflow: hidden;
+      // overflow: hidden;
     } 
-
-    // .site-header {
-    //   background-color: transparent;
-    // }
 
     .admin-login-link {
       font-size: 1.25rem;
@@ -1257,8 +1143,7 @@ a-scene {
   }
 
     .app-title {
-      // margin: 0 auto;
-      margin: 20px 75px 25px 200px;
+      margin: 0 85px 18px 200px;
       max-width: 60vw;
       font-family: 'Montserrat', sans-serif;
       font-weight: 800;
@@ -1269,28 +1154,21 @@ a-scene {
       float: left;
     }
 
-
     .q-mark {
       color: #424949;
     }
     
-    // .site-subhead {
-    //   margin-top: 20px;
+    // .app-subhead.is-mobile {
+    //   display: none;
     // }
-    
+
     .app-subhead.is-tablet-desktop {
-      display: block;
       color: #424949;
-      margin: 20px 50px 50px 130px;
+      margin: 20px 50px 20px 50px;
       font-family: 'Pacifico', cursive;
-      // font-size: 22px;
-      // line-height: 30px;
       font-size: 2.75rem;
       line-height: 3.25rem;
       text-align: center;
-      // padding: 80px 150px 25px 0;
-      max-width: 60vw;
-      float: left;
     }
   
 
@@ -1311,6 +1189,10 @@ a-scene {
       vertical-align: top;
       margin-right: 4px;
     }
+
+    // .home-browse-button a {
+    // flex: 0%;
+    // }
     
     .home-geolocate-button {
       // margin: 10px auto 30px auto;
@@ -1331,10 +1213,8 @@ a-scene {
 
     .home-search-area {
       display: flex;
-      margin-top: 16px;
-      vertical-align: top;
       width: 60%;
-      margin: 10px 100px 10px 170px;
+      margin: 20px 100px 10px 70px;
 
       // margin: 0 auto;
       // align-content: space-between;
@@ -1350,7 +1230,43 @@ a-scene {
     }
 
 
+    .business-name {
+      font-size: 3rem;
+      line-height: 3.75rem;
+      // font-weight: 800;
+      // text-align: center;
+      // color: #FDFEFE;
+      // padding: 10px 0;
+    }
     
+    .address-phone {
+      color: #F59841;
+      font-size: 1.5rem;
+      line-height: 2.25rem;
+      /* font-family: 'Heebo', sans-serif;
+      font-weight: 500; */
+      // font-family: 'Montserrat', sans-serif;
+      // font-weight: 600;
+      // text-align: center;
+      // margin-top: 4px;
+      // padding-bottom: 4px;
+    }
+    
+    .hours {
+      color: #FDFEFE;
+      font-size: 1.5rem;
+      line-height: 2.25rem;
+      font-weight: 600;
+      text-align: center;
+      margin-top: 4px;
+    }
+
+    label.upload-file-label {
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+    }
+
+
 }       
 
 
@@ -1383,6 +1299,12 @@ a-scene {
       background-color: transparent;
       overflow: hidden;
     } 
+
+    .app-title {
+      margin: 0 150px 18px 250px;
+      max-width: 60vw;
+    }
+
 
     .fork-imageV.desktop {
       background-image: asset_url("WGH-fork-fullheight-tH.png");

@@ -15,10 +15,14 @@
                 <% end %>
         </div>  
 
-        <div class="address-phone"><%= @profile.address %>  |  <%= @profile.phone %>
+        <div class="address-phone">
+            <%= @profile.address %> <br>
+            <%= @profile.phone %>
         </div>    
 
-        <div class="hours"> <%= @profile.hours %> </div>
+        <div class="hours"> 
+            <%= @profile.hours %> 
+        </div>
     </div>
 
     <% if current_profile && @profile.id == current_profile.id %>
