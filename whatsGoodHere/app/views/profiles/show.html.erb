@@ -10,20 +10,25 @@
         <div class="name-field">
             <h1 class="business-name">
             <%= @profile.restaurant %></h1>
-                <% if flash[:error_message] %>
-                <p class="flash-error"><%= flash[:error_message] %></p>
-                <% end %>
+               
         </div>  
 
-        <div class="address-phone"><%= @profile.address %>  |  <%= @profile.phone %>
+        <div class="address-phone">
+            <%= @profile.address %> <br>
+            <%= @profile.phone %>
         </div>    
 
-        <div class="hours"> <%= @profile.hours %> </div>
+        <div class="hours"> 
+            <%= @profile.hours %> 
+        </div>
     </div>
 
+    <% if flash[:notice] %>
+        <p class="notification is-success" id="notice"><%= flash[:notice] %></p>
+    <% end %>
     <% if current_profile && @profile.id == current_profile.id %>
     <%= form_with model: @profile, local: true do |form| %>
-
+      
  
     <%= form.label "Upload or replace menu", class: "upload-file-label", type: "text" %>
 
@@ -62,7 +67,7 @@
     </div>
 
     <%= form.label "Upload or replace floor plan", class: "upload-file-label", type:"text"  %>
-
+  
     <div class="field">
         <div class="file is-small">
             <label class="file-label">
@@ -115,14 +120,13 @@
             <div class="modal-content">
                 <span class="close-button" id="close-buttonFare">×</span>
                 <h2 class="modal-head">"Fare"</h2>
-                <p>This section should contain general descriptions of what your establishment offers to customers.</p>
-                        <p>Examples: <br>
-                        - “Global Street Food” <br>
-                        - “Beer, Spirits and Wine” <br>
-                        - “House Made Cocktails” <br>
-                        - “Pint Night Wednesdays” <br>
-                        - “$2 PBR Mondays” <br>
-                        - “Trivia Sundays”</p>
+                <p>This section should contain general descriptions of what your establishment offers to customers. You can upload a menu pdf/png for this section, as well as an image of your specials board or specials list.</p>
+                <p><span class="italic-modal">Examples:</span> </p>       <p>• Parts & Labor serves a delicious mix of items inspired by global street food.</p>
+                <p>• Beer, Spirits and Wine</p>
+                <p>• House-Made Cocktails</p>
+                <p>• $2 PBR Mondays</p>
+                <p>• Pint Night Wednesdays</p>
+                <p>• Trivia Sundays</p>
             </div>
         </div>
         <% end %>
@@ -165,10 +169,14 @@
         <% if @profile.offers.length > 3  %>
             <a class="expand-link" onClick=showDetail('hideable-fare')> ... see more</a>
         <% end %>
+        <p id="offer-error"></p>
         <% if current_profile && @profile.id == current_profile.id %>
             <%= render 'offerForm' %>
 
             <% end %> 
+        <% if @profile.special.attached? %> 
+            <%= link_to (image_tag @profile.special), rails_blob_path(@profile.special, disposition: "special"), target: "_new" %>
+        <% end %> 
 
         <div class="info-category-header tips">tips
         
@@ -178,7 +186,16 @@
         <div class="modal" id="modalTips">
             <div class="modal-content">
                 <span class="close-button" id="close-buttonTips">×</span>
-                <h1>Hello, I am a modal!</h1>
+                <h2 class="modal-head">"Tips"</h2>
+                <p>This section is for FAQ, subjective info and “insider” knowledge. It’s meant to give a more intimate portrait of what to expect at your establishment.</p>
+                <p><span class="italic-modal">Examples:</span> </p>
+                <p>• The MotoBanh is delicious, and is a top seller - you should git you some!</p>
+                <p>• Order anything from anyone behind the bar. Drinks will be made to order and you’ll be given a number for food orders. Food will be brought to the number. Sit anywhere!</p>
+                <p>• Water is self-serve; it's to the left of the bar by the front wall.</p>
+                <p>• In warm weather, our large bay doors will be open.</p>
+                <p>• Sliders are mini burger-like sandwiches.</p>
+                <p>• You can still order the Hipster Poutine even though it’s not on the menu. It’s fries, kimchi, marinated beef, sriracha aioli and cilantro - delish!</p>
+                <p>• If Tony is behind the bar (tall gangly guy with dark hair), ask him to make a tamarind shrub!</p>
             </div>
         </div>
         <% end %>
@@ -217,6 +234,7 @@
         <% if @profile.hacks.length > 3  %>
         <a class="expand-link" onClick=showDetail('hideable-tips')> ... see more</a>
         <% end %>
+        <p id="tips-error"></p>
             <% if current_profile && @profile.id == current_profile.id %>
             <%= form_with model: @hack, url: hacks_path do |f| %>
         
@@ -232,16 +250,13 @@
             <div class="modal" id="modalSpecs">
                 <div class="modal-content">
                     <span class="close-button" id="close-buttonSpecs">×</span>
-                    <h2>"Fare"</h2>
-                    <p>This section should contain general descriptions of what your establishment offers to customers.</p>
+                    <h2 class="modal-head">"Specs"</h2>
+                    <p>This section is to describe the physical space. You can upload a floorplan pdf/png, upload a 360° image which will be linked to this section.</p>
                     
-                            <p>Examples: <br>
-                            - “Global Street Food” <br>
-                            - “Beer, Spirits and Wine” <br>
-                            - “House Made Cocktails” <br>
-                            - “Pint Night Wednesdays” <br>
-                            - “$2 PBR Mondays” <br>
-                            - “Trivia Sundays”</p>
+                <p><span class="italic-modal">Examples:</span> </p>
+                    <p>• Bathrooms are around the bar to the left in the hallway. They are unisex.</p>
+                    <p>• The self-serve water station is to the left of the bar near the entrance.</p>
+                    <p>• The parking lot is surrounding south and east of the building. It’s $1.50 per hour. There’s public city street pay parking for several blocks in any direction.</p>
                 </div>
             </div>
         <% end %>
@@ -289,6 +304,7 @@
             <% if @profile.locations.length > 3  %>
             <a class="expand-link" onClick=showDetail('hideable-specs')> ... see more</a>    
             <% end %>
+            <p id="spec-error"></p>
             <% if current_profile && @profile.id == current_profile.id %>
             <%= form_with model: @location, url: locations_path do |f| %>
         

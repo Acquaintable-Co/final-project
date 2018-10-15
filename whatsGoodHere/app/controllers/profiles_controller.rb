@@ -34,8 +34,10 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    @profile.update(profile_params)
-    redirect_to @profile
+    if @profile.update(profile_param)
+      redirect_to @profile
+      flash[:notice] = "Images Updated"
+    end
   end
 
   def destroy
@@ -46,7 +48,9 @@ class ProfilesController < ApplicationController
   def set_profile
     @profile = Profile.find(params[:id])
   end
-
+  def profile_param
+  params.fetch(:profile, {}).permit(:menu, :vr_image, :floor_plan, :special)
+  end
   def profile_params
     params.require(:profile).permit(:email, :password, :address, :hours, :phone, :website, :restaurant, :name, :menu, :vr_image, :floor_plan, :special)
   end

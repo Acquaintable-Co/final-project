@@ -1,2 +1,7 @@
-$(".specs-detail").append("<div> • <%= @location.location_detail %></div>")
+if (document.getElementById('location_detail_field').value != "") {
+$(".specs-detail").append("<div class='info-entry'> • <%= @location.location_detail %></div>")
 $('#location_detail_field').val('');
+$("#spec-error").remove()
+} else {
+  $("#spec-error").html("<span class='has-text-danger'>Can not be blank</span>")
+}
