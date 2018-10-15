@@ -178,6 +178,11 @@
             <%= link_to (image_tag @profile.special), rails_blob_path(@profile.special, disposition: "special"), target: "_new" %>
         <% end %> 
 
+        <% if @profile.special.attached? %> 
+            <div class="specials-caption">current specials:</div>
+            <%= link_to (image_tag @profile.special), rails_blob_path(@profile.special, disposition: "special"), target: "_new", class: "specials-image"%>
+        <% end %> 
+
         <div class="info-category-header tips">tips
         
         <% if current_profile && @profile.id == current_profile.id %>
@@ -330,7 +335,6 @@
         <% end %>
 
     </div>          
-
 
 </div>
 

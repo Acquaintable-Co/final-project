@@ -320,8 +320,8 @@ i.fas.fa-question-circle {
 
 .view-caption {
   color: #424949;
-  font-size: 14px;
-  line-height: 16px;
+  font-size: .8rem;
+  line-height: 1rem;
   font-weight: 800;
   padding-top: 5px;
   text-align: right;
@@ -354,6 +354,21 @@ i.fas.fa-question-circle {
   color: #FDFEFE;
   margin-bottom: 5px;
   text-align: right;
+}
+
+.specials-image {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.specials-caption {
+  // width: 85%;
+  color: #424949;
+  font-size: .8rem;
+  line-height: 1rem;
+  font-weight: 800;
+  padding: 15px 0 10px 0;
+  text-align: left;
 }
 
 .info-category-header.pano-view {
