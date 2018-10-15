@@ -7,9 +7,10 @@ class ProfilesController < ApplicationController
   end
   
   def nearby
-    respond_to :js, :html
-      #  @nearby = Profile.near(request.remote_ip, 0.5)
-       @nearby = Profile.near([params[:lat], params[:long]], 0.5)
+
+       #@nearby = Profile.near(request.remote_ip, 0.5)
+       @nearby = Profile.near([location.latitude, location.longitude], 2.8)
+       #@nearby = Profile.near([35.993124, -78.905147], 0.5)
 
   end
 
