@@ -174,9 +174,6 @@
             <%= render 'offerForm' %>
 
             <% end %> 
-        <% if @profile.special.attached? %> 
-            <%= link_to (image_tag @profile.special), rails_blob_path(@profile.special, disposition: "special"), target: "_new" %>
-        <% end %> 
 
         <% if @profile.special.attached? %> 
             <div class="specials-caption">current specials:</div>
