@@ -30,9 +30,9 @@
     <%= form_with model: @profile, local: true do |form| %>
       
  
-    <%= form.label "Upload or replace menu", class: "upload-file-label", type: "text" %>
+    <%= form.label "Upload or replace menu file", class: "upload-file-label", type: "text" %>
 
-    <div class="field">
+    <div class="field upload-button-div">
         <div class="file is-small">
             <label class="file-label">
                 <%= form.file_field :menu, class: "file-input" %>
@@ -50,7 +50,7 @@
 
     <%= form.label "Upload or replace specials image", class: "upload-file-label", type:"text"  %>
 
-    <div class="field">
+    <div class="field upload-button-div">
         <div class="file is-small">
             <label class="file-label">
                 <%= form.file_field :special, class: "file-input" %>
@@ -68,7 +68,7 @@
 
     <%= form.label "Upload or replace floor plan", class: "upload-file-label", type:"text"  %>
   
-    <div class="field">
+    <div class="field upload-button-div">
         <div class="file is-small">
             <label class="file-label">
                 <%= form.file_field :floor_plan, class: "file-input" %>
@@ -84,9 +84,9 @@
         </div>
     </div>
 
-    <%= form.label "Upload or replace 360 image", class: "upload-file-label", type:"text"  %>
+    <%= form.label "Upload or replace 360° image", class: "upload-file-label", type:"text"  %>
 
-    <div class="field">
+    <div class="field upload-button-div">
         <div class="file is-small">
             <label class="file-label">
                 <%= form.file_field :vr_image, class: "file-input" %>
@@ -103,7 +103,7 @@
     </div>
 
 
-    <%= form.submit "upload file", class: "button is-warning upload-button" %>
+    <%= form.submit "upload selected file or files", class: "button is-warning upload-button" %>
     <% end %>
     <% end %>
   
