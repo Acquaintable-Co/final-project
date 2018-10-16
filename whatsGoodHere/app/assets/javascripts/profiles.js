@@ -19,24 +19,22 @@ function showDetail (className) {
     }
   }
 }
+$(document).ready(function() {
 
-function getLocation(){
-  if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function (position){
-         var lat = position.coords.latitude
-         var long = position.coords.longitude
-         console.log(lat);
-         console.log(long);
-         $.ajax({
-          type: 'GET',
-          url: '/nearby',
-          data: { lat: position.coords.latitude, long: position.coords.longitude }
-          });
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function (position) {
+        var nearbyLink = $('#nearby-link');
+        nearbyLink.attr('href', `/nearby?lat=${position.coords.latitude}&long=${position.coords.longitude}`);
       });
+    }
   }
-}
 
-getLocation();
+  getLocation();
+});
+
+
+
 
 window.onload = function () {
   var modalFare = document.querySelector("#modalFare");

@@ -24,10 +24,10 @@
       <%= link_to 'see full list', browse_path, :class => 'button main is-large is-tablet-desktop' %>
     </div>
     <div class="home-geolocate-button">
-      <%= link_to "what's nearby", nearby_path, remote: true, :class => 'button main is-mobile' %>
+      <%= link_to "what's nearby", nearby_path, :class => 'button main is-mobile', id: "nearby-link" %>
     </div>
     <div class="home-geolocate-button">
-      <%= link_to "what's nearby", nearby_path, remote: true, :class => 'button main is-large is-tablet-desktop' %>
+      <%= link_to "what's nearby", nearby_path, :class => 'button main is-large is-tablet-desktop', id: "nearby-link" %>
     </div>
   </div>
 
