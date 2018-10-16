@@ -10,7 +10,6 @@ class ProfilesController < ApplicationController
     respond_to :html, :js
       #  @nearby = Profile.near(request.remote_ip, 0.5)
        @nearby = Profile.near([params[:lat], params[:long]], 0.5)
-
   end
 
   def browse
