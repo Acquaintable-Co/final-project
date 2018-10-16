@@ -19,6 +19,19 @@ function showDetail (className) {
     }
   }
 }
+$(document).ready(function() {
+
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function (position) {
+        var nearbyLink = $('#nearby-link');
+        nearbyLink.attr('href', `/nearby?lat=${position.coords.latitude}&long=${position.coords.longitude}`);
+      });
+    }
+  }
+
+  getLocation();
+});
 
 
 
