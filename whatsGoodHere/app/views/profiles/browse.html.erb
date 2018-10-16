@@ -13,5 +13,7 @@
 
 <% @browse.each do |profile| %>
     <div class="browse-list-item"><%= link_to profile.restaurant, profile_path(profile), class: "browse-list-item" %></div>
-    <div class="list-divider">•</div>
+    <div class="list-divider">
+    <%= image_tag("WGH-bulleted-icon.png", :alt => "What's Good Here logo") %>
+    </div>
 <% end %>
