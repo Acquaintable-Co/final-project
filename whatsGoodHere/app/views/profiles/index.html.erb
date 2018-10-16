@@ -9,49 +9,66 @@
   <div class="fork-imageV desktop"></div>
 
   <div class="site-subhead">
+
     <div class="app-subhead is-mobile">Get to know <br>the local spots
     </div>
 
     <div class="app-subhead is-tablet-desktop">Get to know the local spots
     </div>
+
   </div>
 
   <div class="home-search-button-row">
+
     <div class="home-browse-button">
-      <%= link_to 'see full list', browse_path, :class => 'button main is-mobile' %>
+      <%= link_to 'see full list', browse_path, :class => 'button main is-expanded is-mobile ' %>
     </div>
+
     <div class="home-browse-button">
-      <%= link_to 'see full list', browse_path, :class => 'button main is-large is-tablet-desktop' %>
+      <%= link_to 'see full list', browse_path, :class => 'button main is-large is-expanded is-tablet-desktop' %>
     </div>
+
     <div class="home-geolocate-button">
-      <%= link_to "what's nearby", nearby_path, :class => 'button main is-mobile' %>
+      <%= link_to "what's nearby", nearby_path, :class => 'button main is-mobile', id: "nearby-link" %>
     </div>
+    
     <div class="home-geolocate-button">
-      <%= link_to "what's nearby", nearby_path, :class => 'button main is-large is-tablet-desktop' %>
+      <%= link_to "what's nearby", nearby_path, :class => 'button main is-large is-tablet-desktop', id: "nearby-link" %>
     </div>
+
   </div>
 
   <div class="home-search-area">
 
-    <div class="field has-addons is-mobile">
-      <div class="control">
-        <%= form_tag(browse_path, method: :get) do %>
-          <%= text_field_tag :restaurant, params[:restaurant], :class => 'input home-search-bar mobile is-mobile', :type => 'text', :placeholder => 'or find a venue'  %>
-          <%= submit_tag 'Search', class: 'button is-mobile' %>
-        <% end %>
-      </div>
-    </div>    
+    <div class="field is-grouped is-mobile">
 
-    <div class="field has-addons is-tablet-desktop">
-      <div class="control">
+      <div class="control search-bar is-expanded">
         <%= form_tag(browse_path, method: :get) do %>
-          <%= text_field_tag :restaurant, params[:restaurant], :class => 'input is-large home-search-bar is-tablet-desktop', :type => 'text', :placeholder => 'or find a venue'  %>
-          <%= submit_tag 'Search', class: 'button is-tablet-desktop' %>
-        <% end %>
+        <%= text_field_tag :restaurant, params[:restaurant], :class => 'input home-search-bar is-mobile', :type => 'text', :placeholder => 'or, find a venue' %>
       </div>
+
+      <div class="control search-button">
+      <button class="button is-light is-mobile">search!</button>
+      </div>
+
+        <% end %>
     </div>
 
-   </div>
+    <div class="field is-grouped is-tablet-desktop">
+
+      <div class="control search-bar is-expanded">
+        <%= form_tag(browse_path, method: :get) do %>
+          <%= text_field_tag :restaurant, params[:restaurant], :class => 'input is-large home-search-bar is-tablet-desktop', :type => 'text', :placeholder => 'or, find a venue'  %>
+      </div>
+
+      <div class="control search-button">
+        <button class="button is-light is-expanded is-tablet-desktop">search!</button>
+      </div>
+
+        <% end %>
+    </div>
+
+  </div>
 
   </div>
 </div>

@@ -1,19 +1,20 @@
-
-<div class="app-container browse">
+<script>
+  getLocation();
+</script>
+<div class="app-container profile">
     <div class="top-nav-bar">
         <div>
           <%= link_to "wgh", profiles_path, class: "app-initials" %><span class="nav-q-mark">?</span>
         </div>
+        
     </div>
 
 <div class="interior-logo"><%= image_tag("WGH-logomark-int100.png", :alt => "What's Good Here logo") %></div>
 
-<div class="secondary-view-header">What's Here<span class="secondary-vew-header-q">?</span></div>
-
-
-<% @browse.each do |profile| %>
+<div class="secondary-view-header">What's Near<span class="secondary-vew-header-q">?</span></div>
+<div id ="nearby">
+<% @nearby.each do |profile| %>
     <div class="browse-list-item"><%= link_to profile.restaurant, profile_path(profile), class: "browse-list-item" %></div>
-    <div class="list-divider">
-    <%= image_tag("WGH-bulleted-icon.png", :alt => "What's Good Here logo") %>
-    </div>
+    <div class="list-divider">•</div>
 <% end %>
+</div>
