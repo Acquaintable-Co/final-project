@@ -20,20 +20,20 @@
 
   <div class="home-search-button-row">
 
-    <div class="home-browse-button">
-      <%= link_to 'see full list', browse_path, :class => 'button main is-expanded is-mobile ' %>
+    <div class="home-browse-button is-mobile">
+      <%= link_to 'see full list', browse_path, :class => 'button main is-expanded' %>
     </div>
 
-    <div class="home-browse-button">
-      <%= link_to 'see full list', browse_path, :class => 'button main is-large is-expanded is-tablet-desktop' %>
+    <div class="home-browse-button is-tablet-desktop">
+      <%= link_to 'see full list', browse_path, :class => 'button main is-large is-expanded' %>
     </div>
 
-    <div class="home-geolocate-button">
-      <%= link_to "what's nearby", nearby_path, :class => 'button main  is-mobile' %>
+    <div class="home-geolocate-button is-mobile">
+      <%= link_to "what's nearby", nearby_path, :class => 'button main' %>
     </div>
     
-    <div class="home-geolocate-button">
-      <%= link_to "what's nearby", nearby_path, :class => 'button main is-large is-tablet-desktop' %>
+    <div class="home-geolocate-button is-tablet-desktop">
+      <%= link_to "what's nearby", nearby_path, :class => 'button main is-large' %>
     </div>
 
   </div>
