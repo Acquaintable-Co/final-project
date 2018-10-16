@@ -107,7 +107,6 @@ body {
   align-content: space-between;
   padding-top: 5px;
   padding-left: 18px;
-
 }
 
 .button.main {
@@ -148,7 +147,7 @@ button.button.is-light {
   display: inline-block;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  font-size: 1rem;
+  // font-size: 1rem;
 }
 
 .control.search-bar, .control.search-button {
@@ -397,13 +396,13 @@ form {
 }
 
 .upload-button-div {
-  float: left;
+  // float: left;
   margin: 0 200px 0 0;
 }
 
-.file.is-small {
-  margin-left: 20px;
-}
+// .file.is-small {
+//   margin-left: 20px;
+// }
 
 .file-label {
   padding-bottom: 10px;
@@ -432,12 +431,6 @@ form {
   display: block;
 }
 
-.save-entry {
-  // margin: 5px 200px 10px 0;
-  display: block;
-  // width: 60%;
-}
-
 .upload-button {
   display: block;
   text-align: center;
@@ -446,6 +439,7 @@ form {
 }
 
 .save-entry {
+  display: block;
   margin: 5px 200px 15px 0px;
 }
 
@@ -755,35 +749,35 @@ a-scene {
     /* main app homepage */
 
 
-    a.button.main.is-mobile {
+    .button.main.is-mobile {
       display: none;
     }
 
     .app-background {
       background-image: asset_url("WGH-BGonly-V800px.jpg");
-      background-size:cover; 
-      background-repeat:no-repeat;
-      background-attachment:fixed;
-      height: 100vh;
-      background-color: transparent;
-      overflow: hidden;
+      // background-size:cover; 
+      // background-repeat:no-repeat;
+      // background-attachment:fixed;
+      // height: 100vh;
+      // background-color: transparent;
+      // overflow: hidden;
     } 
 
     .app-title {
-      margin: 0 auto;
+      // margin: 0 auto;
       padding: 110px 0 30px 0;
       max-width: 85vw;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 800;
+      // font-family: 'Montserrat', sans-serif;
+      // font-weight: 800;
       font-size: 6rem;
       line-height: 6.5rem;
-      text-align: center;
-      color: #FDFEFE;
+      // text-align: center;
+      // color: #FDFEFE;
     }
 
-    .q-mark {
-      color: #424949;
-    }
+    // .q-mark {
+    //   color: #424949;
+    // }
 
     .fork-imageH.tabletV {
       background-image: asset_url("WGH-fork-fullwidth-tV.png");
@@ -812,28 +806,31 @@ a-scene {
       display: block;
     }
 
+    .app-subhead.is-mobile {
+      display: none;
+    }
+
     // .app-subhead.is-tablet-desktop {
-    //   display: inline;
+    //   display: block;
     // }
     
     .app-subhead.is-tablet-desktop {
-      color: #424949;
-      font-family: 'Pacifico', cursive;
+      // color: #424949;
+      // font-family: 'Pacifico', cursive;
       font-size: 2.75rem;
       line-height: 3.5rem;
-      text-align: center;
+      // text-align: center;
       margin: 0 auto;
       padding: 30px 0;
       display: block;
       width: 75%;
     }
 
-    
     .home-search-area {
       display: flex;
       margin: 16px auto 20px auto;
       width: 80%;
-    }
+        }
 
     .home-search-button-row {
       display: flex;
@@ -851,32 +848,46 @@ a-scene {
       text-align: center;
     }
 
-
     .input.is-large.home-search-bar.is-tablet-desktop {
       display: inline-block;
       margin: 0 auto;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+    }
+    
+    button.button.is-large.is-light.is-expanded.is-tablet-desktop {
+      display: inline-block;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+    }
+    
+    .control.search-bar, .control.search-button {
+      display: inline-block;
     }
 
+    .home-search-bar.is-mobile {
+      display: none;
+    }
 
     .field.has-addons.is-mobile {
       display: none;
     }
 
-
-    .is-mobile {
+    .field.is-grouped.is-mobile {
       display: none;
     }
+
 
 
     // profile page:
 
     
-    .app-container.profile {
-      margin: 0 auto;
-      padding-bottom: 25px;
-      background-color: #8ED062;
-      min-height: 100vh;
-    }
+    // .app-container.profile {
+    //   margin: 0 auto;
+    //   padding-bottom: 25px;
+    //   // background-color: #8ED062;
+    //   min-height: 100vh;
+    // }
 
     .app-container.profile, .app-container.log-in, .app-container.browse {
       margin: 0 auto;
@@ -927,8 +938,8 @@ a-scene {
     }
     
     .business-name {
-      font-size: 2.5rem;
-      line-height: 2.75rem;
+      font-size: 2.75rem;
+      line-height: 3.25rem;
       font-weight: 800;
       text-align: center;
       color: #FDFEFE;
@@ -937,7 +948,7 @@ a-scene {
     
     .address-phone {
       color: #F59841;
-      font-size: 1.5rem;
+      font-size: 1.75rem;
       line-height: 2.25rem;
       /* font-family: 'Heebo', sans-serif;
       font-weight: 500; */
@@ -954,29 +965,97 @@ a-scene {
       line-height: 1.75rem;
       font-weight: 600;
       text-align: center;
-      margin-top: 4px;
+      margin: 5px 0;
     }
 
-    .upload-file-label {
-      font-weight: 800;
-      font-size: 22px;
-      line-height: 26px;
-      text-align: center;
-      display: block;
-      margin-top: 10px;
-      letter-spacing: -0.5px;
-    }
 
-    // .admin-log-out {
-    //   width: 80%;
-    //   margin: 10px 0 0 0;
-    //   padding: 20px;
-    // }
-    
-    .info-category-header.pano-view {
-      padding: 0 75px;
-      width: 60%;
-    }
+/////
+
+
+.hidden {
+  display: none;
+}
+
+.file-label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 20px;
+  text-align: center;
+  display: block;
+  margin-top: 10px;
+  letter-spacing: -0.5px;
+}
+
+// .upload-file-label-div {
+//   display: block;
+//   margin-left: 75px;
+// }
+
+
+label.file-label {
+  padding-bottom: 10px;
+  margin: 0 500px 10px 0;
+  text-align: left;
+  display: block;
+}
+
+label.upload-file-label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  text-align: left;
+  display: block;
+  margin: 20px 0 10px 55px;
+  // padding: 0 20px; 
+  letter-spacing: -0.5px;
+}
+
+
+.input.add-new-item {
+  // margin: 15px auto 5px auto;
+  display: block;
+  width: 80%;
+  margin: 10px 0; 
+}
+
+.label.file-label {
+  display: block;
+  text-align: left;
+}
+
+.upload-button {
+  display: block;
+  text-align: left;
+  margin: 5px 200px 15px 20px;
+  // width: 60%;
+}
+
+
+.field.upload-button-div {
+  margin: 10px 0 0 75px ;
+  display: block;
+  text-align: left;
+
+}
+
+.upload-button {
+  display: block;
+  text-align: center;
+  margin: 5px 200px 15px 20px;
+  // width: 60%;
+}
+
+
+.save-entry {
+  display: block;
+  margin: 5px 200px 15px 0px;
+}
+
+
+/////
+
 
     .info-section {
       display: block;
@@ -987,18 +1066,6 @@ a-scene {
       display: block;
     }
 
-    .info-category-header {
-      width: 60%;
-      display: inline-block;
-      font-family: 'Pacifico', cursive;
-      font-size: 3rem;
-      line-height: 3.75rem;
-      vertical-align: top;
-      text-align: left;
-      color: #FDFEFE;
-    }
-
-
     .info-category-header.info-category-header.pano-view {
       width: 60%;
       display: inline-block;
@@ -1008,12 +1075,11 @@ a-scene {
       vertical-align: top;
       text-align: left;
       color: #FDFEFE;
+      padding: 0 75px;
     }
 
-    
     .fas {
       display: inline-block;
-      /* padding: 10px 15px 0 0; */
       font-size: 30px;
       line-height: 30px;
       color: #424949;
@@ -1022,11 +1088,7 @@ a-scene {
     }
 
     .view-icon {
-      /* padding: 20px 0 15px 0; */
       margin: 30px 0 5px 0;
-    
-      // font-size: 22px;
-      // line-height: 24px;
       vertical-align: top;
       width: 40%;
       display: inline-block;
@@ -1085,16 +1147,16 @@ a-scene {
       display: block;
     }
     
-    .file-label {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 600;
-      font-size: 18px;
-      line-height: 20px;
-      text-align: center;
-      display: block;
-      margin-top: 10px;
-      letter-spacing: -0.5px;
-    }
+    // .file-label {
+    //   font-family: 'Montserrat', sans-serif;
+    //   font-weight: 600;
+    //   font-size: 18px;
+    //   line-height: 20px;
+    //   text-align: center;
+    //   display: block;
+    //   margin-top: 10px;
+    //   letter-spacing: -0.5px;
+    // }
     
     .upload-file-label {
       font-family: 'Montserrat', sans-serif;
@@ -1115,7 +1177,7 @@ a-scene {
     
     .label.upload-file-label{
       display: block;
-      font: 1.5rem;
+      font-size: 1.5rem;
       line-height: 2rem;
     }
     

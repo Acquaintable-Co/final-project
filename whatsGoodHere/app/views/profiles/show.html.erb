@@ -29,8 +29,9 @@
     <% if current_profile && @profile.id == current_profile.id %>
     <%= form_with model: @profile, local: true do |form| %>
       
- 
+ <div class="upload-file-label-div">
     <%= form.label "Upload or replace menu file", class: "upload-file-label", type: "text" %>
+</div>    
 
     <div class="field upload-button-div">
         <div class="file is-small">
@@ -48,7 +49,9 @@
         </div>
     </div>
 
+ <div class="upload-file-label-div">
     <%= form.label "Upload or replace specials image", class: "upload-file-label", type:"text"  %>
+</div>
 
     <div class="field upload-button-div">
         <div class="file is-small">
@@ -66,7 +69,9 @@
         </div>
     </div>
 
+ <div class="upload-file-label-div">
     <%= form.label "Upload or replace floor plan", class: "upload-file-label", type:"text"  %>
+</div>    
   
     <div class="field upload-button-div">
         <div class="file is-small">
@@ -84,7 +89,9 @@
         </div>
     </div>
 
+ <div class="upload-file-label-div">
     <%= form.label "Upload or replace 360° image", class: "upload-file-label", type:"text"  %>
+</div>
 
     <div class="field upload-button-div">
         <div class="file is-small">
