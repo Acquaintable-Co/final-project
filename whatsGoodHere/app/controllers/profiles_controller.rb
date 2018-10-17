@@ -7,7 +7,7 @@ class ProfilesController < ApplicationController
   end
   
   def nearby
-    
+
       #  @nearby = Profile.near(request.remote_ip, 0.5)
        @nearby = Profile.near([params[:lat], params[:long]], 0.5)
   end
