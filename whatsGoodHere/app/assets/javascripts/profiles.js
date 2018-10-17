@@ -26,6 +26,8 @@ $(document).ready(function() {
       navigator.geolocation.getCurrentPosition(function (position) {
         var nearbyLink = $('#nearby-link');
         nearbyLink.attr('href', `/nearby?lat=${position.coords.latitude}&long=${position.coords.longitude}`);
+        var nearbyLink = $('#nearby-link2');
+        nearbyLink.attr('href', `/nearby?lat=${position.coords.latitude}&long=${position.coords.longitude}`);
       });
     }
   }
